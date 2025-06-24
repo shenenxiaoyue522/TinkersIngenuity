@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tinkers_ingenuity:flame_steel_ingot"
+    }
+  ],
+  "result": {
+    "item": "tinkers_ingenuity:flame_steel_nugget"
+  }
+}

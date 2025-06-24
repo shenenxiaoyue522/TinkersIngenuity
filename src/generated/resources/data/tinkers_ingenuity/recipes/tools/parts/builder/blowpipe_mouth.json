@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:part_builder",
+  "cost": 2,
+  "pattern": "tinkers_ingenuity:blowpipe_mouth",
+  "pattern_item": [
+    {
+      "tag": "tconstruct:patterns/default"
+    },
+    {
+      "item": "tinkers_ingenuity:blowpipe_mouth_cast"
+    }
+  ],
+  "result": {
+    "item": "tinkers_ingenuity:blowpipe_mouth"
+  }
+}
