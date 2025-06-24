@@ -67,9 +67,9 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         this.unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, entry.ingot())::unlockedBy, entry.nugget().get())
                 .pattern("XXX").pattern("XXX").pattern("XXX").define('X', entry.nugget())
                 .save(pvd, this.prefix(entry.block().getId(), "ingot_from_nugget/"));
-        this.unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, entry.ingot())::unlockedBy, entry.block().asItem())
+        this.unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, entry.ingot(), 9)::unlockedBy, entry.block().asItem())
                 .requires(entry.block()).save(pvd, this.prefix(entry.ingot().getId(), "ingot_from_block/"));
-        this.unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, entry.nugget())::unlockedBy, entry.ingot().get())
+        this.unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, entry.nugget(), 9)::unlockedBy, entry.ingot().get())
                 .requires(entry.ingot()).save(pvd, this.prefix(entry.ingot().getId(), "nugget_from_ingot/"));
     }
 
