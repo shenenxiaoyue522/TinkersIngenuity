@@ -109,7 +109,7 @@ public enum TIMaterials {
     ELFS_CRYSTAL(MaterialBuildHolder.builder("elfs_crystal")
             .craftableMaterial(TIItems.ELFS_CRYSTAL)
             .desc(b -> b
-                    .encyclopedia("Right click on the tool with the mouse carrying the part to customize its traits onto the tool, and the part will be consumed. Right click on the tool with the mouse to convert the numerical values on this tool, and the tool will be retained."))
+                    .encyclopedia("In the backpack, right-click on the tool with a part to characterize the part onto the tool, and the part will be consumed. Right-click the tool with the tool to numerically transform the tool onto the tool, and the tool will remain."))
             .definition(MaterialDefinitionData.Builder::craftable)
             .statAndShield(plat(25f).armor(2.0F, 5.0F, 6.0F, 2.0F),
                     head(790, 7.0F, Tiers.DIAMOND, 2.7F),

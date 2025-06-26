@@ -30,7 +30,7 @@ public enum TIModifierData {
     SPOTLESS("spotless", "In pristine condition.",
             "This piece of armor will help protect you from negative effects"),
     FRESH_WATER("fresh_water", "The surface of the water is like a mirror, reflecting you and me.",
-            "Right click on a part or tool carried by the mouse to digitize its properties or tools onto the tool"),
+            "Use a part or the same tool that is compatible with the tool in your backpack, right-click on the tool to numerize the feature or tool onto the tool"),
     DEADLY_PLAGUE("deadly_plague", "Beware of infections!",
             "After attacking, the target will take Plague damage over time based on their current health"),
     COLORFUL_SLIME("colorful_slime", "The world is so colorful!",

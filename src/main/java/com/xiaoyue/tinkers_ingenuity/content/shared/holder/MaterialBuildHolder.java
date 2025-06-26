@@ -59,7 +59,7 @@ public record MaterialBuildHolder(MaterialDescData desc, @Nullable MaterialRecip
             return this;
         }
 
-        public Builder stat(boolean shield, ArmorModuleBuilder.ArmorShieldModuleBuilder<? extends IMaterialStats> armor, IMaterialStats... stats) {
+        public Builder stat(boolean shield, @Nullable ArmorModuleBuilder.ArmorShieldModuleBuilder<? extends IMaterialStats> armor, IMaterialStats... stats) {
             this.stats = new MaterialStatsData(shield, armor, stats);
             return this;
         }
