@@ -3,10 +3,10 @@ package com.xiaoyue.tinkers_ingenuity.register;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
+import com.xiaoyue.celestial_invoker.library.binding.MetalItemEntry;
 import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import com.xiaoyue.tinkers_ingenuity.content.items.ModifiableBlowpipe;
 import com.xiaoyue.tinkers_ingenuity.content.items.ModifiableCurio;
-import com.xiaoyue.tinkers_ingenuity.content.shared.holder.MetalItemEntry;
 import com.xiaoyue.tinkers_ingenuity.content.shared.stats.CurioMainMaterialStat;
 import com.xiaoyue.tinkers_ingenuity.content.shared.stats.TIExtraMaterialStat;
 import com.xiaoyue.tinkers_ingenuity.data.tools.TIToolDefinitionGen;
@@ -23,14 +23,15 @@ import java.util.List;
 public class TIItems {
 
     public static final ItemEntry<Item> FINAL_SHELL;
-    public static final MetalItemEntry BLACK_GOLD;
-    public static final MetalItemEntry FLAME_STEEL;
-    public static final MetalItemEntry BLACK_FLASH_ALLOY;
+    public static final MetalItemEntry<Item> BLACK_GOLD;
+    public static final MetalItemEntry<Item> FLAME_STEEL;
+    public static final MetalItemEntry<Item> BLACK_FLASH_ALLOY;
     public static final ItemEntry<Item> COLOURED_GLAZE_STAR;
     public static final ItemEntry<Item> ELFS_CRYSTAL;
     public static final ItemEntry<Item> PLAGUE_BONE;
-    public static final MetalItemEntry COLORFUL_SLIME;
-    public static final MetalItemEntry KNIGHT_CRYSTAL;
+    public static final MetalItemEntry<Item> COLORFUL_SLIME;
+    public static final MetalItemEntry<Item> KNIGHT_CRYSTAL;
+    public static final MetalItemEntry<Item> MITHRIL;
     public static final List<ItemEntry<Item>> MEDAL_RIBBONS_CAST;
     public static final List<ItemEntry<Item>> MEDAL_BODY_CAST;
     public static final List<ItemEntry<Item>> BLOWPIPE_TUBE_CAST;
@@ -43,27 +44,28 @@ public class TIItems {
     public static final RegistryEntry<ModifiableBlowpipe> BLOWPIPE;
 
     static {
-        registrate().defaultCreativeTab(TinkersIngenuity.ITEMS.getKey());
+        reg().defaultCreativeTab(TinkersIngenuity.ITEMS.getKey());
         FINAL_SHELL = item("final_shell", "material", Item::new);
-        BLACK_GOLD = registrate().metal("black_gold");
-        FLAME_STEEL = registrate().metal("flame_steel");
-        BLACK_FLASH_ALLOY = registrate().metal("black_flash_alloy");
+        BLACK_GOLD = reg().metal("black_gold");
+        FLAME_STEEL = reg().metal("flame_steel");
+        BLACK_FLASH_ALLOY = reg().metal("black_flash_alloy");
         COLOURED_GLAZE_STAR = item("coloured_glaze_star", "material", Item::new);
         ELFS_CRYSTAL = item("elfs_crystal", "material", Item::new);
         PLAGUE_BONE = item("plague_bone", "material", Item::new);
-        COLORFUL_SLIME = registrate().metal("colorful_slime");
-        KNIGHT_CRYSTAL = registrate().metal("knight_crystal");
-        MEDAL_RIBBONS_CAST = registrate().castItem("medal_ribbons");
-        MEDAL_BODY_CAST = registrate().castItem("medal_body");
-        BLOWPIPE_TUBE_CAST = registrate().castItem("blowpipe_tube");
-        BLOWPIPE_MOUTH_CAST = registrate().castItem("blowpipe_mouth");
-        registrate().defaultCreativeTab(TinkersIngenuity.TOOLS.getKey());
+        COLORFUL_SLIME = reg().metal("colorful_slime");
+        KNIGHT_CRYSTAL = reg().metal("knight_crystal");
+        MITHRIL = reg().metal("mithril");
+        MEDAL_RIBBONS_CAST = reg().castItem("medal_ribbons");
+        MEDAL_BODY_CAST = reg().castItem("medal_body");
+        BLOWPIPE_TUBE_CAST = reg().castItem("blowpipe_tube");
+        BLOWPIPE_MOUTH_CAST = reg().castItem("blowpipe_mouth");
+        reg().defaultCreativeTab(TinkersIngenuity.TOOLS.getKey());
         MEDAL_RIBBONS = part("medal_ribbons", "tinkers_medal", p -> new ToolPartItem(p, TIExtraMaterialStat.getCurioExtra()), 0, 3);
         MEDAL_BODY = part("medal_body", "tinkers_medal", p -> new ToolPartItem(p, CurioMainMaterialStat.ID), 0, -3);
         BLOWPIPE_TUBE = part("blowpipe_tube", "blowpipe", p -> new ToolPartItem(p, LimbMaterialStats.ID), 1, 1);
         BLOWPIPE_MOUTH = part("blowpipe_mouth", "blowpipe", p -> new ToolPartItem(p, GripMaterialStats.ID), -2, -2);
-        TINKERS_MEDAL = registrate().simpleItem("tinkers_medal", () -> new ModifiableCurio(TIToolDefinitionGen.TINKERS_MEDAL));
-        BLOWPIPE = registrate().simpleItem("blowpipe", () -> new ModifiableBlowpipe(TIToolDefinitionGen.BLOWPIPE));
+        TINKERS_MEDAL = reg().simpleItem("tinkers_medal", () -> new ModifiableCurio(TIToolDefinitionGen.TINKERS_MEDAL));
+        BLOWPIPE = reg().simpleItem("blowpipe", () -> new ModifiableBlowpipe(TIToolDefinitionGen.BLOWPIPE));
     }
 
     public static void addItemsToTab(CreativeModeTab.ItemDisplayParameters ignored, CreativeModeTab.Output o) {
@@ -76,14 +78,14 @@ public class TIItems {
     }
 
     public static <T extends Item> ItemEntry<T> part(String id, String tool, NonNullFunction<Item.Properties, T> factory, int x, int y) {
-        return registrate().partItem(id, tool, factory, x, y).removeTab(TinkersIngenuity.TOOLS.getKey()).register();
+        return reg().partItem(id, tool, factory, x, y).removeTab(TinkersIngenuity.TOOLS.getKey()).register();
     }
 
     public static <T extends Item> ItemEntry<T> item(String id, String path, NonNullFunction<Item.Properties, T> factory) {
-        return registrate().item(id, factory).model((ctx, pvd) -> pvd.generated(ctx, new ResourceLocation[]{pvd.modLoc("item/" + path + "/" + ctx.getName())})).register();
+        return reg().item(id, factory).model((ctx, pvd) -> pvd.generated(ctx, new ResourceLocation[]{pvd.modLoc("item/" + path + "/" + ctx.getName())})).register();
     }
 
-    public static TIRegistrate registrate() {
+    public static TIRegistrate reg() {
         return TinkersIngenuity.REGISTRATE;
     }
 

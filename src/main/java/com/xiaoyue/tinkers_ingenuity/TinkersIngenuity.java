@@ -3,6 +3,7 @@ package com.xiaoyue.tinkers_ingenuity;
 import com.mojang.logging.LogUtils;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.entry.RegistryEntry;
+import com.xiaoyue.celestial_invoker.library.GeneratorTypes;
 import com.xiaoyue.celestial_invoker.simple.SimpleInvoker;
 import com.xiaoyue.tinkers_ingenuity.content.generic.MeleeCacheCapability;
 import com.xiaoyue.tinkers_ingenuity.content.generic.SerialLoader;
@@ -69,6 +70,9 @@ public class TinkersIngenuity
         REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TITagGen::addItemTagGen);
         REGISTRATE.addDataGenerator(ProviderType.FLUID_TAGS, TITagGen::addFluidTagGen);
         REGISTRATE.addDataGenerator(ProviderType.RECIPE, TIRecipeGen::acceptRecipe);
+        REGISTRATE.addDataGenerator(ProviderType.LOOT, TILootTableGen::onLootGen);
+        REGISTRATE.addDataGenerator(GeneratorTypes.LOOT_MODIFIER, TILootTableGen::onLootModifier);
+        REGISTRATE.addDataGenerator(GeneratorTypes.RECORD_DATA, TISlotGen::onRecordGen);
     }
 
     @SubscribeEvent
@@ -96,7 +100,6 @@ public class TinkersIngenuity
         TIMaterialSprGen matSpr = new TIMaterialSprGen();
         TITinkerPartSpriteGen partSpr = new TITinkerPartSpriteGen();
         gen.addProvider(server, matDef);
-        gen.addProvider(server, new TISlotGen(gen));
         gen.addProvider(server, new TIStationLayoutGen(output));
         gen.addProvider(server, new TIToolDefinitionGen(output));
         gen.addProvider(server, new TIMaterialStatGen(output, matDef));

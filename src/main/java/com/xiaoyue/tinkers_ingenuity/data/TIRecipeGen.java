@@ -1,19 +1,17 @@
 package com.xiaoyue.tinkers_ingenuity.data;
 
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
-import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import com.xiaoyue.tinkers_ingenuity.content.shared.holder.MetalItemEntry;
+import com.xiaoyue.celestial_invoker.library.binding.RecipeBinding;
 import com.xiaoyue.tinkers_ingenuity.content.shared.material.MaterialRecipeData;
 import com.xiaoyue.tinkers_ingenuity.data.material.TIMaterials;
 import com.xiaoyue.tinkers_ingenuity.data.modifier.TIModifierData;
 import com.xiaoyue.tinkers_ingenuity.register.TIFluids;
 import com.xiaoyue.tinkers_ingenuity.register.TIItems;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -36,8 +34,9 @@ import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.shared.TinkerMaterials;
 
 import java.util.List;
-import java.util.function.BiFunction;
 import java.util.function.Consumer;
+
+import static com.xiaoyue.celestial_invoker.library.binding.RecipeBinding.unlock;
 
 public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper, IToolRecipeHelper {
     public static void acceptRecipe(RegistrateRecipeProvider pvd) {
@@ -46,42 +45,37 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
 
     private void vanillaRecipes(RegistrateRecipeProvider pvd) {
         String material = "craft/material/";
-        this.unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TIItems.ELFS_CRYSTAL)::unlockedBy, Items.HEART_OF_THE_SEA)
+        unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TIItems.ELFS_CRYSTAL)::unlockedBy, Items.HEART_OF_THE_SEA)
         .requires(Items.HEART_OF_THE_SEA).requires(Items.DIAMOND).requires(Items.QUARTZ).requires(TinkerMaterials.cobalt.getIngot())
                 .save(pvd, this.prefix(TIItems.ELFS_CRYSTAL.getId(), material));
-        this.unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TIItems.PLAGUE_BONE)::unlockedBy, TinkerMaterials.venombone.get())
+        unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TIItems.PLAGUE_BONE)::unlockedBy, TinkerMaterials.venombone.get())
                 .requires(TinkerMaterials.venombone).requires(Items.SOUL_SAND).requires(Items.NETHER_WART)
                 .save(pvd, this.prefix(TIItems.PLAGUE_BONE.getId(), material));
-        this.metalCraft(pvd, TIItems.BLACK_GOLD);
-        this.metalCraft(pvd, TIItems.FLAME_STEEL);
-        this.metalCraft(pvd, TIItems.BLACK_FLASH_ALLOY);
-        this.metalCraft(pvd, TIItems.COLORFUL_SLIME);
-        this.metalCraft(pvd, TIItems.KNIGHT_CRYSTAL);
-    }
-
-    public void metalCraft(RegistrateRecipeProvider pvd, MetalItemEntry entry) {
-        this.unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, entry.block())::unlockedBy, entry.ingot().get())
-                .pattern("XXX").pattern("XXX").pattern("XXX")
-                .define('X', entry.ingot())
-                .save(pvd, this.prefix(entry.block().getId(), "block_from_ingot/"));
-        this.unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, entry.ingot())::unlockedBy, entry.nugget().get())
-                .pattern("XXX").pattern("XXX").pattern("XXX").define('X', entry.nugget())
-                .save(pvd, this.prefix(entry.block().getId(), "ingot_from_nugget/"));
-        this.unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, entry.ingot(), 9)::unlockedBy, entry.block().asItem())
-                .requires(entry.block()).save(pvd, this.prefix(entry.ingot().getId(), "ingot_from_block/"));
-        this.unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, entry.nugget(), 9)::unlockedBy, entry.ingot().get())
-                .requires(entry.ingot()).save(pvd, this.prefix(entry.ingot().getId(), "nugget_from_ingot/"));
-    }
-
-    private <T> T unlock(RegistrateRecipeProvider pvd, BiFunction<String, InventoryChangeTrigger.TriggerInstance, T> func, Item item) {
-        return func.apply("has_" + pvd.safeName(item), DataIngredient.items(item).getCritereon(pvd));
+        RecipeBinding.metalCraft(pvd, TIItems.BLACK_GOLD);
+        RecipeBinding.metalCraft(pvd, TIItems.FLAME_STEEL);
+        RecipeBinding.metalCraft(pvd, TIItems.BLACK_FLASH_ALLOY);
+        RecipeBinding.metalCraft(pvd, TIItems.COLORFUL_SLIME);
+        RecipeBinding.metalCraft(pvd, TIItems.KNIGHT_CRYSTAL);
+        RecipeBinding.metalCraft(pvd, TIItems.MITHRIL);
     }
 
     protected void modifierRecipe(Consumer<FinishedRecipe> cons) {
         String ability = "tools/modifier/ability/";
+        String upgrade = "tools/modifier/upgrade/";
+        String curio_ability = "tools/modifier/curio/ability/";
+        String curio_upgrade = "tools/modifier/curio/upgrade/";
         ModifierRecipeBuilder.modifier(TIModifierData.RAPID_FIRE.getId()).setTools(TinkerTags.Items.RANGED).setSlots(SlotType.ABILITY, 1)
                 .addInput(Items.AMETHYST_BLOCK).addInput(Items.REDSTONE).addInput(Items.STRING)
                 .save(cons, this.prefix(TIModifierData.RAPID_FIRE.getId(), ability));
+        ModifierRecipeBuilder.modifier(TIModifierData.BLOT_OUT.getId()).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
+                .addInput(Ingredient.of(ItemTags.WOOL)).addInput(Items.ENDER_PEARL)
+                .save(cons, this.prefix(TIModifierData.BLOT_OUT.getId(), curio_ability));
+        ModifierRecipeBuilder.modifier(TIModifierData.WALK_SNOW.getId()).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(Items.LEATHER_BOOTS)
+                .save(cons, this.prefix(TIModifierData.WALK_SNOW.getId(), curio_upgrade));
+        ModifierRecipeBuilder.modifier(TIModifierData.GOLDEN.getId()).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(Items.GOLD_INGOT).addInput(Items.BLACKSTONE)
+                .save(cons, this.prefix(TIModifierData.GOLDEN.getId(), curio_upgrade));
     }
 
     protected void materialBuildRecipe(Consumer<FinishedRecipe> cons) {

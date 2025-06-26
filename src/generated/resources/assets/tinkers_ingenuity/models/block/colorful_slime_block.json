@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "tinkers_ingenuity:block/colorful_slime_block"
+    "all": "tinkers_ingenuity:block/metal/colorful_slime_block"
   }
 }

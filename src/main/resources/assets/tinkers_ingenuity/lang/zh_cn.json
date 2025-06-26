@@ -180,6 +180,9 @@
   "modifier.tinkers_ingenuity.golden": "金质",
   "modifier.tinkers_ingenuity.golden.description": "猪灵不会主动对穿戴者产生仇恨",
   "modifier.tinkers_ingenuity.golden.flavor": "我是猪灵好朋友！",
+  "block.tinkers_ingenuity.mithril_block": "秘银块",
+  "item.tinkers_ingenuity.mithril_ingot": "秘银锭",
+  "item.tinkers_ingenuity.mithril_nugget": "秘银粒",
   "curios.identifier.tinkers_curio": "工匠饰品",
   "curios.modifiers.tinkers_curio": "佩戴工匠饰品时："
 }

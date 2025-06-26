@@ -1,25 +1,17 @@
 package com.xiaoyue.tinkers_ingenuity.register;
 
-import com.tterrag.registrate.builders.BlockBuilder;
 import com.tterrag.registrate.builders.ItemBuilder;
-import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
-import com.xiaoyue.tinkers_ingenuity.content.shared.holder.MetalItemEntry;
-import com.xiaoyue.tinkers_ingenuity.data.TITagGen;
+import com.xiaoyue.celestial_invoker.library.CSeriesRegistrate;
 import dev.xkmc.l2library.base.L2Registrate;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
 import slimeknights.tconstruct.common.TinkerTags.Items;
@@ -31,7 +23,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import java.util.List;
 
-public class TIRegistrate extends L2Registrate {
+public class TIRegistrate extends CSeriesRegistrate {
 
     private final FluidDeferredRegister fluidRegister = new FluidDeferredRegister(this.getModid());
 
@@ -60,18 +52,6 @@ public class TIRegistrate extends L2Registrate {
         ItemEntry<Item> sandCast = this.tagItem(name + "_sand_cast", "cast", Item::new, Items.CASTS, Items.SAND_CASTS, ItemTags.create(singleCast)).register();
         ItemEntry<Item> redSandCast = this.tagItem(name + "_red_sand_cast", "cast", Item::new, Items.CASTS, Items.RED_SAND_CASTS, ItemTags.create(singleCast)).register();
         return List.of(cast, sandCast, redSandCast);
-    }
-
-    public MetalItemEntry metal(String id) {
-        ItemEntry<Item> ingot = this.tagItem(id + "_ingot", "metal", Item::new, TITagGen.ingotTag(id)).register();
-        ItemEntry<Item> nugget = this.tagItem(id + "_nugget", "metal", Item::new, TITagGen.nuggetTag(id)).register();
-        BlockEntry<Block> block = this.metalBlock(id).item().tag(TITagGen.blockTag(id)).build().register();
-        return new MetalItemEntry(ingot, nugget, block);
-    }
-
-    public BlockBuilder<Block, L2Registrate> metalBlock(String id) {
-        BlockBehaviour.Properties prop = Properties.of().sound(SoundType.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F);
-        return this.block(id + "_block", (p) -> new Block(prop));
     }
 
     public <T extends Item> ItemBuilder<T, L2Registrate> partItem(String id, String tool, NonNullFunction<Item.Properties, T> factory, int x, int y) {
