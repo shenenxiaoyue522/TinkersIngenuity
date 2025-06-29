@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-26T21:53:53.8967844	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider]
+// 1.20.1	2025-06-29T14:29:43.1921803	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider]
 e557016fbb3942809ff5a0d0860840a884743972 assets/tinkers_ingenuity/blockstates/black_flash_alloy_block.json
 cc611fce4c7ef9bec089301f40af20c25fce67cd assets/tinkers_ingenuity/blockstates/black_gold_block.json
 c4698202e0bffb8078ad7a5f449f9c986d6cead3 assets/tinkers_ingenuity/blockstates/colorful_slime_block.json
@@ -52,7 +52,7 @@ ff7d2f952fea9aa46be9e5e7941ba70601e8de81 assets/tinkers_ingenuity/models/item/mi
 030fffa43dd70a6044008a6bcdb9e7b36f82c446 assets/tinkers_ingenuity/models/item/mithril_nugget.json
 f135cfcb8bc12748ffc720dac1f22185f50e2da2 assets/tinkers_ingenuity/models/item/plague_bone.json
 8ecc4eef6c7a89d42bc384569b2f2393d45306c7 data/curios/tags/items/tinkers_curio.json
-4d598428a634fee97d55fc3eaeb6f5d4a8c3d0bf data/forge/loot_modifiers/global_loot_modifiers.json
+bc4e4393d8ca5a7ad14dbefd9369539d91ea131a data/forge/loot_modifiers/global_loot_modifiers.json
 03e3dc5809c19ceb254cba856596324e9d66607e data/forge/tags/fluids/dragon_breath.json
 27cfe0835e00eb0cb836958efdd7420dbc9e10e8 data/forge/tags/fluids/ender_compound.json
 7c0a286e7c1ea5ae8f02e5020e94e79d4869f088 data/forge/tags/fluids/molten_black_flash_alloy.json
@@ -120,8 +120,6 @@ ce7e5f5d9e8b2effe89b28555c8ed0c12bdeca09 data/tinkers_ingenuity/advancements/rec
 145ffd96830a72c9eb4a4f966048368c5089cc61 data/tinkers_ingenuity/advancements/recipes/misc/nugget_from_ingot/mithril_ingot.json
 30e2574cb44d3ce9cd4c96a6f39d54d6cc1d7c0f data/tinkers_ingenuity/curios/entities/player_vanilla.json
 7bf8f64f32668ee115212fcd8c1ae6de4dc0906e data/tinkers_ingenuity/curios/slots/tinkers_curio.json
-7869b112caf5ce154373b8e496e738f2a6dee8aa data/tinkers_ingenuity/loot_modifiers/chests/abandoned_mineshaft.json
-b476c3aa8e8cb9daeeac66cf0629e8c023928c5f data/tinkers_ingenuity/loot_tables/abandoned_mineshaft.json
 d941b6fe76bc803ea71d9aa4daea1f49f1db99d9 data/tinkers_ingenuity/loot_tables/blocks/black_flash_alloy_block.json
 301afc33d6da11deda641941e9eb1ad4aa9f7cea data/tinkers_ingenuity/loot_tables/blocks/black_gold_block.json
 4588249f584969c0262905da159354487655787b data/tinkers_ingenuity/loot_tables/blocks/colorful_slime_block.json

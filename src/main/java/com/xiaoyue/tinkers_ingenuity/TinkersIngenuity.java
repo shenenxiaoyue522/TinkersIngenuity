@@ -63,15 +63,12 @@ public class TinkersIngenuity
         TIHooks.register();
         TIToolStats.register();
         TIDamageTypes.register();
-        TILootModifiers.register();
         MeleeCacheCapability.register();
         AttackEventHandler.register(2222, new TIAttackListener());
         REGISTRATE.addDataGenerator(ProviderType.LANG, TILang::addLang);
         REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TITagGen::addItemTagGen);
         REGISTRATE.addDataGenerator(ProviderType.FLUID_TAGS, TITagGen::addFluidTagGen);
         REGISTRATE.addDataGenerator(ProviderType.RECIPE, TIRecipeGen::acceptRecipe);
-        REGISTRATE.addDataGenerator(ProviderType.LOOT, TILootGen::onLootTableGen);
-        REGISTRATE.addDataGenerator(GeneratorTypes.LOOT_MODIFIER, TILootGen::onLootModifier);
         REGISTRATE.addDataGenerator(GeneratorTypes.RECORD_DATA, TISlotGen::onRecordGen);
     }
 
