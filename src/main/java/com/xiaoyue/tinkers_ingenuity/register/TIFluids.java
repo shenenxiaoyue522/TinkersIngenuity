@@ -17,8 +17,8 @@ public class TIFluids {
 
     public static final List<FluidObject<ForgeFlowingFluid>> FLUID_OBJECTS = new ArrayList<>();
 
-    public static final FluidObject<ForgeFlowingFluid> MOLTEN_BLACK_GOLD, MOLTEN_FLAME_STEEL, DRAGON_BREATH,
-            ENDER_COMPOUND, SCULK_GENE, MOLTEN_BLACK_FLASH_ALLOY, MOLTEN_COLORFUL_SLIME, MOLTEN_KNIGHT_CRYSTAL;
+    public static final FluidObject<ForgeFlowingFluid> MOLTEN_BLACK_GOLD, MOLTEN_FLAME_STEEL, DRAGON_BREATH, ENDER_COMPOUND,
+            SCULK_GENE, MOLTEN_BLACK_FLASH_ALLOY, MOLTEN_COLORFUL_SLIME, MOLTEN_KNIGHT_CRYSTAL, TERRESTRIAL_SOLUTION, MOLTEN_MITHRIL;
 
     static {
         MOLTEN_BLACK_GOLD = fluid("molten_black_gold", 1200, 0);
@@ -29,6 +29,8 @@ public class TIFluids {
         MOLTEN_BLACK_FLASH_ALLOY = fluid("molten_black_flash_alloy", 1500, 0);
         MOLTEN_COLORFUL_SLIME = fluid("molten_colorful_slime", 1200, 0);
         MOLTEN_KNIGHT_CRYSTAL = fluid("molten_knight_crystal", 1400, 0);
+        TERRESTRIAL_SOLUTION = fluid("terrestrial_solution", 900, 2);
+        MOLTEN_MITHRIL = fluid("molten_mithril", 1550, 0);
     }
 
 

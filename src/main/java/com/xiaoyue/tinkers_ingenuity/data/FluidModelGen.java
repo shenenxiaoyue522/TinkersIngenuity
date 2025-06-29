@@ -22,6 +22,8 @@ public class FluidModelGen extends AbstractFluidTextureProvider {
         this.liquid(TIFluids.SCULK_GENE, -16740205);
         this.texture(TIFluids.MOLTEN_COLORFUL_SLIME, "colorful_slime/");
         this.liquid(TIFluids.MOLTEN_KNIGHT_CRYSTAL, -6984738);
+        this.liquid(TIFluids.TERRESTRIAL_SOLUTION, 0xff6aecbf);
+        this.molten(TIFluids.MOLTEN_MITHRIL, 0xff6aecbf);
     }
 
     public FluidTexture.Builder texture(FluidObject<?> fluid, String id) {

@@ -1,12 +1,12 @@
-// 1.20.1	2025-06-29T14:29:43.1921803	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider]
+// 1.20.1	2025-06-29T18:21:06.8162035	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider]
 e557016fbb3942809ff5a0d0860840a884743972 assets/tinkers_ingenuity/blockstates/black_flash_alloy_block.json
 cc611fce4c7ef9bec089301f40af20c25fce67cd assets/tinkers_ingenuity/blockstates/black_gold_block.json
 c4698202e0bffb8078ad7a5f449f9c986d6cead3 assets/tinkers_ingenuity/blockstates/colorful_slime_block.json
 480b0a384ab820b673818d08d333df0991f24297 assets/tinkers_ingenuity/blockstates/flame_steel_block.json
 432f1fae2524f5443f1ff8b3212f0d06d0efbfc2 assets/tinkers_ingenuity/blockstates/knight_crystal_block.json
 b6efcb95bd5101561eb5c6e185af32ea6e8a88e5 assets/tinkers_ingenuity/blockstates/mithril_block.json
-4852266899c27e13ebb711ae56063e963965aff0 assets/tinkers_ingenuity/lang/en_ud.json
-a6b867e42295f13a6e714dbe476b9a39cd1124b9 assets/tinkers_ingenuity/lang/en_us.json
+ab2e8d61be39b29bb4509ee77220bf9f9c886013 assets/tinkers_ingenuity/lang/en_ud.json
+fa1ba3ab8e5b1d54203a6aeb1f67122f939bdf75 assets/tinkers_ingenuity/lang/en_us.json
 871dda071e83965b8ecdd8953e93e79429dca841 assets/tinkers_ingenuity/models/block/black_flash_alloy_block.json
 629b3d1a5fa53ba3a6f846d3f4ffdd40b0ad81b4 assets/tinkers_ingenuity/models/block/black_gold_block.json
 4511efea30d1e67156abf770eb04fe482661e3df assets/tinkers_ingenuity/models/block/colorful_slime_block.json
@@ -60,7 +60,9 @@ bc4e4393d8ca5a7ad14dbefd9369539d91ea131a data/forge/loot_modifiers/global_loot_m
 c6dc771ab4003a8ce9c7a7931531e73eebe9ad33 data/forge/tags/fluids/molten_colorful_slime.json
 e5de45e28f36982104c6bb26250ec534738b8fa5 data/forge/tags/fluids/molten_flame_steel.json
 244afb8e0527db8a66e9c80f7ccfb20116ef2793 data/forge/tags/fluids/molten_knight_crystal.json
+5060f427e9f6a9faa440d43ebe3232ea2bbdb7cd data/forge/tags/fluids/molten_mithril.json
 a180ab0bb681cd54a2002275d508c1ac94dedb03 data/forge/tags/fluids/sculk_gene.json
+4980654c0595b4d31408540d0db462253e01adaa data/forge/tags/fluids/terrestrial_solution.json
 b246e477276fe77923df6428d249a128bcda8fcf data/forge/tags/items/ingots/black_flash_alloy.json
 2b144ac71adb9c93ddca52d1769a10d5e3a42eda data/forge/tags/items/ingots/black_gold.json
 870488570019c18675c1ac6dfe6cf202ae791d63 data/forge/tags/items/ingots/colorful_slime.json
@@ -157,6 +159,7 @@ ec56c45575aa997fa96478a02e379636424e9ee6 data/tinkers_ingenuity/recipes/nugget_f
 ceee61568697ca03059e6911e2cf12788dc1380a data/tinkers_ingenuity/recipes/smeltery/alloys/molten_colorful_slime.json
 bf7adf4542b81076601403f85e723650ab2b46e5 data/tinkers_ingenuity/recipes/smeltery/alloys/molten_flame_steel.json
 12b5af66b24bd4ee75646dd736bcd04963bc30e3 data/tinkers_ingenuity/recipes/smeltery/alloys/molten_knight_crystal.json
+3bdf64cad236bf978b5ca69a6d1b3c83fff9e975 data/tinkers_ingenuity/recipes/smeltery/alloys/molten_mithril.json
 d490c4d756a72538916d7923cc0489ae68b16187 data/tinkers_ingenuity/recipes/smeltery/casting/coloured_glaze_star.json
 e2e63e9d5d7d478a58e1e8a1f0f77075b80692f3 data/tinkers_ingenuity/recipes/smeltery/casting/final_shell.json
 fe25209c5b2e6cd19dd00076e546e15a4ee8c2c5 data/tinkers_ingenuity/recipes/smeltery/casting/metal/black_flash_alloy/block.json
@@ -184,6 +187,11 @@ d6fc54eb16c874e1752edf0d63712e6fa3602276 data/tinkers_ingenuity/recipes/smeltery
 eb70db3c6a99999f3d79da405f0ef89a1977f0e4 data/tinkers_ingenuity/recipes/smeltery/casting/metal/knight_crystal/ingot_sand_cast.json
 4658e17a406fe080bc77c561bcde8cc0273b9ff8 data/tinkers_ingenuity/recipes/smeltery/casting/metal/knight_crystal/nugget_gold_cast.json
 1f36d64b807b19b2efc5c2d311750095cdc702ec data/tinkers_ingenuity/recipes/smeltery/casting/metal/knight_crystal/nugget_sand_cast.json
+7b61943db19953d249bdf80417dcebe24f0a8a3e data/tinkers_ingenuity/recipes/smeltery/casting/metal/mithril/block.json
+2dcf0a542ea504347cd53a263c25ae9e379395fd data/tinkers_ingenuity/recipes/smeltery/casting/metal/mithril/ingot_gold_cast.json
+acdea95b07afa2cb7e3cb4c66780d710a4ca5a45 data/tinkers_ingenuity/recipes/smeltery/casting/metal/mithril/ingot_sand_cast.json
+ff4de7aa1aab361ef86ac2dc450a1ea0ba0c3db1 data/tinkers_ingenuity/recipes/smeltery/casting/metal/mithril/nugget_gold_cast.json
+71e41f65a47e1649da3c4693dd6d532f74d065bf data/tinkers_ingenuity/recipes/smeltery/casting/metal/mithril/nugget_sand_cast.json
 41967a60e0e0849a3011edd53ebbfbfe0b64b304 data/tinkers_ingenuity/recipes/smeltery/casts/gold/blowpipe_mouth.json
 27ce2e969b28a6d0b2450698f93e39528474ade5 data/tinkers_ingenuity/recipes/smeltery/casts/gold/blowpipe_tube.json
 82b44310a9ad1a73ea1ee8bad7dd8e68d0ea707a data/tinkers_ingenuity/recipes/smeltery/casts/gold/medal_body.json
@@ -229,7 +237,11 @@ d50ee52d5695cdedd45318956e7989ca79acac42 data/tinkers_ingenuity/recipes/smeltery
 e17f272bf1445f0a16bdfdf6686b43621635488a data/tinkers_ingenuity/recipes/smeltery/melting/metal/knight_crystal/block.json
 acb5d7452ff73820079e7d27b93885d2e2945ecb data/tinkers_ingenuity/recipes/smeltery/melting/metal/knight_crystal/ingot.json
 fd906a5b4a7083bdd84d8e41fc9d9a7b4ff64710 data/tinkers_ingenuity/recipes/smeltery/melting/metal/knight_crystal/nugget.json
+7c0fc5437708e6222e9338a430692f109bd02795 data/tinkers_ingenuity/recipes/smeltery/melting/metal/mithril/block.json
+cd04b409299ca7d8b80534d5c744a27cc009d1cc data/tinkers_ingenuity/recipes/smeltery/melting/metal/mithril/ingot.json
+fb070a47e27c43f80c05723e99445dd4a6062ee3 data/tinkers_ingenuity/recipes/smeltery/melting/metal/mithril/nugget.json
 f5f609496a1d731746490dbf0a516f523d215e91 data/tinkers_ingenuity/recipes/smeltery/melting/sculk_gene.json
+74ad8c28c7782a860e9ccd5851217e7784a83428 data/tinkers_ingenuity/recipes/smeltery/melting/terrestrial_solution.json
 895e53fea51b1e02a00f0070611e1f4ec0353597 data/tinkers_ingenuity/recipes/smeltery/special/ender_compound.json
 96d98a72298e7b60e4a6b6293960b812ea6cd390 data/tinkers_ingenuity/recipes/tools/building/blowpipe.json
 ea9e62a8445e98f971efb73e89db0e43986daea7 data/tinkers_ingenuity/recipes/tools/building/tinkers_medal.json

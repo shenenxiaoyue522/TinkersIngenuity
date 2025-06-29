@@ -184,5 +184,9 @@
   "item.tinkers_ingenuity.mithril_ingot": "秘银锭",
   "item.tinkers_ingenuity.mithril_nugget": "秘银粒",
   "curios.identifier.tinkers_curio": "工匠饰品",
-  "curios.modifiers.tinkers_curio": "佩戴工匠饰品时："
+  "curios.modifiers.tinkers_curio": "佩戴工匠饰品时：",
+  "fluid_type.tinkers_ingenuity.molten_mithril": "熔融秘银",
+  "fluid_type.tinkers_ingenuity.terrestrial_solution": "大地溶液",
+  "item.tinkers_ingenuity.molten_mithril_bucket": "熔融秘银桶",
+  "item.tinkers_ingenuity.terrestrial_solution_bucket": "大地溶液桶"
 }

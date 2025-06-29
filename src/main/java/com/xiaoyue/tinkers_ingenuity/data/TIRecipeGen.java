@@ -19,6 +19,7 @@ import net.minecraft.world.level.ItemLike;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.common.registration.CastItemObject;
+import slimeknights.tconstruct.common.registration.GeodeItemObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
@@ -32,6 +33,8 @@ import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.shared.TinkerMaterials;
+import slimeknights.tconstruct.shared.block.SlimeType;
+import slimeknights.tconstruct.world.TinkerWorld;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -128,6 +131,7 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         this.metal(cons, TIFluids.MOLTEN_BLACK_FLASH_ALLOY).metal();
         this.metal(cons, TIFluids.MOLTEN_COLORFUL_SLIME).metal();
         this.metal(cons, TIFluids.MOLTEN_KNIGHT_CRYSTAL).metal();
+        this.metal(cons, TIFluids.MOLTEN_MITHRIL).metal();
 
         AlloyRecipeBuilder.alloy(TIFluids.MOLTEN_BLACK_GOLD, 90)
                 .addInput(TinkerFluids.moltenGold.ingredient(180))
@@ -159,6 +163,11 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
                 .addInput(TinkerFluids.moltenDiamond.ingredient(150))
                 .addInput(TinkerFluids.moltenAmethyst.ingredient(300))
                 .save(cons, this.prefix(TIFluids.MOLTEN_KNIGHT_CRYSTAL, alloys));
+        AlloyRecipeBuilder.alloy(TIFluids.MOLTEN_MITHRIL, 90)
+                .addInput(TIFluids.TERRESTRIAL_SOLUTION.ingredient(180))
+                .addInput(TinkerFluids.moltenClay.ingredient(250))
+                .addInput(TinkerFluids.moltenEmerald.ingredient(200))
+                .save(cons, this.prefix(TIFluids.MOLTEN_MITHRIL, alloys));
 
         ItemCastingRecipeBuilder.tableRecipe(TIItems.FINAL_SHELL).setCast(Items.SHULKER_SHELL, true)
                 .setFluid(TIFluids.ENDER_COMPOUND.ingredient(100))
@@ -170,11 +179,15 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
                 .save(cons, this.prefix(TIItems.COLOURED_GLAZE_STAR.getId(), casting));
 
         MeltingRecipeBuilder.melting(Ingredient.of(Items.DRAGON_BREATH),
-                TIFluids.DRAGON_BREATH.result(250), 1200, 30)
+                        TIFluids.DRAGON_BREATH.result(250), 1200, 30)
                 .save(cons, this.prefix(TIFluids.DRAGON_BREATH.getId(), melting));
         MeltingRecipeBuilder.melting(Ingredient.of(Items.ECHO_SHARD),
-                TIFluids.SCULK_GENE.result(45), 1200, 40)
+                        TIFluids.SCULK_GENE.result(45), 1200, 40)
                 .save(cons, this.prefix(TIFluids.SCULK_GENE.getId(), melting));
+        MeltingRecipeBuilder.melting(Ingredient.of(TinkerWorld.earthGeode.getBud(GeodeItemObject.BudSize.CLUSTER)),
+                        TinkerFluids.slime.get(SlimeType.EARTH), 1000, 1)
+                .addByproduct(TIFluids.TERRESTRIAL_SOLUTION.result(20))
+                .save(cons, this.prefix(TIFluids.TERRESTRIAL_SOLUTION.getId(), melting));
 
         MeltingFuelBuilder.fuel(TIFluids.DRAGON_BREATH.ingredient(50), 120, 2200)
                 .save(cons, this.location(fuel));
