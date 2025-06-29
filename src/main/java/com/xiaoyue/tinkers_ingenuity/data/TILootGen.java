@@ -14,16 +14,16 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.common.loot.LootTableIdCondition;
 
-public class TILootTableGen {
+public class TILootGen {
 
     public static final ResourceLocation MINESHAFT = TinkersIngenuity.loc("abandoned_mineshaft");
 
     public static void onLootModifier(RegistrateLootModifierProvider pvd) {
-        pvd.add("chests/abandoned_mineshaft", new AddLootTableModifier(TILootTableGen.MINESHAFT,
+        pvd.add("chests/abandoned_mineshaft", new AddLootTableModifier(TILootGen.MINESHAFT,
                 new LootTableIdCondition.Builder(BuiltInLootTables.ABANDONED_MINESHAFT).build()));
     }
 
-    public static void onLootGen(RegistrateLootTableProvider pvd) {
+    public static void onLootTableGen(RegistrateLootTableProvider pvd) {
         pvd.addLootAction(LootContextParamSets.EMPTY, cons -> {
             cons.accept(MINESHAFT, LootTable.lootTable().withPool(LootPool.lootPool()
                     .add(LootTableTemplate.getItem(TIItems.MITHRIL.ingot().asItem(), 1).setWeight(1))
@@ -31,5 +31,4 @@ public class TILootTableGen {
             ));
         });
     }
-
 }
