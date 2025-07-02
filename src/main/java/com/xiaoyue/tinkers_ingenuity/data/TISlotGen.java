@@ -1,6 +1,6 @@
 package com.xiaoyue.tinkers_ingenuity.data;
 
-import com.xiaoyue.celestial_invoker.library.generator.RegistrateRecordDataProvider;
+import com.xiaoyue.celestial_invoker.content.generator.RegistrateRecordDataProvider;
 import dev.xkmc.l2library.compat.curios.CurioEntityBuilder;
 import dev.xkmc.l2library.compat.curios.CurioSlotBuilder;
 import dev.xkmc.l2library.compat.curios.CurioSlotBuilder.Operation;
