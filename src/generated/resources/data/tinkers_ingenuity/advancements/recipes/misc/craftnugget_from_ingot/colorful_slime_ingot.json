@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_mithril_block": {
+    "has_colorful_slime_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tinkers_ingenuity:mithril_block"
+              "tinkers_ingenuity:colorful_slime_ingot"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tinkers_ingenuity:ingot_from_block/mithril_ingot"
+        "recipe": "tinkers_ingenuity:craftnugget_from_ingot/colorful_slime_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_mithril_block",
+      "has_colorful_slime_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "tinkers_ingenuity:ingot_from_block/mithril_ingot"
+      "tinkers_ingenuity:craftnugget_from_ingot/colorful_slime_ingot"
     ]
   },
   "sends_telemetry_event": false

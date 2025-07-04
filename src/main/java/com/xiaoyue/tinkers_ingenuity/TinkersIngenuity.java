@@ -46,14 +46,14 @@ public class TinkersIngenuity
     public static final Logger LOGGER = LogUtils.getLogger();
     public static final TIRegistrate REGISTRATE = new TIRegistrate(MODID);
 
-    public static final RegistryEntry<CreativeModeTab> ITEMS = REGISTRATE.buildModCreativeTab("items", "Tinkers Ingenuity Items",
+    public static final RegistryEntry<CreativeModeTab> ITEMS = REGISTRATE.buildCreativeTab("items",
             e -> e.icon(TIItems.BLACK_GOLD.ingot()::asStack));
 
-    public static final RegistryEntry<CreativeModeTab> FLUIDS = REGISTRATE.buildModCreativeTab("fluids", "Tinkers Ingenuity Fluids",
+    public static final RegistryEntry<CreativeModeTab> FLUIDS = REGISTRATE.buildCreativeTab("fluids",
             e -> e.icon(Objects.requireNonNull(TIFluids.MOLTEN_BLACK_FLASH_ALLOY.getBucket())::getDefaultInstance)
                     .displayItems((p, o) -> o.acceptAll(TIFluids.allBucket())));
 
-    public static final RegistryEntry<CreativeModeTab> TOOLS = REGISTRATE.buildModCreativeTab("tools", "Tinkers Ingenuity Tools",
+    public static final RegistryEntry<CreativeModeTab> TOOLS = REGISTRATE.buildCreativeTab("tools",
             e -> e.icon(TIItems.TINKERS_MEDAL.get()::getRenderTool).displayItems(TIItems::addItemsToTab));
     
     public TinkersIngenuity() {

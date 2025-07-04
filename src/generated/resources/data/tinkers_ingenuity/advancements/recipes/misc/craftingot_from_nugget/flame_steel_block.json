@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_flame_steel_ingot": {
+    "has_flame_steel_nugget": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tinkers_ingenuity:flame_steel_ingot"
+              "tinkers_ingenuity:flame_steel_nugget"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tinkers_ingenuity:block_from_ingot/flame_steel_block"
+        "recipe": "tinkers_ingenuity:craftingot_from_nugget/flame_steel_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_flame_steel_ingot",
+      "has_flame_steel_nugget",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "tinkers_ingenuity:block_from_ingot/flame_steel_block"
+      "tinkers_ingenuity:craftingot_from_nugget/flame_steel_block"
     ]
   },
   "sends_telemetry_event": false

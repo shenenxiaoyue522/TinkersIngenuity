@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_black_flash_alloy_ingot": {
+    "has_knight_crystal_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tinkers_ingenuity:black_flash_alloy_ingot"
+              "tinkers_ingenuity:knight_crystal_ingot"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tinkers_ingenuity:nugget_from_ingot/black_flash_alloy_ingot"
+        "recipe": "tinkers_ingenuity:craftnugget_from_ingot/knight_crystal_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_black_flash_alloy_ingot",
+      "has_knight_crystal_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "tinkers_ingenuity:nugget_from_ingot/black_flash_alloy_ingot"
+      "tinkers_ingenuity:craftnugget_from_ingot/knight_crystal_ingot"
     ]
   },
   "sends_telemetry_event": false

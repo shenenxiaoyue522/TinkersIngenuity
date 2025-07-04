@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_flame_steel_block": {
+    "has_black_gold_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tinkers_ingenuity:flame_steel_block"
+              "tinkers_ingenuity:black_gold_block"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tinkers_ingenuity:ingot_from_block/flame_steel_ingot"
+        "recipe": "tinkers_ingenuity:craftingot_from_block/black_gold_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_flame_steel_block",
+      "has_black_gold_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "tinkers_ingenuity:ingot_from_block/flame_steel_ingot"
+      "tinkers_ingenuity:craftingot_from_block/black_gold_ingot"
     ]
   },
   "sends_telemetry_event": false

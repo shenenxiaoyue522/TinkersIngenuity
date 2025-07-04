@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_knight_crystal_ingot": {
+    "has_colorful_slime_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tinkers_ingenuity:knight_crystal_ingot"
+              "tinkers_ingenuity:colorful_slime_block"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tinkers_ingenuity:nugget_from_ingot/knight_crystal_ingot"
+        "recipe": "tinkers_ingenuity:craftingot_from_block/colorful_slime_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_knight_crystal_ingot",
+      "has_colorful_slime_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "tinkers_ingenuity:nugget_from_ingot/knight_crystal_ingot"
+      "tinkers_ingenuity:craftingot_from_block/colorful_slime_ingot"
     ]
   },
   "sends_telemetry_event": false
