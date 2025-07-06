@@ -26,7 +26,10 @@
     "rapid_fire": "#4ed76f",
     "blot_out": "#103927",
     "walk_snow": "#78b7cc",
-    "golden": "#dfd200"
+    "golden": "#dfd200",
+    "mysterious": "#1fa8b1",
+    "dexterous": "#1fa8b1",
+    "demonic": "#1fa8b1"
   },
   "material.tinkers_ingenuity": {
     "black_gold": "#52476b",
@@ -37,6 +40,7 @@
     "elfs_crystal": "#00ff9c",
     "plague_bone": "#3f714c",
     "colorful_slime": "#836492",
-    "knight_crystal": "#956bde"
+    "knight_crystal": "#956bde",
+    "mithril": "#1fa8b1"
   }
 }

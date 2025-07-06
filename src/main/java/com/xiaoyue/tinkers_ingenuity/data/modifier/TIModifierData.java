@@ -59,6 +59,12 @@ public enum TIModifierData {
             "The wearer is able to walk on fine snow"),
     GOLDEN("golden", "I'm a good friend of the piglins!",
             "Piglins do not actively develop hatred towards the wearer"),
+    MYSTERIOUS("mysterious", "Mythical metal!",
+            "This tool will get more upgrade slots"),
+    DEXTEROUS("dexterous", "It's easy to get started.",
+            "This tool's mining speed, attack speed, and arrow velocity will be given additional boosts"),
+    DEMONIC("demonic", "Don't hit me with these unrealistic things.",
+            "This armor provides the wearer with additional protection against magic damage"),
     ;
 
     public final String id;

@@ -188,5 +188,18 @@
   "fluid_type.tinkers_ingenuity.molten_mithril": "熔融秘银",
   "fluid_type.tinkers_ingenuity.terrestrial_solution": "大地溶液",
   "item.tinkers_ingenuity.molten_mithril_bucket": "熔融秘银桶",
-  "item.tinkers_ingenuity.terrestrial_solution_bucket": "大地溶液桶"
+  "item.tinkers_ingenuity.terrestrial_solution_bucket": "大地溶液桶",
+  "material.tinkers_ingenuity.mithril.encyclopedia": "每级增加2升级槽，攻击速度与挖掘速度提高12%。",
+  "material.tinkers_ingenuity.mithril.ranged": "每级增加2升级槽，箭矢初速度提高12%。",
+  "material.tinkers_ingenuity.mithril.armor": "每级增加2升级槽，为穿戴者提供45%魔法伤害保护。",
+  "material.tinkers_ingenuity.mithril": "秘银",
+  "modifier.tinkers_ingenuity.demonic": "御魔",
+  "modifier.tinkers_ingenuity.demonic.description": "这件护甲能为穿戴者提供额外的魔法伤害保护",
+  "modifier.tinkers_ingenuity.demonic.flavor": "别用这些不现实的东西打我。",
+  "modifier.tinkers_ingenuity.dexterous": "灵巧",
+  "modifier.tinkers_ingenuity.dexterous.description": "这件工具的挖掘速度，攻击速度，箭矢初速度将获得提升",
+  "modifier.tinkers_ingenuity.dexterous.flavor": "简单易上手。",
+  "modifier.tinkers_ingenuity.mysterious": "神秘",
+  "modifier.tinkers_ingenuity.mysterious.description": "这件工具将获得更多的升级槽",
+  "modifier.tinkers_ingenuity.mysterious.flavor": "神话金属！"
 }

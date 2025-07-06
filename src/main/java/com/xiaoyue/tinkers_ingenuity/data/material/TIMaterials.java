@@ -26,7 +26,7 @@ public enum TIMaterials {
                     handle().durability(0.9F).miningSpeed(1.2F).attackDamage(1.15F).build(),
                     StatlessMaterialStats.BINDING,
                     limb(840, 0.12F, -0.2F, 0.2F),
-                    grip(0.1F, 0.5F, 1.0F),
+                    grip(0.1F, 0.5F, 0.1f),
                     StatlessMaterialStats.MAILLE)
             .trait(b -> b
                     .addDefault(TIModifierData.AFTERSHOCK.asEntry())
@@ -81,7 +81,7 @@ public enum TIMaterials {
                     handle().durability(1.3F).miningSpeed(0.9F).attackSpeed(1.15F).build(),
                     StatlessMaterialStats.BINDING,
                     limb(2100, -0.2F, 0.15F, -0.05F),
-                    grip(1.3F, 4.5F, -0.1F),
+                    grip(0.3f, 4.5F, -0.1F),
                     StatlessMaterialStats.MAILLE).trait(b -> b
                     .addDefault(TIModifierData.BE_IMPOLITE.asEntry())
                     .addArmor(TIModifierData.VULNERABILITY_INSURANCE.asEntry()))
@@ -141,7 +141,8 @@ public enum TIMaterials {
             .statAndShield(plat(29f).armor(3.0F, 5.0F, 7.0F, 3.0F).toughness(2.0F),
                     head(957, 7.0F, Tiers.DIAMOND, 3.2F),
                     handle().durability(0.9F).attackSpeed(1.2F).attackDamage(1.1F).build(),
-                    StatlessMaterialStats.BINDING,limb(957, 0.2F, 0.0F, 0.1F),
+                    StatlessMaterialStats.BINDING,
+                    limb(957, 0.2F, 0.0F, 0.1F),
                     grip(-0.1F, 3.2F, 0.05F),
                     StatlessMaterialStats.MAILLE)
             .defaultTrait(TIModifierData.COLORFUL_SLIME.asEntry(), TIModifierData.COOPERATION.asEntry(), TIMaterialTraitGen.entry(TinkerModifiers.overslime.getId()))
@@ -156,7 +157,8 @@ public enum TIMaterials {
             .statAndShield(plat(50f).armor(3.0F, 5.0F, 7.0F, 3.0F).toughness(1.5F).knockbackResistance(0.1F),
                     head(1622, 7.5F, Tiers.NETHERITE, 3.95F),
                     handle().attackDamage(1.2F).durability(1.1F).miningSpeed(1.1F).build(),
-                    StatlessMaterialStats.BINDING,limb(1622, 0.1F, 0.15F, -0.05F),
+                    StatlessMaterialStats.BINDING,
+                    limb(1622, 0.1F, 0.15F, -0.05F),
                     grip(0.1F, 3.95F, 0.05F),
                     StatlessMaterialStats.MAILLE)
             .trait(b -> b
@@ -164,6 +166,24 @@ public enum TIMaterials {
                     .addArmor(TIModifierData.KNIGHT_BLOODLINE.asEntry()))
             .render(b -> b.color(-6984738).fallbacks("metal", "crystal")
                     .sprite(b.color(-12180661, -10606728, -8636771, -9024802, -6984738, -2637569)))),
+    MITHRIL(MaterialBuildHolder.builder("mithril")
+            .metalMaterial(TIFluids.MOLTEN_MITHRIL)
+            .desc(b -> b
+                    .encyclopedia("Each level increases 2 upgrade slots, increasing attack speed and mining speed by 12%.")
+                    .ranged("Each level adds 2 upgrade slots and increases the initial velocity of arrows by 12%.")
+                    .armor("Adds 2 upgrade slots per level, providing the wearer with 45% magic damage protection."))
+            .statAndShield(plat(34f).armor(2f, 5f, 7f, 2f).toughness(3f),
+                    head(1055, 8f, Tiers.DIAMOND, 3.1f),
+                    handle().attackDamage(0.95f).durability(1.1f).attackSpeed(1.2f).build(),
+                    StatlessMaterialStats.BINDING,
+                    limb(1055, 0.12f, 0.1f, 0.05f),
+                    grip(0.1f, 3f, 0f),
+                    StatlessMaterialStats.MAILLE)
+            .trait(b -> b
+                    .addDefault(TIModifierData.MYSTERIOUS.asEntry(), TIModifierData.DEXTEROUS.asEntry())
+                    .addArmor(TIModifierData.MYSTERIOUS.asEntry(), TIModifierData.DEMONIC.asEntry()))
+            .render(b -> b.color(0xff1fa8b1).fallbacks("metal")
+                    .sprite(b.color(0xff0a546a, 0xff13949c, 0xff1fa8b1, 0xff9dd290, 0xff59c2c9, 0xffd4ffbe))))
     ;
 
     public final MaterialBuildHolder holder;

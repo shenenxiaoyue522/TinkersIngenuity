@@ -1,12 +1,12 @@
-// 1.20.1	2025-07-03T22:25:21.7287356	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider]
+// 1.20.1	2025-07-06T21:56:49.0377169	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider]
 e557016fbb3942809ff5a0d0860840a884743972 assets/tinkers_ingenuity/blockstates/black_flash_alloy_block.json
 cc611fce4c7ef9bec089301f40af20c25fce67cd assets/tinkers_ingenuity/blockstates/black_gold_block.json
 c4698202e0bffb8078ad7a5f449f9c986d6cead3 assets/tinkers_ingenuity/blockstates/colorful_slime_block.json
 480b0a384ab820b673818d08d333df0991f24297 assets/tinkers_ingenuity/blockstates/flame_steel_block.json
 432f1fae2524f5443f1ff8b3212f0d06d0efbfc2 assets/tinkers_ingenuity/blockstates/knight_crystal_block.json
 b6efcb95bd5101561eb5c6e185af32ea6e8a88e5 assets/tinkers_ingenuity/blockstates/mithril_block.json
-ab2e8d61be39b29bb4509ee77220bf9f9c886013 assets/tinkers_ingenuity/lang/en_ud.json
-fa1ba3ab8e5b1d54203a6aeb1f67122f939bdf75 assets/tinkers_ingenuity/lang/en_us.json
+1d4b9648ffb0369c1d0177ec64b968a4b8811a69 assets/tinkers_ingenuity/lang/en_ud.json
+77cc9a41a5c497801f9ded6a1ef9123cbd6baf0b assets/tinkers_ingenuity/lang/en_us.json
 871dda071e83965b8ecdd8953e93e79429dca841 assets/tinkers_ingenuity/models/block/black_flash_alloy_block.json
 629b3d1a5fa53ba3a6f846d3f4ffdd40b0ad81b4 assets/tinkers_ingenuity/models/block/black_gold_block.json
 4511efea30d1e67156abf770eb04fe482661e3df assets/tinkers_ingenuity/models/block/colorful_slime_block.json
@@ -256,6 +256,7 @@ bb158348c4b8caa62b5f454c73f46e54eec88872 data/tinkers_ingenuity/recipes/tools/ma
 3b23a2e30a32cb92301a7947d5f5e1ea3ca77434 data/tinkers_ingenuity/recipes/tools/materials/casting/colorful_slime.json
 4284202b25de8828cc90f93a3290dd968d2a5c83 data/tinkers_ingenuity/recipes/tools/materials/casting/flame_steel.json
 db9dd170b34b0f9deef11688dbaeaac7953ebab2 data/tinkers_ingenuity/recipes/tools/materials/casting/knight_crystal.json
+573510f4f624c89243917c8b729167c9adbf5a29 data/tinkers_ingenuity/recipes/tools/materials/casting/mithril.json
 b84edbed3f9da38953268846419a618b244c150d data/tinkers_ingenuity/recipes/tools/materials/colorful_slime/block.json
 397c3be5e073e9a990f4e13795845ecb12bf0d0d data/tinkers_ingenuity/recipes/tools/materials/colorful_slime/ingot.json
 8181e4e1af2b8674954bf8b0792965181b5d24c5 data/tinkers_ingenuity/recipes/tools/materials/colorful_slime/nugget.json
@@ -273,6 +274,10 @@ cdbb95efcaaa1844b78bda02e08cdaf8d5df5202 data/tinkers_ingenuity/recipes/tools/ma
 eba5cb11487cfb9e54487cc0d9382dcf6f8a6b43 data/tinkers_ingenuity/recipes/tools/materials/melting/colorful_slime.json
 9dee37f7f0c601573ea9d7d479c788d05484d91d data/tinkers_ingenuity/recipes/tools/materials/melting/flame_steel.json
 5915e2811198291de61bf293a3ea4b346ac443fc data/tinkers_ingenuity/recipes/tools/materials/melting/knight_crystal.json
+f46615cc6d70b36fe9c1256e2bf646290f8e651f data/tinkers_ingenuity/recipes/tools/materials/melting/mithril.json
+a98e6bd19ea2a4b89464163b2757f9ae7275ce58 data/tinkers_ingenuity/recipes/tools/materials/mithril/block.json
+1a18e0bbf4fa697efc72944a816c96fc95e62669 data/tinkers_ingenuity/recipes/tools/materials/mithril/ingot.json
+23a20bc9fcc31f6eb6826bc65bd843728a1c6b1c data/tinkers_ingenuity/recipes/tools/materials/mithril/nugget.json
 2ca3ff401313b0e7ac884baabdca2c326e94363f data/tinkers_ingenuity/recipes/tools/materials/plague_bone.json
 c4f4487b2bf8bbb720754e77d8a1d104ebeb1244 data/tinkers_ingenuity/recipes/tools/modifier/ability/rapid_fire.json
 5c79890f5fa7777cc4031b3d1d69a7bc9694a2e6 data/tinkers_ingenuity/recipes/tools/modifier/curio/ability/blot_out.json

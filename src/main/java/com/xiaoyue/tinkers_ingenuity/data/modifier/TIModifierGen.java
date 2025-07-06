@@ -12,24 +12,30 @@ import com.xiaoyue.tinkers_ingenuity.content.module.combat.CriticalChanceModule;
 import com.xiaoyue.tinkers_ingenuity.content.module.combat.ExtraMagicAttackModule;
 import com.xiaoyue.tinkers_ingenuity.content.module.combat.ForceAddEffectModule;
 import com.xiaoyue.tinkers_ingenuity.content.module.curios.*;
+import com.xiaoyue.tinkers_ingenuity.content.module.defense.SimpleProtectionModule;
 import com.xiaoyue.tinkers_ingenuity.content.module.defense.SourceOrEntityProtectionModule;
 import com.xiaoyue.tinkers_ingenuity.content.module.mixed.MixedModificationModule;
 import com.xiaoyue.tinkers_ingenuity.content.shared.json.action.LivingEntityAction;
 import com.xiaoyue.tinkers_ingenuity.content.shared.json.action.MultiBonusHelper;
 import com.xiaoyue.tinkers_ingenuity.content.shared.json.action.ProjectileDataAction;
 import com.xiaoyue.tinkers_ingenuity.content.shared.json.condition.TIEntityCondition;
+import com.xiaoyue.tinkers_ingenuity.content.shared.json.condition.TISourceCondition;
 import com.xiaoyue.tinkers_ingenuity.content.shared.json.variable.LevelingFormula;
 import com.xiaoyue.tinkers_ingenuity.content.shared.json.variable.StatOperation;
 import com.xiaoyue.tinkers_ingenuity.data.TIDamageState;
 import com.xiaoyue.tinkers_ingenuity.register.TIEffects;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
+import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
+import slimeknights.tconstruct.library.modifiers.modules.build.ModifierSlotModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
+import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.modifiers.slotless.OverslimeModifier;
@@ -91,7 +97,8 @@ public class TIModifierGen extends AbstractModifierProvider {
                 .addModule(CShootProjectileModule.any(ProjectileDataAction.scale_velocity, LevelingFormula.mulBase(0.05F)))
                 .addModule(CBreakSpeedModule.any(LevelingFormula.mulBase(0.08F), false));
         buildModifier(TIModifierData.COLD_BLOODED.getId())
-                .addModule(CModifyAttackModule.get(TIEntityCondition.FULL_HEALTH, LivingEntityPredicate.ANY, LevelingFormula.mulBase(0.5F)));
+                .addModule(CModifyAttackModule.get(TIEntityCondition.FULL_HEALTH, LivingEntityPredicate.ANY,
+                        LevelingFormula.mulBase(0.5F)));
         buildModifier(TIModifierData.CRUSH.getId())
                 .addModule(CBreakSpeedModule.any(LevelingFormula.mulBase(0.25F), true));
         buildModifier(TIModifierData.DEVOURING_LIFE.getId())
@@ -103,6 +110,14 @@ public class TIModifierGen extends AbstractModifierProvider {
         buildModifier(TIModifierData.BLOT_OUT.getId()).levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TIModifierData.WALK_SNOW.getId()).levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TIModifierData.GOLDEN.getId()).levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TIModifierData.MYSTERIOUS.getId())
+                .addModule(ModifierSlotModule.slot(SlotType.UPGRADE).eachLevel(2));
+        buildModifier(TIModifierData.DEXTEROUS.getId())
+                .addModule(MixedModificationModule.get(LivingEntityPredicate.ANY, new MultiBonusHelper(true,
+                        false, ToolStats.VELOCITY), LevelingFormula.mulBase(0.12f)))
+                .addModule(AttributeModule.builder(Attributes.ATTACK_SPEED, AttributeModifier.Operation.MULTIPLY_BASE).eachLevel(0.12f));
+        buildModifier(TIModifierData.DEMONIC.getId())
+                .addModule(SimpleProtectionModule.any(TISourceCondition.IS_MAGIC, LevelingFormula.mulBase(0.45f)));
     }
 
     @Override

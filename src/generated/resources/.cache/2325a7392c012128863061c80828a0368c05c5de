@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-29T14:29:43.1989664	Tinkers Ingenuity material traits providers
+// 1.20.1	2025-07-06T21:19:54.7054136	Tinkers Ingenuity material traits providers
 2b1ae003ddf4cf324f714bb32c3d2855fbe94321 data/tconstruct/tinkering/materials/traits/amethyst_bronze.json
 73007495eca7cf7aebe5cab2cd480fd6d8e2d96d data/tconstruct/tinkering/materials/traits/bone.json
 762bafd5033bce5b5b18fe1005faf933cfaeb673 data/tconstruct/tinkering/materials/traits/cobalt.json
@@ -16,4 +16,5 @@ b1e3cae5d1bf4acff7764f99742f0e9aef3e8f84 data/tconstruct/tinkering/materials/tra
 7cc3827a5c6307a2fb584f5aacd92fce82dc14e8 data/tinkers_ingenuity/tinkering/materials/traits/final_shell.json
 2c0931086d5181bec12c1e89b1ebe53f047ba1df data/tinkers_ingenuity/tinkering/materials/traits/flame_steel.json
 4081f6b57dcc6df1501fa6411103c6f2877a81ae data/tinkers_ingenuity/tinkering/materials/traits/knight_crystal.json
+7ff2e8b765438ed5be0ce8bd79e61932ecc429ab data/tinkers_ingenuity/tinkering/materials/traits/mithril.json
 f875c9253d11216dba07254d8b8528555ea95271 data/tinkers_ingenuity/tinkering/materials/traits/plague_bone.json
