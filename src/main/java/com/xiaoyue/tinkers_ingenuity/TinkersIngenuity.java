@@ -3,7 +3,7 @@ package com.xiaoyue.tinkers_ingenuity;
 import com.mojang.logging.LogUtils;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.entry.RegistryEntry;
-import com.xiaoyue.celestial_invoker.content.GeneratorTypes;
+import com.xiaoyue.celestial_invoker.content.generator.GeneratorTypes;
 import com.xiaoyue.celestial_invoker.simple.SimpleInvoker;
 import com.xiaoyue.tinkers_ingenuity.content.generic.MeleeCacheCapability;
 import com.xiaoyue.tinkers_ingenuity.content.generic.SerialLoader;

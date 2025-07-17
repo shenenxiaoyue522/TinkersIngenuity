@@ -2,7 +2,7 @@ package com.xiaoyue.tinkers_ingenuity.data;
 
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import com.xiaoyue.celestial_invoker.content.binding.RecipeBinding;
+import com.xiaoyue.celestial_invoker.content.binding.BindingHandler;
 import com.xiaoyue.tinkers_ingenuity.content.shared.material.MaterialRecipeData;
 import com.xiaoyue.tinkers_ingenuity.data.material.TIMaterials;
 import com.xiaoyue.tinkers_ingenuity.data.modifier.TIModifierData;
@@ -39,7 +39,7 @@ import slimeknights.tconstruct.world.TinkerWorld;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static com.xiaoyue.celestial_invoker.content.binding.RecipeBinding.unlock;
+import static com.xiaoyue.celestial_invoker.content.binding.BindingHandler.unlock;
 
 public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper, IToolRecipeHelper {
     public static void acceptRecipe(RegistrateRecipeProvider pvd) {
@@ -54,12 +54,12 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TIItems.PLAGUE_BONE)::unlockedBy, TinkerMaterials.venombone.get())
                 .requires(TinkerMaterials.venombone).requires(Items.SOUL_SAND).requires(Items.NETHER_WART)
                 .save(pvd, this.prefix(TIItems.PLAGUE_BONE.getId(), material));
-        RecipeBinding.metalCraft(pvd, "craft", TIItems.BLACK_GOLD);
-        RecipeBinding.metalCraft(pvd, "craft", TIItems.FLAME_STEEL);
-        RecipeBinding.metalCraft(pvd, "craft", TIItems.BLACK_FLASH_ALLOY);
-        RecipeBinding.metalCraft(pvd, "craft", TIItems.COLORFUL_SLIME);
-        RecipeBinding.metalCraft(pvd, "craft", TIItems.KNIGHT_CRYSTAL);
-        RecipeBinding.metalCraft(pvd, "craft", TIItems.MITHRIL);
+        BindingHandler.metalCraft(pvd, "craft", TIItems.BLACK_GOLD);
+        BindingHandler.metalCraft(pvd, "craft", TIItems.FLAME_STEEL);
+        BindingHandler.metalCraft(pvd, "craft", TIItems.BLACK_FLASH_ALLOY);
+        BindingHandler.metalCraft(pvd, "craft", TIItems.COLORFUL_SLIME);
+        BindingHandler.metalCraft(pvd, "craft", TIItems.KNIGHT_CRYSTAL);
+        BindingHandler.metalCraft(pvd, "craft", TIItems.MITHRIL);
     }
 
     protected void modifierRecipe(Consumer<FinishedRecipe> cons) {

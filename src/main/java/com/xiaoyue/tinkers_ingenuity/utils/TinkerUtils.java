@@ -43,7 +43,7 @@ public class TinkerUtils {
     public static final DecimalFormat VALUE_FORMAT = new DecimalFormat("#.##");
 
     public static boolean checkTool(ItemStack stack) {
-        if (stack != null && !stack.isEmpty() && stack.is(Items.MODIFIABLE)) {
+        if (!stack.isEmpty() && stack.is(Items.MODIFIABLE)) {
             if (stack.getItem() instanceof IModifiable modifiable) {
                 return modifiable.getToolDefinition() != ToolDefinition.EMPTY;
             }
@@ -103,8 +103,7 @@ public class TinkerUtils {
             if (checkTool(bow)) {
                 tool = ToolStack.from(bow);
             }
-        } else if (entity instanceof Player) {
-            Player player = (Player)entity;
+        } else if (entity instanceof Player player) {
             ItemStack stack = MeleeCacheCapability.getTool(player);
             if (checkTool(stack)) {
                 tool = ToolStack.from(stack);
