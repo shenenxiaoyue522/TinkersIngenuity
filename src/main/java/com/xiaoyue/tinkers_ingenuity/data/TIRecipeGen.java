@@ -54,12 +54,12 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TIItems.PLAGUE_BONE)::unlockedBy, TinkerMaterials.venombone.get())
                 .requires(TinkerMaterials.venombone).requires(Items.SOUL_SAND).requires(Items.NETHER_WART)
                 .save(pvd, this.prefix(TIItems.PLAGUE_BONE.getId(), material));
-        BindingHandler.metalCraft(pvd, "craft", TIItems.BLACK_GOLD);
-        BindingHandler.metalCraft(pvd, "craft", TIItems.FLAME_STEEL);
-        BindingHandler.metalCraft(pvd, "craft", TIItems.BLACK_FLASH_ALLOY);
-        BindingHandler.metalCraft(pvd, "craft", TIItems.COLORFUL_SLIME);
-        BindingHandler.metalCraft(pvd, "craft", TIItems.KNIGHT_CRYSTAL);
-        BindingHandler.metalCraft(pvd, "craft", TIItems.MITHRIL);
+        BindingHandler.metalCraft(pvd, "craft/", TIItems.BLACK_GOLD);
+        BindingHandler.metalCraft(pvd, "craft/", TIItems.FLAME_STEEL);
+        BindingHandler.metalCraft(pvd, "craft/", TIItems.BLACK_FLASH_ALLOY);
+        BindingHandler.metalCraft(pvd, "craft/", TIItems.COLORFUL_SLIME);
+        BindingHandler.metalCraft(pvd, "craft/", TIItems.KNIGHT_CRYSTAL);
+        BindingHandler.metalCraft(pvd, "craft/", TIItems.MITHRIL);
     }
 
     protected void modifierRecipe(Consumer<FinishedRecipe> cons) {

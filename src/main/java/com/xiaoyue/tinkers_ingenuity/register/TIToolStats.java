@@ -5,11 +5,8 @@ import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
 
 public class TIToolStats {
 
-    public static final FloatToolStat CURIO_MOVEMENT_SPEED;
-    public static final FloatToolStat CURIO_MELEE_ATTACK;
-    public static final FloatToolStat CURIO_PROJECTILE_ATTACK;
-    public static final FloatToolStat CURIO_MAX_HEALTH;
-    public static final FloatToolStat CURIO_ARMOR;
+    public static final FloatToolStat CURIO_MOVEMENT_SPEED, CURIO_MELEE_ATTACK, CURIO_PROJECTILE_ATTACK, CURIO_MAX_HEALTH,
+            CURIO_ARMOR;
 
     static {
         CURIO_MOVEMENT_SPEED = TinkersIngenuity.REGISTRATE.floatToolStat("curio_movement_speed",

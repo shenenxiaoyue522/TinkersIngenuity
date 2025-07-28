@@ -23,24 +23,10 @@ import java.util.List;
 
 public class TIItems {
 
-    public static final ItemEntry<Item> FINAL_SHELL;
-    public static final MetalItemEntry<Item, Block> BLACK_GOLD;
-    public static final MetalItemEntry<Item, Block> FLAME_STEEL;
-    public static final MetalItemEntry<Item, Block> BLACK_FLASH_ALLOY;
-    public static final ItemEntry<Item> COLOURED_GLAZE_STAR;
-    public static final ItemEntry<Item> ELFS_CRYSTAL;
-    public static final ItemEntry<Item> PLAGUE_BONE;
-    public static final MetalItemEntry<Item, Block> COLORFUL_SLIME;
-    public static final MetalItemEntry<Item, Block> KNIGHT_CRYSTAL;
-    public static final MetalItemEntry<Item, Block> MITHRIL;
-    public static final List<ItemEntry<Item>> MEDAL_RIBBONS_CAST;
-    public static final List<ItemEntry<Item>> MEDAL_BODY_CAST;
-    public static final List<ItemEntry<Item>> BLOWPIPE_TUBE_CAST;
-    public static final List<ItemEntry<Item>> BLOWPIPE_MOUTH_CAST;
-    public static final ItemEntry<ToolPartItem> MEDAL_RIBBONS;
-    public static final ItemEntry<ToolPartItem> MEDAL_BODY;
-    public static final ItemEntry<ToolPartItem> BLOWPIPE_TUBE;
-    public static final ItemEntry<ToolPartItem> BLOWPIPE_MOUTH;
+    public static final ItemEntry<Item> FINAL_SHELL, COLOURED_GLAZE_STAR, ELFS_CRYSTAL, PLAGUE_BONE;
+    public static final MetalItemEntry<Item, Block> BLACK_GOLD, FLAME_STEEL, BLACK_FLASH_ALLOY, COLORFUL_SLIME, KNIGHT_CRYSTAL, MITHRIL;
+    public static final List<ItemEntry<Item>> MEDAL_RIBBONS_CAST, MEDAL_BODY_CAST, BLOWPIPE_TUBE_CAST, BLOWPIPE_MOUTH_CAST;
+    public static final ItemEntry<ToolPartItem> MEDAL_RIBBONS, MEDAL_BODY, BLOWPIPE_TUBE, BLOWPIPE_MOUTH;
     public static final RegistryEntry<ModifiableCurio> TINKERS_MEDAL;
     public static final RegistryEntry<ModifiableBlowpipe> BLOWPIPE;
 

@@ -3,7 +3,7 @@ package com.xiaoyue.tinkers_ingenuity;
 import com.mojang.logging.LogUtils;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.entry.RegistryEntry;
-import com.xiaoyue.celestial_invoker.content.generator.GeneratorTypes;
+import com.xiaoyue.celestial_invoker.content.generator.CelestialProviders;
 import com.xiaoyue.celestial_invoker.simple.SimpleInvoker;
 import com.xiaoyue.tinkers_ingenuity.content.generic.MeleeCacheCapability;
 import com.xiaoyue.tinkers_ingenuity.content.generic.SerialLoader;
@@ -64,12 +64,13 @@ public class TinkersIngenuity
         TIToolStats.register();
         TIDamageTypes.register();
         MeleeCacheCapability.register();
+        REGISTRATE.addModTooltipGen();
         AttackEventHandler.register(2222, new TIAttackListener());
         REGISTRATE.addDataGenerator(ProviderType.LANG, TILang::addLang);
         REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TITagGen::addItemTagGen);
         REGISTRATE.addDataGenerator(ProviderType.FLUID_TAGS, TITagGen::addFluidTagGen);
         REGISTRATE.addDataGenerator(ProviderType.RECIPE, TIRecipeGen::acceptRecipe);
-        REGISTRATE.addDataGenerator(GeneratorTypes.RECORD_DATA, TISlotGen::onRecordGen);
+        REGISTRATE.addDataGenerator(CelestialProviders.RECORD_DATA, TISlotGen::onRecordGen);
     }
 
     @SubscribeEvent
