@@ -241,6 +241,6 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
 
     public enum ChangeType {
         EQUIP,
-        UNEQUIP;
+        UNEQUIP
     }
 }

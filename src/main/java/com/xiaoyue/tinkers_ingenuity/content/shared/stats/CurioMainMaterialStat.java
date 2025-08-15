@@ -32,7 +32,7 @@ public record CurioMainMaterialStat(float curio_movement_speed, float curio_max_
                     CurioMainMaterialStat::new));
 
     private static final String MOVEMENT_SPEED_BONUS_PREFIX = IMaterialStats.makeTooltipKey(TinkersIngenuity.loc("curio_movement_speed"));
-    private static final String MAX_HEALTH_BONUS_PREFIX = IMaterialStats.makeTooltipKey(TinkersIngenuity.loc("curio_max_health"));;
+    private static final String MAX_HEALTH_BONUS_PREFIX = IMaterialStats.makeTooltipKey(TinkersIngenuity.loc("curio_max_health"));
     private static final String ARMOR_BONUS_PREFIX = IMaterialStats.makeTooltipKey(TinkersIngenuity.loc("curio_armor"));
     private static final String MELEE_ATTACK_BONUS_PREFIX = IMaterialStats.makeTooltipKey(TinkersIngenuity.loc("curio_melee_attack"));
     private static final String PROJECTILE_ATTACK_BONUS_PREFI = IMaterialStats.makeTooltipKey(TinkersIngenuity.loc("curio_projectile_attack"));
