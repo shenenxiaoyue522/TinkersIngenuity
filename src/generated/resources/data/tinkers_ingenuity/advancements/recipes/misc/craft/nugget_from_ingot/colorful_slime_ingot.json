@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tinkers_ingenuity:craftblock_from_ingot/colorful_slime_block"
+        "recipe": "tinkers_ingenuity:craft/nugget_from_ingot/colorful_slime_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "tinkers_ingenuity:craftblock_from_ingot/colorful_slime_block"
+      "tinkers_ingenuity:craft/nugget_from_ingot/colorful_slime_ingot"
     ]
   },
   "sends_telemetry_event": false

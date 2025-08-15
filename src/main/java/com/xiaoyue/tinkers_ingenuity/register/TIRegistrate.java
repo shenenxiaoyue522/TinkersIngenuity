@@ -6,7 +6,6 @@ import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import com.xiaoyue.celestial_invoker.content.binding.CelestialRegistrate;
-import dev.xkmc.l2library.base.L2Registrate;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -41,8 +40,9 @@ public class TIRegistrate extends CelestialRegistrate {
     }
 
     @SafeVarargs
-    public final <T extends Item> ItemBuilder<T, L2Registrate> tagItem(String id, String path, NonNullFunction<Item.Properties, T> factory, TagKey<Item>... tags) {
-        return this.item(id, factory).model((ctx, pvd) -> pvd.generated(ctx, new ResourceLocation[]{pvd.modLoc("item/" + path + "/" + ctx.getName())})).tag(tags);
+    public final <T extends Item> ItemBuilder<T, CelestialRegistrate> tagItem(String id, String path, NonNullFunction<Item.Properties, T> factory, TagKey<Item>... tags) {
+        return this.item(id, factory).model((ctx, pvd) ->
+                pvd.generated(ctx, pvd.modLoc("item/" + path + "/" + ctx.getName()))).tag(tags);
     }
 
     public List<ItemEntry<Item>> castItem(String name) {
@@ -54,13 +54,15 @@ public class TIRegistrate extends CelestialRegistrate {
         return List.of(cast, sandCast, redSandCast);
     }
 
-    public <T extends Item> ItemBuilder<T, L2Registrate> partItem(String id, String tool, NonNullFunction<Item.Properties, T> factory, int x, int y) {
+    public <T extends Item> ItemBuilder<T, CelestialRegistrate> partItem(String id, String tool, NonNullFunction<Item.Properties, T> factory, int x, int y) {
         return this.item(id, factory).model((ctx, pvd) ->
                 pvd.withExistingParent(ctx.getName(), "forge:item/default").texture("texture", pvd.modLoc("item/" + tool + "/" + ctx.getName()))
                         .customLoader((b, h) -> new MaterialModelBuilder<>(b, h).offset(x, y)));
     }
 
-    public FloatToolStat floatToolStat(String id, int color, float defValue, float minValue, float maxValue) {
+    public FloatToolStat floatToolStat(String id, String name, String desc, int color, float defValue, float minValue, float maxValue) {
+        addRawLang("tool_stat.tinkers_ingenuity." + id, name);
+        addRawLang("tool_stat.tinkers_ingenuity." + id + ".description", desc);
         return ToolStats.register(new FloatToolStat(new ToolStatId(new ResourceLocation(this.getModid(), id)), color, defValue, minValue, maxValue));
     }
 

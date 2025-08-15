@@ -21,9 +21,7 @@ public class TIMaterialTraitGen extends AbstractMaterialTraitDataProvider {
         for(TIMaterials mate : TIMaterials.values()) {
             MaterialTraitsData traits = mate.holder.traits();
             if (traits != null) {
-                if (traits.defaultTraits() != null) {
-                    this.addDefaultTraits(mate.asMate(), traits.defaultTraits());
-                }
+                this.addDefaultTraits(mate.asMate(), traits.defaultTraits());
                 traits.otherTraits().forEach((id, trait) -> this.addTraits(mate.asMate(), id, trait));
             }
         }

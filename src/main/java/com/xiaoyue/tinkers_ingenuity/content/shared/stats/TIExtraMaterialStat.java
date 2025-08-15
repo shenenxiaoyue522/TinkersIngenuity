@@ -1,5 +1,7 @@
 package com.xiaoyue.tinkers_ingenuity.content.shared.stats;
 
+import com.xiaoyue.celestial_invoker.invoker.tooltip.SubscribeTooltip;
+import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipEntry;
 import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import net.minecraft.network.chat.Component;
 import slimeknights.tconstruct.TConstruct;
@@ -16,6 +18,9 @@ public enum TIExtraMaterialStat implements IMaterialStats {
     private static final List<Component> LOCALIZED = List.of(IMaterialStats.makeTooltip(TConstruct.getResource("extra.no_stats")));
     private static final List<Component> DESCRIPTION = List.of(Component.empty());
     private final MaterialStatType<TIExtraMaterialStat> type;
+
+    @SubscribeTooltip(key = "stat.tinkers_ingenuity.curio_extra")
+    public static final TooltipEntry tooltip = TooltipEntry.define("Accessories sub-parts");
 
     TIExtraMaterialStat(String name) {
         this.type = MaterialStatType.singleton(new MaterialStatsId(TinkersIngenuity.loc(name)), this);

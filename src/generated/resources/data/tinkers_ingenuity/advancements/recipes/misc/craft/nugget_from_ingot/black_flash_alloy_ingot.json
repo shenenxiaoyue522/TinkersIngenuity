@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_flame_steel_nugget": {
+    "has_black_flash_alloy_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tinkers_ingenuity:flame_steel_nugget"
+              "tinkers_ingenuity:black_flash_alloy_ingot"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tinkers_ingenuity:craftingot_from_nugget/flame_steel_block"
+        "recipe": "tinkers_ingenuity:craft/nugget_from_ingot/black_flash_alloy_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_flame_steel_nugget",
+      "has_black_flash_alloy_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "tinkers_ingenuity:craftingot_from_nugget/flame_steel_block"
+      "tinkers_ingenuity:craft/nugget_from_ingot/black_flash_alloy_ingot"
     ]
   },
   "sends_telemetry_event": false

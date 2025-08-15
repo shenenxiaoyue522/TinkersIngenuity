@@ -17,6 +17,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.common.registration.GeodeItemObject;
@@ -187,7 +188,7 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         MeltingRecipeBuilder.melting(Ingredient.of(TinkerWorld.earthGeode.getBud(GeodeItemObject.BudSize.CLUSTER)),
                         TinkerFluids.slime.get(SlimeType.EARTH), 1000, 1)
                 .addByproduct(TIFluids.TERRESTRIAL_SOLUTION.result(20))
-                .save(cons, this.prefix(TIFluids.TERRESTRIAL_SOLUTION.getId(), melting));
+                .save(cons, TConstruct.getResource("melting/slime/earth_slime_crystal_cluster"));
 
         MeltingFuelBuilder.fuel(TIFluids.DRAGON_BREATH.ingredient(50), 120, 2200)
                 .save(cons, this.location(fuel));

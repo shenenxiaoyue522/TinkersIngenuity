@@ -1,5 +1,7 @@
 package com.xiaoyue.tinkers_ingenuity.content.items;
 
+import com.xiaoyue.celestial_invoker.invoker.tooltip.SubscribeTooltip;
+import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipEntry;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -30,6 +32,13 @@ public class ModifiableBlowpipe extends ModifiableLauncherItem {
     public ModifiableBlowpipe(ToolDefinition toolDefinition) {
         super((new Item.Properties()).stacksTo(1), toolDefinition);
     }
+
+    @SubscribeTooltip(key = "item.tinkers_ingenuity.blowpipe")
+    public static TooltipEntry tooltip = TooltipEntry.define("Blowpipe");
+
+    @SubscribeTooltip(key = "item.tinkers_ingenuity.blowpipe.description")
+    public static TooltipEntry tooltip_desc = TooltipEntry.define(
+            "A modular ranged weapon that fires in bursts using two parts, but fires arrows at a low velocity.");
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {

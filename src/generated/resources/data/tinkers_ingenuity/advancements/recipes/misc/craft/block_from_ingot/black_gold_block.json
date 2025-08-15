@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tinkers_ingenuity:craftnugget_from_ingot/black_gold_ingot"
+        "recipe": "tinkers_ingenuity:craft/block_from_ingot/black_gold_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "tinkers_ingenuity:craftnugget_from_ingot/black_gold_ingot"
+      "tinkers_ingenuity:craft/block_from_ingot/black_gold_block"
     ]
   },
   "sends_telemetry_event": false

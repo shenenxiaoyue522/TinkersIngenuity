@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_black_gold_ingot": {
+    "has_colorful_slime_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tinkers_ingenuity:black_gold_ingot"
+              "tinkers_ingenuity:colorful_slime_ingot"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tinkers_ingenuity:craftblock_from_ingot/black_gold_block"
+        "recipe": "tinkers_ingenuity:craft/block_from_ingot/colorful_slime_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_black_gold_ingot",
+      "has_colorful_slime_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "tinkers_ingenuity:craftblock_from_ingot/black_gold_block"
+      "tinkers_ingenuity:craft/block_from_ingot/colorful_slime_block"
     ]
   },
   "sends_telemetry_event": false

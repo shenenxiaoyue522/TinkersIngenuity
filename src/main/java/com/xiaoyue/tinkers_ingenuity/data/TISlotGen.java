@@ -1,6 +1,8 @@
 package com.xiaoyue.tinkers_ingenuity.data;
 
 import com.xiaoyue.celestial_invoker.content.generator.RegistrateRecordDataProvider;
+import com.xiaoyue.celestial_invoker.invoker.tooltip.SubscribeTooltip;
+import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipEntry;
 import dev.xkmc.l2library.compat.curios.CurioEntityBuilder;
 import dev.xkmc.l2library.compat.curios.CurioSlotBuilder;
 import dev.xkmc.l2library.compat.curios.CurioSlotBuilder.Operation;
@@ -11,6 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TISlotGen {
+
+    @SubscribeTooltip(key = "curios.identifier.tinkers_curio")
+    public static TooltipEntry slot_tooltip = TooltipEntry.define("Tinkers Curio");
+
+    @SubscribeTooltip(key = "curios.modifiers.tinkers_curio")
+    public static TooltipEntry slot_modifier_tooltip = TooltipEntry.define("When worn as tinkers curio:");
 
     public static void onRecordGen(RegistrateRecordDataProvider pvd) {
         pvd.map.put("tinkers_ingenuity/curios/slots/tinkers_curio",

@@ -11,24 +11,7 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import slimeknights.mantle.registration.object.FluidObject;
 
 public enum TILang {
-    TINKERS_MEDAL("item.tinkers_ingenuity.tinkers_medal", "Tinkers Medal",
-            "A modular cosmetic created by a craftsman that uses two pieces that can be worn in the amulet position and increase the wearer's stats based on stats."),
-    BLOWPIPE("item.tinkers_ingenuity.blowpipe", "Blowpipe",
-            "A modular ranged weapon that fires in bursts using two parts, but fires arrows at a low velocity."),
-    CURIO_MAIN_MATE_STAT("stat.tinkers_ingenuity.curio_main", "The main part of the accessory"),
-    CURIO_EXTRA_MATE_STAT("stat.tinkers_ingenuity.curio_extra", "Accessories sub-parts"),
-    CURIO_MOVEMENT_SPEED_TOOL_STAT("tool_stat.tinkers_ingenuity.curio_movement_speed", "Movement Speed:",
-            "How much more can I increase your movement speed."),
-    CURIO_MAX_HEALTH_TOOL_STAT("tool_stat.tinkers_ingenuity.curio_max_health", "Max Health:",
-            "How much max life can be boosted for you."),
-    CURIO_ARMOR_TOOL_STAT("tool_stat.tinkers_ingenuity.curio_armor", "Armor:",
-            "How much projectile attack damage can be increased for you."),
-    CURIO_MELEE_ATTACK_TOOL_STAT("tool_stat.tinkers_ingenuity.curio_melee_attack", "Melee Attack Damage:",
-            "How much armor can I improve for you."),
-    CURIO_PROJECTILE_ATTACK_TOOL_STAT("tool_stat.tinkers_ingenuity.curio_projectile_attack", "Projectile Attack Damage:",
-            "How much projectile attack damage can be increased for you."),
-    TINKERS_CURIO_SLOT("curios.identifier.tinkers_curio", "Tinkers Curio"),
-    TINKERS_CURIO_SLOT_MODIFIER("curios.modifiers.tinkers_curio", "When worn as tinkers curio:");
+    ;
 
     private final String key;
     private final String text;
