@@ -11,11 +11,11 @@
   "parts": [
     {
       "name": "tube",
-      "index": 1
+      "index": 0
     },
     {
       "name": "mouth",
-      "index": 0
+      "index": 1
     }
   ]
 }

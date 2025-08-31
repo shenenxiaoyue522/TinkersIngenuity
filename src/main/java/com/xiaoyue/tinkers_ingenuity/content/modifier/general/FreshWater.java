@@ -5,6 +5,7 @@ import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.specail.MenuSlotClickM
 import com.xiaoyue.tinkers_ingenuity.mixin.ToolStackInvoker;
 import com.xiaoyue.tinkers_ingenuity.register.TIHooks;
 import com.xiaoyue.tinkers_ingenuity.utils.TinkerUtils;
+import dev.xkmc.l2serial.serialization.SerialClass;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.inventory.ClickAction;
 import net.minecraft.world.item.ItemStack;
@@ -26,9 +27,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@SerialClass
 public class FreshWater extends SimpleModifier implements MenuSlotClickModifierHook, RawDataModifierHook {
 
+    @SerialClass.SerialField
     public final Map<String, ModifierNBT> TRAIT_MAP = new HashMap<>();
+
+    @SerialClass.SerialField
     public final Map<String, StatsNBT> STATS_MAP = new HashMap<>();
 
     @Override
@@ -103,5 +108,10 @@ public class FreshWater extends SimpleModifier implements MenuSlotClickModifierH
 
     @Override
     public void removeRawData(IToolStackView tool, Modifier modifier, RestrictedCompoundTag tag) {
+        if (this.TRAIT_MAP.containsKey("partTraits")) {
+            for (ModifierEntry entry : this.TRAIT_MAP.get("partTraits")) {
+                ((ToolStack) tool).removeModifier(entry.getId(), entry.getLevel());
+            }
+        }
     }
 }
