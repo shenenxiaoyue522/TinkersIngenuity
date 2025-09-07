@@ -2,8 +2,8 @@ package com.xiaoyue.tinkers_ingenuity.register;
 
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
-import com.xiaoyue.celestial_invoker.content.generic.SimpleEffect;
 import com.xiaoyue.celestial_invoker.content.generic.builder.SimpleEffectBuilder;
+import com.xiaoyue.celestial_invoker.content.generic.shared.SimpleEffect;
 import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;

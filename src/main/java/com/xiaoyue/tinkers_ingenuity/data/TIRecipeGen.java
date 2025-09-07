@@ -188,7 +188,7 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         MeltingRecipeBuilder.melting(Ingredient.of(TinkerWorld.earthGeode.getBud(GeodeItemObject.BudSize.CLUSTER)),
                         TinkerFluids.slime.get(SlimeType.EARTH), 1000, 1)
                 .addByproduct(TIFluids.TERRESTRIAL_SOLUTION.result(20))
-                .save(cons, TConstruct.getResource("melting/slime/earth_slime_crystal_cluster"));
+                .save(cons, TConstruct.getResource("smeltery/melting/slime/earth/bud_cluster"));
 
         MeltingFuelBuilder.fuel(TIFluids.DRAGON_BREATH.ingredient(50), 120, 2200)
                 .save(cons, this.location(fuel));
