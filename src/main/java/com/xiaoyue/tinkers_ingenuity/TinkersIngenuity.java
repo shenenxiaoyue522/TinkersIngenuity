@@ -65,7 +65,7 @@ public class TinkersIngenuity
         TIDamageTypes.register();
         MeleeCacheCapability.register();
         AttackEventHandler.register(2222, new TIAttackListener());
-        REGISTRATE.addModTooltipGen();
+        REGISTRATE.initModTooltipSubscribe();
         REGISTRATE.addDataGenerator(ProviderType.LANG, TILang::addLang);
         REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TITagGen::addItemTagGen);
         REGISTRATE.addDataGenerator(ProviderType.FLUID_TAGS, TITagGen::addFluidTagGen);

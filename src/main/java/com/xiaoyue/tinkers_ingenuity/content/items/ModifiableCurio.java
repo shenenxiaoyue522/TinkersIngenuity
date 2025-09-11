@@ -4,6 +4,7 @@ import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.SubscribeTooltip;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipEntry;
+import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipHolder;
 import com.xiaoyue.tinkers_ingenuity.content.shared.holder.CurioStackView;
 import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.specail.TinkersCurioModifierHook;
 import com.xiaoyue.tinkers_ingenuity.data.modifier.TIModifierData;
@@ -97,12 +98,11 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
         }
     }
 
-    @SubscribeTooltip(key = "item.tinkers_ingenuity.tinkers_medal")
-    public static TooltipEntry tooltip = TooltipEntry.define("Tinkers Medal");
-
-    @SubscribeTooltip(key = "item.tinkers_ingenuity.tinkers_medal.description")
-    public static TooltipEntry tooltip_desc = TooltipEntry.define(
-            "A modular cosmetic created by a craftsman that uses two pieces that can be worn in the amulet position and increase the wearer's stats based on stats.");
+    @SubscribeTooltip
+    public static TooltipHolder tooltipHolder = TooltipHolder.define(
+            TooltipEntry.define("item.tinkers_ingenuity.tinkers_medal", "Tinkers Medal"),
+            TooltipEntry.define("item.tinkers_ingenuity.tinkers_medal.description",
+                    "A modular cosmetic created by a craftsman that uses two pieces that can be worn in the amulet position and increase the wearer's stats based on stats."));
 
     private void addAttributeStats(ToolStack curio, UUID uuid, Multimap<Attribute, AttributeModifier> map) {
         StatsNBT stats = curio.getStats();

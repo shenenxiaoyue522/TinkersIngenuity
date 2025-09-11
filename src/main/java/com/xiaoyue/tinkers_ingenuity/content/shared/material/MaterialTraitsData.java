@@ -14,7 +14,7 @@ public record MaterialTraitsData(Map<MaterialStatsId, ModifierEntry[]> otherTrai
 
     public static class Builder {
         private final Map<MaterialStatsId, ModifierEntry[]> traits = new HashMap<>();
-        private ModifierEntry[] defaultTraits;
+        private ModifierEntry[] defaultTraits = new ModifierEntry[0];
 
         public Builder addDefault(ModifierEntry... traits) {
             this.defaultTraits = traits;

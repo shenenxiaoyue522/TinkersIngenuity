@@ -1,4 +1,4 @@
-// 1.20.1	2025-08-03T17:11:06.3485065	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider, Sound Definitions, Particle Descriptions]
+// 1.20.1	2025-09-12T00:19:32.5509885	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider, Sound Definitions, Particle Descriptions]
 e557016fbb3942809ff5a0d0860840a884743972 assets/tinkers_ingenuity/blockstates/black_flash_alloy_block.json
 cc611fce4c7ef9bec089301f40af20c25fce67cd assets/tinkers_ingenuity/blockstates/black_gold_block.json
 c4698202e0bffb8078ad7a5f449f9c986d6cead3 assets/tinkers_ingenuity/blockstates/colorful_slime_block.json
@@ -81,7 +81,7 @@ f123424bab890f2578e023ab8aa7effdcc4f727c data/forge/tags/items/storage_blocks/bl
 fef859bb88ff6fb6efb00d46e78f7bfb0d655d3d data/forge/tags/items/storage_blocks/flame_steel.json
 5f74502c3a3a63b1aa4035cb126cb6d41efe2ee1 data/forge/tags/items/storage_blocks/knight_crystal.json
 fc0b7cffd7c3b1bab561c0b5f13b191908ecb127 data/forge/tags/items/storage_blocks/mithril.json
-74ad8c28c7782a860e9ccd5851217e7784a83428 data/tconstruct/recipes/melting/slime/earth_slime_crystal_cluster.json
+74ad8c28c7782a860e9ccd5851217e7784a83428 data/tconstruct/recipes/smeltery/melting/slime/earth/bud_cluster.json
 c55f80209a8ef31720acd230ecaae73933be0169 data/tconstruct/tags/items/casts.json
 921cd2aa8404817af3b1c36b88ad307f4d4c9013 data/tconstruct/tags/items/casts/gold.json
 0f3ed80443da444a14abf31ec68c4b3fb5c1a30e data/tconstruct/tags/items/casts/red_sand.json
