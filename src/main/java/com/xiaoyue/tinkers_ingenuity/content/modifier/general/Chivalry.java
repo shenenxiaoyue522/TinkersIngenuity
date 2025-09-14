@@ -3,7 +3,7 @@ package com.xiaoyue.tinkers_ingenuity.content.modifier.general;
 import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import com.xiaoyue.tinkers_ingenuity.content.generic.ISimpleModule;
 import com.xiaoyue.tinkers_ingenuity.content.generic.SerialLoader;
-import com.xiaoyue.tinkers_ingenuity.content.shared.json.variable.LevelingFormula;
+import com.xiaoyue.tinkers_ingenuity.content.json.variable.LevelingFormula;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;

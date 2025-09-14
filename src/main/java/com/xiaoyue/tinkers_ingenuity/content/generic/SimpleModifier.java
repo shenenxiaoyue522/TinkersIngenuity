@@ -38,7 +38,6 @@ public abstract class SimpleModifier extends Modifier implements ModifierRemoval
         if (this.getNBTKey() != null) {
             tool.getPersistentData().remove(this.getNBTKey());
         }
-
         return null;
     }
 
