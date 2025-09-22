@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "tinkers_ingenuity.refmap.json",
   "mixins": [
+    "LivingEntityMixin",
     "SweepAttackMixin",
     "ToolAttackUtilMixin",
     "ToolStackInvoker"
