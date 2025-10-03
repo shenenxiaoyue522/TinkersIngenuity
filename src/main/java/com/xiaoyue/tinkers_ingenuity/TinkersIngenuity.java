@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.xiaoyue.celestial_invoker.content.generator.CelestialProviders;
+import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipLoader;
 import com.xiaoyue.celestial_invoker.simple.SimpleInvoker;
 import com.xiaoyue.tinkers_ingenuity.content.generic.MeleeCacheCapability;
 import com.xiaoyue.tinkers_ingenuity.content.generic.SerialLoader;
@@ -65,7 +66,6 @@ public class TinkersIngenuity
         TIDamageTypes.register();
         MeleeCacheCapability.register();
         AttackEventHandler.register(2222, new TIAttackListener());
-        REGISTRATE.initModTooltipSubscribe();
         REGISTRATE.addDataGenerator(ProviderType.LANG, TILang::addLang);
         REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TITagGen::addItemTagGen);
         REGISTRATE.addDataGenerator(ProviderType.FLUID_TAGS, TITagGen::addFluidTagGen);
@@ -93,7 +93,8 @@ public class TinkersIngenuity
         ExistingFileHelper helper = event.getExistingFileHelper();
         DataGenerator gen = event.getGenerator();
         PackOutput output = gen.getPackOutput();
-        (new TIDamageTypes(output, pvd, helper)).generate(server, gen);
+        new TIDamageTypes(output, pvd, helper).generate(server, gen);
+        new TooltipLoader(MODID).generator(event);
         TIMaterialDefGen matDef = new TIMaterialDefGen(output);
         TIMaterialSprGen matSpr = new TIMaterialSprGen();
         TITinkerPartSpriteGen partSpr = new TITinkerPartSpriteGen();
