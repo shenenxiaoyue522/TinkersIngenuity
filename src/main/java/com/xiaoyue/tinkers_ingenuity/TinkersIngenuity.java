@@ -66,6 +66,7 @@ public class TinkersIngenuity
         TIDamageTypes.register();
         MeleeCacheCapability.register();
         AttackEventHandler.register(2222, new TIAttackListener());
+        TooltipLoader.generator(MODID, REGISTRATE);
         REGISTRATE.addDataGenerator(ProviderType.LANG, TILang::addLang);
         REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TITagGen::addItemTagGen);
         REGISTRATE.addDataGenerator(ProviderType.FLUID_TAGS, TITagGen::addFluidTagGen);
@@ -94,7 +95,6 @@ public class TinkersIngenuity
         DataGenerator gen = event.getGenerator();
         PackOutput output = gen.getPackOutput();
         new TIDamageTypes(output, pvd, helper).generate(server, gen);
-        new TooltipLoader(MODID).generator(event);
         TIMaterialDefGen matDef = new TIMaterialDefGen(output);
         TIMaterialSprGen matSpr = new TIMaterialSprGen();
         TITinkerPartSpriteGen partSpr = new TITinkerPartSpriteGen();
