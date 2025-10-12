@@ -7,7 +7,7 @@
     "LivingEntityMixin",
     "SweepAttackMixin",
     "ToolAttackUtilMixin",
-    "ToolStackInvoker"
+    "ToolStackMixin"
   ],
   "minVersion": "0.8",
   "client": [

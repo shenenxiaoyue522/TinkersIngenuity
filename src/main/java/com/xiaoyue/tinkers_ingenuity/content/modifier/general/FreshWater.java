@@ -2,7 +2,6 @@ package com.xiaoyue.tinkers_ingenuity.content.modifier.general;
 
 import com.xiaoyue.tinkers_ingenuity.content.generic.SimpleModifier;
 import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.specail.MenuSlotClickModifierHook;
-import com.xiaoyue.tinkers_ingenuity.mixin.ToolStackInvoker;
 import com.xiaoyue.tinkers_ingenuity.register.TIHooks;
 import com.xiaoyue.tinkers_ingenuity.utils.TinkerUtils;
 import net.minecraft.nbt.CompoundTag;
@@ -19,7 +18,6 @@ import slimeknights.tconstruct.library.modifiers.hook.build.RawDataModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
-import slimeknights.tconstruct.library.tools.nbt.StatsNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.library.tools.part.IToolPart;
 import slimeknights.tconstruct.library.utils.RestrictedCompoundTag;
@@ -28,8 +26,8 @@ import java.util.List;
 
 public class FreshWater extends SimpleModifier implements MenuSlotClickModifierHook, RawDataModifierHook {
 
-    private final String TAG_COPY_STATS = "freshWater_copyStats";
-    private final String TAG_COPY_TRAITS = "freshWater_copyTraits";
+    public static final String TAG_COPY_STATS = "freshWater_copyStats";
+    public static final String TAG_COPY_TRAITS = "freshWater_copyTraits";
 
     @Override
     public boolean isSingleLevel() {
@@ -62,7 +60,7 @@ public class FreshWater extends SimpleModifier implements MenuSlotClickModifierH
         CompoundTag tag = stack.getOrCreateTag();
         if (tool.getDefinition().equals(target.getDefinition()) && target.getUpgrades().isEmpty()) {
             tag.put(TAG_COPY_STATS, target.getStats().serializeToNBT());
-            ((ToolStackInvoker) tool).callSetStats(target.getStats());
+            tool.rebuildStats();
         }
     }
 
@@ -97,11 +95,6 @@ public class FreshWater extends SimpleModifier implements MenuSlotClickModifierH
 
     @Override
     public void addRawData(IToolStackView tool, ModifierEntry modifier, RestrictedCompoundTag tag) {
-        ItemStack stack = ((ToolStack) tool).createStack();
-        CompoundTag nbt = stack.getOrCreateTag();
-        if (nbt.contains(TAG_COPY_STATS)) {
-            ((ToolStackInvoker) tool).callSetStats(StatsNBT.readFromNBT(nbt.getCompound(TAG_COPY_STATS)));
-        }
     }
 
     @Override
