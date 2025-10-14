@@ -24,6 +24,7 @@ public class FluidModelGen extends AbstractFluidTextureProvider {
         this.liquid(TIFluids.MOLTEN_KNIGHT_CRYSTAL, -6984738);
         this.liquid(TIFluids.TERRESTRIAL_SOLUTION, 0xff6aecbf);
         this.molten(TIFluids.MOLTEN_MITHRIL, 0xff6aecbf);
+        this.molten(TIFluids.BLACK_DRAGON_GENE, 0xff451177);
     }
 
     public FluidTexture.Builder texture(FluidObject<?> fluid, String id) {

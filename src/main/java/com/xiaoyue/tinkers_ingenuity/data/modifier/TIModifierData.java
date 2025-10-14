@@ -65,6 +65,7 @@ public enum TIModifierData {
             "This tool's mining speed, attack speed, and arrow velocity will be given additional boosts"),
     DEMONIC("demonic", "Don't hit me with these unrealistic things.",
             "This armor provides the wearer with additional protection against magic damage"),
+    SCHOLAR("scholar", "Smart as I am.", "You can gain more experience points when you pick up experience"),
     ;
 
     public final String id;

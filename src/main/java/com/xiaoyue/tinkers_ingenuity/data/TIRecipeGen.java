@@ -35,6 +35,7 @@ import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBui
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.shared.TinkerMaterials;
 import slimeknights.tconstruct.shared.block.SlimeType;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.world.TinkerWorld;
 
 import java.util.List;
@@ -71,6 +72,9 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         ModifierRecipeBuilder.modifier(TIModifierData.RAPID_FIRE.getId()).setTools(TinkerTags.Items.RANGED).setSlots(SlotType.ABILITY, 1)
                 .addInput(Items.AMETHYST_BLOCK).addInput(Items.REDSTONE).addInput(Items.STRING)
                 .save(cons, this.prefix(TIModifierData.RAPID_FIRE.getId(), ability));
+        ModifierRecipeBuilder.modifier(TIModifierData.SCHOLAR.getId()).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(Ingredient.of(Items.BOOK)).addInput(Items.EMERALD)
+                .save(cons, this.prefix(TIModifierData.SCHOLAR.getId(), curio_upgrade));
         ModifierRecipeBuilder.modifier(TIModifierData.BLOT_OUT.getId()).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
                 .addInput(Ingredient.of(ItemTags.WOOL)).addInput(Items.ENDER_PEARL)
                 .save(cons, this.prefix(TIModifierData.BLOT_OUT.getId(), curio_ability));
@@ -179,6 +183,9 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
                 .setCoolingTime(80)
                 .save(cons, this.prefix(TIItems.COLOURED_GLAZE_STAR.getId(), casting));
 
+        MeltingRecipeBuilder.melting(Ingredient.of(TinkerModifiers.dragonScale),
+                        TIFluids.BLACK_DRAGON_GENE.result(75), 1800, 20)
+                .save(cons, this.prefix(TIFluids.BLACK_DRAGON_GENE.getId(), melting));
         MeltingRecipeBuilder.melting(Ingredient.of(Items.DRAGON_BREATH),
                         TIFluids.DRAGON_BREATH.result(250), 1200, 30)
                 .save(cons, this.prefix(TIFluids.DRAGON_BREATH.getId(), melting));

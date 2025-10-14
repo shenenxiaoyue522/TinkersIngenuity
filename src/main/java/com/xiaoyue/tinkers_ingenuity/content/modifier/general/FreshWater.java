@@ -27,6 +27,7 @@ import java.util.List;
 public class FreshWater extends SimpleModifier implements MenuSlotClickModifierHook, RawDataModifierHook {
 
     public static final String TAG_COPY_STATS = "freshWater_copyStats";
+    public static final String TAG_COPY_MULTIPLIERS = "freshWater_copyMultipliers";
     public static final String TAG_COPY_TRAITS = "freshWater_copyTraits";
 
     @Override
@@ -60,6 +61,7 @@ public class FreshWater extends SimpleModifier implements MenuSlotClickModifierH
         CompoundTag tag = stack.getOrCreateTag();
         if (tool.getDefinition().equals(target.getDefinition()) && target.getUpgrades().isEmpty()) {
             tag.put(TAG_COPY_STATS, target.getStats().serializeToNBT());
+            tag.put(TAG_COPY_MULTIPLIERS, target.getMultipliers().serializeToNBT());
             tool.rebuildStats();
         }
     }

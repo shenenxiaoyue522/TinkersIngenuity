@@ -4,6 +4,7 @@ import com.xiaoyue.tinkers_ingenuity.content.items.ModifiableCurio;
 import com.xiaoyue.tinkers_ingenuity.content.shared.holder.CurioStackView;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -86,6 +87,10 @@ public interface TinkersCurioModifierHook {
     }
 
     default void onBreakBlock(CurioStackView curio, int level, LivingEntity entity, BlockState state, BlockPos pos) {
+    }
+
+    default void onPickupExp(CurioStackView curio, int level, LivingEntity entity, ExperienceOrb orb) {
+
     }
 
     record AllMerger(Collection<TinkersCurioModifierHook> modules) implements TinkersCurioModifierHook {
@@ -213,6 +218,13 @@ public interface TinkersCurioModifierHook {
         public void onBreakBlock(CurioStackView curio, int level, LivingEntity entity, BlockState state, BlockPos pos) {
             for(TinkersCurioModifierHook module : this.modules) {
                 module.onBreakBlock(curio, level, entity, state, pos);
+            }
+        }
+
+        @Override
+        public void onPickupExp(CurioStackView curio, int level, LivingEntity entity, ExperienceOrb orb) {
+            for (TinkersCurioModifierHook module : modules) {
+                module.onPickupExp(curio, level, entity, orb);
             }
         }
     }

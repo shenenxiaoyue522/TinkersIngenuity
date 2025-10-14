@@ -90,8 +90,8 @@ public enum TIMaterials {
     COLOURED_GLAZE_STAR(MaterialBuildHolder.builder("coloured_glaze_star")
             .craftableMaterial(TIItems.COLOURED_GLAZE_STAR)
             .desc(b -> b
-                    .encyclopedia("Reduces durability by 49% per level and increases attack damage and mining speed by 49%. Your attacks are immune to damage that pierces the target.")
-                    .ranged("Durability is reduced by 49% per level and projectile damage is increased by 49%. Your attacks are immune to damage that pierces the target.")
+                    .encyclopedia("Reduces durability by 49% and increases attack damage and mining speed by 49%. Your attacks are immune to damage that pierces the target.")
+                    .ranged("Durability is reduced by 49% and projectile damage is increased by 49%. Your attacks are immune to damage that pierces the target.")
                     .armor("You will be immune to negative effects. Every 45 seconds, there is a 45% chance to increase armor by 2%, tenacity, and movement speed by 1%, and this effect can stack up to 10 times."))
             .definition(MaterialDefinitionData.Builder::craftable)
             .statAndShield(plat(40f).armor(3.0F, 5.0F, 7.0F, 3.0F).toughness(3.0F).knockbackResistance(0.1F),

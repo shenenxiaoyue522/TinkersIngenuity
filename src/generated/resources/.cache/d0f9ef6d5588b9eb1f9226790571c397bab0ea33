@@ -1,12 +1,12 @@
-// 1.20.1	2025-09-12T00:19:32.5509885	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider, Sound Definitions, Particle Descriptions]
+// 1.20.1	2025-10-13T20:35:57.0562348	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider, Sound Definitions, Particle Descriptions]
 e557016fbb3942809ff5a0d0860840a884743972 assets/tinkers_ingenuity/blockstates/black_flash_alloy_block.json
 cc611fce4c7ef9bec089301f40af20c25fce67cd assets/tinkers_ingenuity/blockstates/black_gold_block.json
 c4698202e0bffb8078ad7a5f449f9c986d6cead3 assets/tinkers_ingenuity/blockstates/colorful_slime_block.json
 480b0a384ab820b673818d08d333df0991f24297 assets/tinkers_ingenuity/blockstates/flame_steel_block.json
 432f1fae2524f5443f1ff8b3212f0d06d0efbfc2 assets/tinkers_ingenuity/blockstates/knight_crystal_block.json
 b6efcb95bd5101561eb5c6e185af32ea6e8a88e5 assets/tinkers_ingenuity/blockstates/mithril_block.json
-1d4b9648ffb0369c1d0177ec64b968a4b8811a69 assets/tinkers_ingenuity/lang/en_ud.json
-77cc9a41a5c497801f9ded6a1ef9123cbd6baf0b assets/tinkers_ingenuity/lang/en_us.json
+f033818fbd5348f77956ca4b69d13d3d44c5ea86 assets/tinkers_ingenuity/lang/en_ud.json
+6b57c74dc5e7fcd527847c26962824635fb2d310 assets/tinkers_ingenuity/lang/en_us.json
 871dda071e83965b8ecdd8953e93e79429dca841 assets/tinkers_ingenuity/models/block/black_flash_alloy_block.json
 629b3d1a5fa53ba3a6f846d3f4ffdd40b0ad81b4 assets/tinkers_ingenuity/models/block/black_gold_block.json
 4511efea30d1e67156abf770eb04fe482661e3df assets/tinkers_ingenuity/models/block/colorful_slime_block.json
@@ -53,6 +53,7 @@ ff7d2f952fea9aa46be9e5e7941ba70601e8de81 assets/tinkers_ingenuity/models/item/mi
 f135cfcb8bc12748ffc720dac1f22185f50e2da2 assets/tinkers_ingenuity/models/item/plague_bone.json
 8ecc4eef6c7a89d42bc384569b2f2393d45306c7 data/curios/tags/items/tinkers_curio.json
 bc4e4393d8ca5a7ad14dbefd9369539d91ea131a data/forge/loot_modifiers/global_loot_modifiers.json
+61bd1161903e24baa04155e84f6b262b591803b1 data/forge/tags/fluids/black_dragon_gene.json
 03e3dc5809c19ceb254cba856596324e9d66607e data/forge/tags/fluids/dragon_breath.json
 27cfe0835e00eb0cb836958efdd7420dbc9e10e8 data/forge/tags/fluids/ender_compound.json
 7c0a286e7c1ea5ae8f02e5020e94e79d4869f088 data/forge/tags/fluids/molten_black_flash_alloy.json
@@ -222,6 +223,7 @@ fea8d6742c4cf119d083d129ba9b78c7fd8a1ff3 data/tinkers_ingenuity/recipes/smeltery
 37c3c403a8fd15ef4e7035cd0f8dee02fecd8efd data/tinkers_ingenuity/recipes/smeltery/casts/sand/molding/medal_body.json
 b619dcceb2c73e24997d47c9271aa05440199a3a data/tinkers_ingenuity/recipes/smeltery/casts/sand/molding/medal_ribbons.json
 7ee52584d15883dcce8d28ff4a3ab0047d936cb1 data/tinkers_ingenuity/recipes/smeltery/fuel/.json
+91cc61568ae709c9eaf8d49b5098507d2bb1b9ce data/tinkers_ingenuity/recipes/smeltery/melting/black_dragon_gene.json
 a1d3f4b9dc12a7c88f912a35d4758d25cefc2852 data/tinkers_ingenuity/recipes/smeltery/melting/dragon_breath.json
 a800d48358f7918c2b86996776f9f4badb812e2a data/tinkers_ingenuity/recipes/smeltery/melting/metal/black_flash_alloy/block.json
 801b72ad1778c2162a899ef59471a9ce11a12829 data/tinkers_ingenuity/recipes/smeltery/melting/metal/black_flash_alloy/ingot.json

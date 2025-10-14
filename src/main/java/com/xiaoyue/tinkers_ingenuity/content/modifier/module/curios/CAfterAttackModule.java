@@ -45,7 +45,6 @@ public record CAfterAttackModule(IJsonPredicate<LivingEntity> attacker, IJsonPre
             float finalAmount = TinkerPredicate.AIRBORNE.matches(attacker) ? this.amount * 2.0F : this.amount;
             GeneralEventHandler.schedule(() -> this.action.apply(attacker, finalAmount * (float)level));
         }
-
     }
 
     @Override

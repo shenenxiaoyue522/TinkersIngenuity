@@ -98,8 +98,8 @@
   "item.tinkers_ingenuity.coloured_glaze_star": "琉璃之星",
   "material.tinkers_ingenuity.coloured_glaze_star": "琉璃之星",
   "material.tinkers_ingenuity.coloured_glaze_star.armor": "你将免疫负面效果的侵扰。每经过45秒都有45%概率提高护甲2%韧性与1%移动速度 该效果至多叠加10次。",
-  "material.tinkers_ingenuity.coloured_glaze_star.encyclopedia": "每级耐久降低49%，攻击伤害与挖掘速度提高49%。你的攻击能够穿透目标的伤害免疫。",
-  "material.tinkers_ingenuity.coloured_glaze_star.ranged": "每级耐久降低49%，弹射物伤害提高49%。你的攻击能够穿透目标的伤害免疫。",
+  "material.tinkers_ingenuity.coloured_glaze_star.encyclopedia": "耐久降低49%，攻击伤害与挖掘速度提高49%。你的攻击能够穿透目标的伤害免疫。",
+  "material.tinkers_ingenuity.coloured_glaze_star.ranged": "耐久降低49%，弹射物伤害提高49%。你的攻击能够穿透目标的伤害免疫。",
   "modifier.tinkers_ingenuity.crystallization": "晶化",
   "modifier.tinkers_ingenuity.crystallization.description": "这件护甲会随着时间的推移变得更加柔韧与轻便",
   "modifier.tinkers_ingenuity.crystallization.flavor": "它开始生长了！",
@@ -201,5 +201,10 @@
   "modifier.tinkers_ingenuity.dexterous.flavor": "简单易上手。",
   "modifier.tinkers_ingenuity.mysterious": "神秘",
   "modifier.tinkers_ingenuity.mysterious.description": "这件工具将获得更多的升级槽",
-  "modifier.tinkers_ingenuity.mysterious.flavor": "神话金属！"
+  "modifier.tinkers_ingenuity.mysterious.flavor": "神话金属！",
+  "fluid_type.tinkers_ingenuity.black_dragon_gene": "黑龙因子",
+  "item.tinkers_ingenuity.black_dragon_gene_bucket": "黑龙因子桶",
+  "modifier.tinkers_ingenuity.scholar": "学者",
+  "modifier.tinkers_ingenuity.scholar.description": "拾取经验时能够获得更多的经验值",
+  "modifier.tinkers_ingenuity.scholar.flavor": "聪明如我。"
 }
