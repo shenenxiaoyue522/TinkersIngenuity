@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "tconstruct:dragon_scale"
+  },
+  "result": {
+    "amount": 75,
+    "tag": "forge:black_dragon_gene"
+  },
+  "temperature": 1800,
+  "time": 20
+}

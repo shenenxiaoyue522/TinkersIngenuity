@@ -1,0 +1,15 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_ingenuity:curio_pickup_exp_bonus",
+      "bonus": {
+        "factor": 0.15,
+        "operation": "multiplier_base",
+        "single": false
+      },
+      "entity": "mantle:any"
+    }
+  ],
+  "tooltip_display": "always"
+}
