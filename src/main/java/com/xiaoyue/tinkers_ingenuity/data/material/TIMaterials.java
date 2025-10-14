@@ -183,7 +183,21 @@ public enum TIMaterials {
                     .addDefault(TIModifierData.MYSTERIOUS.asEntry(), TIModifierData.DEXTEROUS.asEntry())
                     .addArmor(TIModifierData.MYSTERIOUS.asEntry(), TIModifierData.DEMONIC.asEntry()))
             .render(b -> b.color(0xff1fa8b1).fallbacks("metal")
-                    .sprite(b.color(0xff0a546a, 0xff13949c, 0xff1fa8b1, 0xff9dd290, 0xff59c2c9, 0xffd4ffbe))))
+                    .sprite(b.color(0xff0a546a, 0xff13949c, 0xff1fa8b1, 0xff9dd290, 0xff59c2c9, 0xffd4ffbe)))),
+    BLACK_DRAGON_SUBSTANCE(MaterialBuildHolder.builder("black_dragon_substance")
+            .craftableMaterial(TIItems.BLACK_DRAGON_SUBSTANCE)
+            .desc(b -> b
+                    .encyclopedia(""))
+            .statAndShield(plat(25).armor(3f, 6f, 8f, 3f).toughness(2f),
+                    head(775, 7.5f, Tiers.NETHERITE, 3.5f),
+                    handle().attackDamage(1.1f).durability(0.9f).durability(1.2f).build(),
+                    StatlessMaterialStats.BINDING,
+                    limb(775, 0.1f, 0.2f, -0.05f),
+                    grip(0.2f, 3.2f, 0.04f),
+                    StatlessMaterialStats.MAILLE)
+            .trait(b -> b.addDefault())
+            .render(b -> b.color(0xff573e63).fallbacks("bone", "metal")
+                    .sprite(b.color(0xff271430, 0xff3e2848, 0xff45304f, 0xff6a4c78, 0xff834b9c, 0xffb373d1)))),
     ;
 
     public final MaterialBuildHolder holder;

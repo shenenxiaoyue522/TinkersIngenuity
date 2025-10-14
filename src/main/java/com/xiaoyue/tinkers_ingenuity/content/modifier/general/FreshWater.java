@@ -13,18 +13,15 @@ import net.minecraftforge.event.ItemStackedOnOtherEvent;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.hook.build.RawDataModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.library.tools.part.IToolPart;
-import slimeknights.tconstruct.library.utils.RestrictedCompoundTag;
 
 import java.util.List;
 
-public class FreshWater extends SimpleModifier implements MenuSlotClickModifierHook, RawDataModifierHook {
+public class FreshWater extends SimpleModifier implements MenuSlotClickModifierHook {
 
     public static final String TAG_COPY_STATS = "freshWater_copyStats";
     public static final String TAG_COPY_MULTIPLIERS = "freshWater_copyMultipliers";
@@ -37,7 +34,7 @@ public class FreshWater extends SimpleModifier implements MenuSlotClickModifierH
 
     @Override
     protected void addHooks(ModuleHookMap.Builder builder) {
-        builder.addHook(this, TIHooks.MENU_SLOT_CLICK, ModifierHooks.RAW_DATA);
+        builder.addHook(this, TIHooks.MENU_SLOT_CLICK);
     }
 
     private void updateTraits(ToolStack tool, ItemStack part) {
@@ -93,13 +90,5 @@ public class FreshWater extends SimpleModifier implements MenuSlotClickModifierH
             });
         }
         return null;
-    }
-
-    @Override
-    public void addRawData(IToolStackView tool, ModifierEntry modifier, RestrictedCompoundTag tag) {
-    }
-
-    @Override
-    public void removeRawData(IToolStackView tool, Modifier modifier, RestrictedCompoundTag tag) {
     }
 }
