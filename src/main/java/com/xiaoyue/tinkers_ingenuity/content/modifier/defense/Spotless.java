@@ -1,6 +1,7 @@
 package com.xiaoyue.tinkers_ingenuity.content.modifier.defense;
 
 import com.xiaoyue.tinkers_ingenuity.content.generic.SimpleModifier;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
@@ -11,6 +12,9 @@ import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Spotless extends SimpleModifier implements InventoryTickModifierHook {
     
@@ -26,12 +30,14 @@ public class Spotless extends SimpleModifier implements InventoryTickModifierHoo
 
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level level, LivingEntity entity, int index, boolean select, boolean current, ItemStack stack) {
-        if (current) {
+        if (current && entity.tickCount % 20 == 0) {
+            List<MobEffect> list = new ArrayList<>();
             for (MobEffectInstance effect : entity.getActiveEffects()) {
                 if (effect.getEffect().getCategory().equals(MobEffectCategory.HARMFUL)) {
-                    entity.removeEffect(effect.getEffect());
+                    list.add(effect.getEffect());
                 }
             }
+            list.forEach(entity::removeEffect);
         }
     }
 }
