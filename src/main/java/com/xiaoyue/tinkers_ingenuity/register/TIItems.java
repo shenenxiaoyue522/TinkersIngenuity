@@ -39,10 +39,10 @@ public class TIItems {
         COLOURED_GLAZE_STAR = item("coloured_glaze_star", "material", Item::new);
         ELFS_CRYSTAL = item("elfs_crystal", "material", Item::new);
         PLAGUE_BONE = item("plague_bone", "material", Item::new);
-        BLACK_DRAGON_SUBSTANCE = item("black_dragon_substance", "material", Item::new);
         COLORFUL_SLIME = reg().slimeMetal("colorful_slime");
         KNIGHT_CRYSTAL = reg().slimeMetal("knight_crystal");
         MITHRIL = reg().slimeMetal("mithril");
+        BLACK_DRAGON_SUBSTANCE = item("black_dragon_substance", "material", Item::new);
         MEDAL_RIBBONS_CAST = reg().castItem("medal_ribbons");
         MEDAL_BODY_CAST = reg().castItem("medal_body");
         BLOWPIPE_TUBE_CAST = reg().castItem("blowpipe_tube");

@@ -65,7 +65,14 @@ public enum TIModifierData {
             "This tool's mining speed, attack speed, and arrow velocity will be given additional boosts"),
     DEMONIC("demonic", "Don't hit me with these unrealistic things.",
             "This armor provides the wearer with additional protection against magic damage"),
-    SCHOLAR("scholar", "Smart as I am.", "You can gain more experience points when you pick up experience"),
+    SCHOLAR("scholar", "Smart as I am.",
+            "You can gain more experience points when you pick up experience"),
+    BLACK_WINGS("black_wings", "I have invisible wings.",
+    "Gain the ability to fly at the cost of speeding up hunger"),
+    ALIEN("alien", "It started moving!",
+            "This tool grows over time"),
+    FLAME_HEART("flame_heart", "The fire of the heart that will never be extinguished.",
+            "Even if you are not in the fire, you will be considered in the fire"),
     ;
 
     public final String id;

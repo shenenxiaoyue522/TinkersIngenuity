@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "item": "minecraft:piston"
+    },
+    {
+      "item": "minecraft:piston"
+    },
+    {
+      "tag": "forge:ingots/queens_slime"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    }
+  ],
+  "result": "tconstruct:reach",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "tag": "tinkers_ingenuity:modifiable_curio"
+  }
+}

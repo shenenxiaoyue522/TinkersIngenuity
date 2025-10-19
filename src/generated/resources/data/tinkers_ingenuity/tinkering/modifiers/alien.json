@@ -1,0 +1,12 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_ingenuity:alien_modifier",
+      "bonus": 0.01,
+      "bonus_interval": 400,
+      "max": 50
+    }
+  ],
+  "tooltip_display": "always"
+}

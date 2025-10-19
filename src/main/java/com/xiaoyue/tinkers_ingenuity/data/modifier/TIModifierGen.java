@@ -11,6 +11,7 @@ import com.xiaoyue.tinkers_ingenuity.content.json.variable.StatOperation;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.defense.Crystallization;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.defense.KnightBloodline;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.defense.VulnerabilityInsurance;
+import com.xiaoyue.tinkers_ingenuity.content.modifier.general.Alien;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.general.Chivalry;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.module.building.AllFloatStatCopyModule;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.module.building.StatWithTraitCountModule;
@@ -62,9 +63,11 @@ public class TIModifierGen extends AbstractModifierProvider {
         buildModifier(TIModifierData.BE_IMPOLITE.getId())
                 .addModule(CriticalChanceModule.any(1.0F));
         buildModifier(TIModifierData.PENETRATING_STAR.getId())
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(CreateSourceModule.any(TIDamageState.BYPASS_ENTITY_INV))
                 .addModule(CreateSourceModule.any(TIDamageState.BYPASS_COOLDOWN));
         buildModifier(TIModifierData.DELICATE.getId())
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(StatBoostModule.multiplyBase(ToolStats.MINING_SPEED).flat(0.49F))
                 .addModule(StatBoostModule.multiplyBase(ToolStats.ATTACK_DAMAGE).flat(0.49F))
                 .addModule(StatBoostModule.multiplyBase(ToolStats.PROJECTILE_DAMAGE).flat(0.49F))
@@ -80,7 +83,6 @@ public class TIModifierGen extends AbstractModifierProvider {
                 .addModule(StatWithTraitCountModule.get(OverslimeModifier.OVERSLIME_STAT, StatOperation.multiplier_base, 0.15F,
                         true, TinkerModifiers.overslime.getId()));
         buildModifier(TIModifierData.CRYSTALLIZATION.getId())
-                .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(Crystallization.getIns());
         buildModifier(TIModifierData.VULNERABILITY_INSURANCE.getId())
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
@@ -120,6 +122,9 @@ public class TIModifierGen extends AbstractModifierProvider {
                 .addModule(SimpleProtectionModule.any(TISourceCondition.IS_MAGIC, LevelingFormula.mulBase(0.45f)));
         buildModifier(TIModifierData.SCHOLAR.getId())
                 .addModule(CPickupExpBonusModule.any(LevelingFormula.mulBase(0.15f)));
+        buildModifier(TIModifierData.ALIEN.getId())
+                .addModules(Alien.getIns());
+        buildModifier(TIModifierData.FLAME_HEART.getId()).levelDisplay(ModifierLevelDisplay.NO_LEVELS);
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.xiaoyue.tinkers_ingenuity.content.items;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
+import com.xiaoyue.celestial_invoker.content.ancillary.entry.AttrModifierEntry;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.SubscribeTooltip;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipEntry;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipHolder;
@@ -16,7 +17,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.player.Player;
@@ -26,12 +26,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
-import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
 import slimeknights.tconstruct.library.tools.helper.TooltipBuilder;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
@@ -74,7 +75,7 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
         }
     }
 
-    public static void postAction(LivingEntity entity, Modifier modifier, BiConsumer<CurioStackView, Integer> cons) {
+    public static void postAction(LivingEntity entity, ModifierId modifier, BiConsumer<CurioStackView, Integer> cons) {
         if (!findAll(entity).isEmpty()) {
             for (SlotResult result : findAll(entity)) {
                 CurioStackView tool = CurioStackView.of(result);
@@ -94,22 +95,25 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
                     arrow.setBaseDamage(arrow.getBaseDamage() * (double) (1.0F + bonus));
                 }
             }
-
         }
     }
 
     @SubscribeTooltip
     public static TooltipHolder tooltipHolder = TooltipHolder.define(
+            TooltipEntry.define("pattern.tinkers_ingenuity.medal_body", "Medal Body"),
+            TooltipEntry.define("pattern.tinkers_ingenuity.medal_ribbons", "Medal Ribbons"),
             TooltipEntry.define("item.tinkers_ingenuity.tinkers_medal", "Tinkers Medal"),
             TooltipEntry.define("item.tinkers_ingenuity.tinkers_medal.description",
                     "A modular cosmetic created by a craftsman that uses two pieces that can be worn in the amulet position and increase the wearer's stats based on stats."));
 
     private void addAttributeStats(ToolStack curio, UUID uuid, Multimap<Attribute, AttributeModifier> map) {
         StatsNBT stats = curio.getStats();
-        map.put(Attributes.MOVEMENT_SPEED, new AttributeModifier(uuid, "curio_speed_stat", (double) stats.get(TIToolStats.CURIO_MOVEMENT_SPEED), Operation.MULTIPLY_BASE));
-        map.put(Attributes.MAX_HEALTH, new AttributeModifier(uuid, "curio_max_health_stat", (double) stats.get(TIToolStats.CURIO_MAX_HEALTH), Operation.ADDITION));
-        map.put(Attributes.ARMOR, new AttributeModifier(uuid, "curio_armor_stat", (double) stats.get(TIToolStats.CURIO_ARMOR), Operation.MULTIPLY_BASE));
-        map.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, "curio_attack_stat", (double) stats.get(TIToolStats.CURIO_MELEE_ATTACK), Operation.MULTIPLY_BASE));
+        AttrModifierEntry.builder().uuid(uuid)
+                .attr(Attributes.MOVEMENT_SPEED).name("curio_speed_stat").value(stats.get(TIToolStats.CURIO_MOVEMENT_SPEED))
+                .operation(1).toMap(map).attr(Attributes.MAX_HEALTH).name("curio_max_health_stat").value(stats.get(TIToolStats.CURIO_MAX_HEALTH))
+                .operation(0).toMap(map).attr(Attributes.ARMOR).name("curio_armo_stat").value(stats.get(TIToolStats.CURIO_ARMOR))
+                .operation(1).toMap(map).attr(Attributes.ATTACK_DAMAGE).name("curio_attack_stat").value(stats.get(TIToolStats.CURIO_MELEE_ATTACK))
+                .operation(1).toMap(map);
     }
 
     @Override
@@ -120,6 +124,13 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
         for (ModifierEntry entry : tool.getModifiers()) {
             TinkersCurioModifierHook hook = entry.getHook(TIHooks.TINKERS_CURIO);
             hook.addAttributes(tool, entry.getLevel(), uuid, map::put);
+        }
+        AttrModifierEntry builder = AttrModifierEntry.builder();
+        if (tool.hasModifier(ModifierIds.reach)) {
+            builder.attr(ForgeMod.ENTITY_REACH.get()).name("modifier_entity_reach_bonus").uuid(uuid)
+                    .value(tool.getModifierLevel(ModifierIds.reach)).toMap(map);
+            builder.attr(ForgeMod.BLOCK_REACH.get()).name("modifier_block_reach_bonus").uuid(uuid)
+                    .value(tool.getModifierLevel(ModifierIds.reach)).toMap(map);
         }
         return map;
     }

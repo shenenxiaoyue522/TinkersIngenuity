@@ -16,6 +16,18 @@ public class TIMaterialStatGen extends AbstractMaterialStatsDataProvider {
         super(packOutput, materials);
     }
 
+    private void addVanillaCurioMaterialStats() {
+        this.addAllCurioPart(MaterialIds.wood, 0.01f, 0.0f, 0.02f, 0.03f, 0.03f);
+        this.addAllCurioPart(MaterialIds.bone, 0.03f, 2.0f, 0.05f, 0.08f, 0.06f);
+        this.addAllCurioPart(MaterialIds.flint, 0.0f, 0.0f, 0.04f, 0.05f, 0.04f);
+        this.addAllCurioPart(MaterialIds.copper, 0.04f, 4.0f, 0.08f, 0.07f, 0.05f);
+        this.addAllCurioPart(MaterialIds.necroticBone, 0.02f, 7.0f, 0.08f, 0.09f, 0.08f);
+        this.addAllCurioPart(MaterialIds.amethystBronze, 0.06f, 8.0f, 0.12f, 0.12f, 0.1f);
+        this.addAllCurioPart(MaterialIds.obsidian, -0.02f, 8.0f, 0.15f, 0.13f, 0.12f);
+        this.addAllCurioPart(MaterialIds.cobalt, 0.1f, 10.0f, 0.18f, 0.13f, 0.11f);
+        this.addAllCurioPart(MaterialIds.manyullyn, 0.05f, 12.0f, 0.2f, 0.18f, 0.16f);
+    }
+
     @Override
     protected void addMaterialStats() {
         for(TIMaterials mate : TIMaterials.values()) {
@@ -30,18 +42,6 @@ public class TIMaterialStatGen extends AbstractMaterialStatsDataProvider {
             }
         }
         this.addVanillaCurioMaterialStats();
-    }
-
-    private void addVanillaCurioMaterialStats() {
-        this.addAllCurioPart(MaterialIds.wood, 0.01f, 0.0f, 0.02F, 0.03F, 0.03F);
-        this.addAllCurioPart(MaterialIds.bone, 0.03F, 2.0F, 0.05F, 0.08F, 0.06F);
-        this.addAllCurioPart(MaterialIds.flint, 0.0F, 0.0F, 0.04F, 0.05F, 0.04F);
-        this.addAllCurioPart(MaterialIds.copper, 0.04F, 4.0F, 0.08F, 0.07F, 0.05F);
-        this.addAllCurioPart(MaterialIds.necroticBone, 0.02F, 7.0F, 0.08F, 0.09F, 0.08F);
-        this.addAllCurioPart(MaterialIds.amethystBronze, 0.06F, 8.0F, 0.12F, 0.12F, 0.1F);
-        this.addAllCurioPart(MaterialIds.obsidian, -0.02F, 8.0F, 0.15F, 0.13F, 0.12F);
-        this.addAllCurioPart(MaterialIds.cobalt, 0.1F, 10.0F, 0.18F, 0.13F, 0.11F);
-        this.addAllCurioPart(MaterialIds.manyullyn, 0.05F, 12.0F, 0.2F, 0.18F, 0.16F);
     }
 
     public void addAllCurioPart(MaterialId mat, float speed, float hp, float armor, float melee, float proj) {

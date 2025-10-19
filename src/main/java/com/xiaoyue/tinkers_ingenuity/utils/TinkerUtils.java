@@ -1,8 +1,11 @@
 package com.xiaoyue.tinkers_ingenuity.utils;
 
+import com.xiaoyue.celestial_invoker.invoker.tooltip.SubscribeTooltip;
+import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipEntry;
 import com.xiaoyue.tinkers_ingenuity.content.generic.MeleeCacheCapability;
 import com.xiaoyue.tinkers_ingenuity.content.shared.holder.EquipmentHolder;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -15,6 +18,7 @@ import net.minecraft.world.item.ItemStack;
 import slimeknights.tconstruct.common.TinkerTags.Items;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 import slimeknights.tconstruct.library.materials.definition.MaterialVariant;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
@@ -41,6 +45,16 @@ import java.util.function.Consumer;
 public class TinkerUtils {
 
     public static final DecimalFormat VALUE_FORMAT = new DecimalFormat("#.##");
+
+    @SubscribeTooltip(id = "modifier_bonus")
+    public static TooltipEntry modifierBonusTifo = TooltipEntry.define("%s: Increases %s by %s");
+
+    public static MutableComponent getModifierBonusTifo(Modifier modifier, FloatToolStat stat, float bonus, boolean mul) {
+        MutableComponent bonusText = mul ? Component.literal(bonus * 100 + "%") : Component.literal(bonus + "");
+        MutableComponent modifierText = Component.translatable(modifier.getTranslationKey());
+        MutableComponent statText = Component.translatable(stat.getTranslationKey());
+        return modifier.applyStyle(modifierBonusTifo.get(modifierText, statText, modifier.applyStyle(bonusText)));
+    }
 
     public static boolean checkTool(ItemStack stack) {
         if (!stack.isEmpty() && stack.is(Items.MODIFIABLE)) {

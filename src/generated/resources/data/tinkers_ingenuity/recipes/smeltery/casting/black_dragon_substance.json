@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "minecraft:dragon_head"
+  },
+  "cast_consumed": true,
+  "cooling_time": 30,
+  "fluid": {
+    "amount": 300,
+    "tag": "forge:black_dragon_gene"
+  },
+  "result": "tinkers_ingenuity:black_dragon_substance"
+}

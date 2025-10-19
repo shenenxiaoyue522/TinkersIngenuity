@@ -51,7 +51,7 @@ public record MixedModificationModule(IJsonPredicate<LivingEntity> holder, Multi
     }
 
     @Override
-    public void onBreakSpeed(IToolStackView tool, ModifierEntry modifier, PlayerEvent.BreakSpeed event, Direction direction, boolean isEffective, float mul) {
+    public void onBreakSpeed(IToolStackView tool, ModifierEntry modifier, PlayerEvent.BreakSpeed event, Direction sideHit, boolean effective, float mul) {
         if (this.test(event.getEntity(), this.holder)) {
             event.setNewSpeed(this.bonus.apply(event.getNewSpeed(), modifier));
         }

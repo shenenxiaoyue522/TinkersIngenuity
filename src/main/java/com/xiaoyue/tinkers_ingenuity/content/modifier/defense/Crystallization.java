@@ -1,16 +1,15 @@
 package com.xiaoyue.tinkers_ingenuity.content.modifier.defense;
 
+import com.xiaoyue.celestial_invoker.content.ancillary.entry.AttrModifierEntry;
 import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import com.xiaoyue.tinkers_ingenuity.content.generic.ISimpleModule;
 import com.xiaoyue.tinkers_ingenuity.content.generic.SerialLoader;
-import dev.xkmc.l2library.util.math.MathHelper;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -59,18 +58,15 @@ public record Crystallization(int time, double chance, int max, float bonus)
         }
     }
 
-    public void acceptAttr(BiConsumer<Attribute, AttributeModifier> cons, Attribute attr, ResourceLocation key, double amount, int lv, int operation) {
-        cons.accept(attr, new AttributeModifier(MathHelper.getUUIDFromString(key.toString()), key.toString(), amount * (double) lv, Operation.fromValue(operation)));
-    }
-
     @Override
     public void addAttributes(IToolStackView tool, ModifierEntry modifier, EquipmentSlot slot, BiConsumer<Attribute, AttributeModifier> cons) {
         ModDataNBT data = tool.getPersistentData();
         if (slot.isArmor()) {
-            this.acceptAttr(cons, Attributes.ARMOR_TOUGHNESS, KEY, this.bonus * (float) data.getInt(KEY), modifier.getLevel(), 2);
-            this.acceptAttr(cons, Attributes.MOVEMENT_SPEED, KEY, this.bonus * (float) data.getInt(KEY), modifier.getLevel(), 2);
+            float bonus = this.bonus * (float) data.getInt(KEY) * modifier.getLevel();
+            AttrModifierEntry.builder()
+                    .attr(Attributes.ARMOR_TOUGHNESS).nameWithUUID(KEY).value(bonus).operation(2).toCons(cons)
+                    .attr(Attributes.MOVEMENT_SPEED).nameWithUUID(KEY).value(bonus / 2).operation(2).toCons(cons);
         }
-
     }
 
     @Override

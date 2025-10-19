@@ -33,7 +33,7 @@ public class FreshWater extends SimpleModifier implements MenuSlotClickModifierH
     }
 
     @Override
-    protected void addHooks(ModuleHookMap.Builder builder) {
+    public void addHooks(ModuleHookMap.Builder builder) {
         builder.addHook(this, TIHooks.MENU_SLOT_CLICK);
     }
 
@@ -56,7 +56,7 @@ public class FreshWater extends SimpleModifier implements MenuSlotClickModifierH
     public void updateStats(ToolStack tool, ToolStack target) {
         ItemStack stack = tool.createStack();
         CompoundTag tag = stack.getOrCreateTag();
-        if (tool.getDefinition().equals(target.getDefinition()) && target.getUpgrades().isEmpty()) {
+        if (tool.getDefinition().equals(target.getDefinition()) && target.getUpgrades().isEmpty() && target.getModifierLevel(this) < 1) {
             tag.put(TAG_COPY_STATS, target.getStats().serializeToNBT());
             tag.put(TAG_COPY_MULTIPLIERS, target.getMultipliers().serializeToNBT());
             tool.rebuildStats();

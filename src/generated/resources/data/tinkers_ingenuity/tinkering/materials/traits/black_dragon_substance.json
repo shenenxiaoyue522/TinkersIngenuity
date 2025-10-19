@@ -1,3 +1,12 @@
 {
-  "default": []
+  "default": [
+    {
+      "level": 1,
+      "name": "tinkers_ingenuity:alien"
+    },
+    {
+      "level": 1,
+      "name": "tinkers_ingenuity:black_wings"
+    }
+  ]
 }

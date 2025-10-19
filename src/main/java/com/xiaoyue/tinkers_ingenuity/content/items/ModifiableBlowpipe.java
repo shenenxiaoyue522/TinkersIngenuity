@@ -36,6 +36,8 @@ public class ModifiableBlowpipe extends ModifiableLauncherItem {
 
     @SubscribeTooltip
     public static TooltipHolder tooltipHolder = TooltipHolder.define(
+            TooltipEntry.define("pattern.tinkers_ingenuity.blowpipe_mouth", "Blowpipe Mouth"),
+            TooltipEntry.define("pattern.tinkers_ingenuity.blowpipe_tube", "Blowpipe Tube"),
             TooltipEntry.define("item.tinkers_ingenuity.blowpipe", "Blowpipe"),
             TooltipEntry.define("item.tinkers_ingenuity.blowpipe.description",
                     "A modular ranged weapon that fires in bursts using two parts, but fires arrows at a low velocity."));

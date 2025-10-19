@@ -29,7 +29,11 @@
     "golden": "#dfd200",
     "mysterious": "#1fa8b1",
     "dexterous": "#1fa8b1",
-    "demonic": "#1fa8b1"
+    "demonic": "#1fa8b1",
+    "black_wings": "#573e63",
+    "alien": "#573e63",
+    "scholar": "#5dd100",
+    "flame_heart": "#d14300"
   },
   "material.tinkers_ingenuity": {
     "black_gold": "#52476b",
@@ -41,6 +45,7 @@
     "plague_bone": "#3f714c",
     "colorful_slime": "#836492",
     "knight_crystal": "#956bde",
-    "mithril": "#1fa8b1"
+    "mithril": "#1fa8b1",
+    "black_dragon_substance": "#573e63"
   }
 }

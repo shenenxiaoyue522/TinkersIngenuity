@@ -12,8 +12,6 @@ import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickM
 import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-import java.util.function.Predicate;
-
 public class Spotless extends SimpleModifier implements InventoryTickModifierHook {
     
     @Override
@@ -22,16 +20,18 @@ public class Spotless extends SimpleModifier implements InventoryTickModifierHoo
     }
 
     @Override
-    protected void addHooks(ModuleHookMap.Builder builder) {
+    public void addHooks(ModuleHookMap.Builder builder) {
         builder.addHook(this, ModifierHooks.INVENTORY_TICK);
     }
 
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level level, LivingEntity entity, int index, boolean select, boolean current, ItemStack stack) {
         if (current) {
-            Predicate<MobEffectInstance> predicate = (ins) -> ins.getEffect().getCategory().equals(MobEffectCategory.HARMFUL);
-            entity.getActiveEffects().removeIf(predicate);
+            for (MobEffectInstance effect : entity.getActiveEffects()) {
+                if (effect.getEffect().getCategory().equals(MobEffectCategory.HARMFUL)) {
+                    entity.removeEffect(effect.getEffect());
+                }
+            }
         }
-
     }
 }

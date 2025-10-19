@@ -2,6 +2,7 @@ package com.xiaoyue.tinkers_ingenuity.register;
 
 import com.xiaoyue.tinkers_ingenuity.content.modifier.defense.PastMemories;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.defense.Spotless;
+import com.xiaoyue.tinkers_ingenuity.content.modifier.general.BlackWings;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.general.EnderResonance;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.general.FreshWater;
 import com.xiaoyue.tinkers_ingenuity.data.modifier.TIModifierData;
@@ -17,6 +18,7 @@ public class TIModifiers {
         modifier(event, TIModifierData.SPOTLESS, Spotless::new);
         modifier(event, TIModifierData.ENDER_RESONANCE, EnderResonance::new);
         modifier(event, TIModifierData.FRESH_WATER, FreshWater::new);
+        modifier(event, TIModifierData.BLACK_WINGS, BlackWings::new);
     }
 
     public static <T extends Modifier> void modifier(ModifierManager.ModifierRegistrationEvent event, TIModifierData id, Supplier<T> modifier) {

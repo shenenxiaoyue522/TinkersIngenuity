@@ -2,12 +2,28 @@ package com.xiaoyue.tinkers_ingenuity.content.shared.holder;
 
 import net.minecraft.world.item.ItemStack;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
-import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
-import slimeknights.tconstruct.library.tools.nbt.ToolStack;
+import slimeknights.tconstruct.library.tools.definition.ToolDefinition;
+import slimeknights.tconstruct.library.tools.nbt.*;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.SlotResult;
 
 public record CurioStackView(ItemStack stack, ToolStack tool, SlotContext context) {
+
+    public ModDataNBT getToolData() {
+        return tool.getPersistentData();
+    }
+
+    public StatsNBT getStats() {
+        return tool.getStats();
+    }
+
+    public MultiplierNBT getMultipliers() {
+        return tool.getMultipliers();
+    }
+
+    public ToolDefinition getDefinition() {
+        return tool.getDefinition();
+    }
 
     public ModifierNBT getModifiers() {
         return this.tool.getModifiers();

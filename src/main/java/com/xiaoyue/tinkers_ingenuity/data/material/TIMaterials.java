@@ -92,7 +92,7 @@ public enum TIMaterials {
             .desc(b -> b
                     .encyclopedia("Reduces durability by 49% and increases attack damage and mining speed by 49%. Your attacks are immune to damage that pierces the target.")
                     .ranged("Durability is reduced by 49% and projectile damage is increased by 49%. Your attacks are immune to damage that pierces the target.")
-                    .armor("You will be immune to negative effects. Every 45 seconds, there is a 45% chance to increase armor by 2%, tenacity, and movement speed by 1%, and this effect can stack up to 10 times."))
+                    .armor("You will be immune to the infestation of negative effects. Every 45 seconds passes, there is a 45% chance to increase Armor Toughness by 2% and Movement Speed by 1%, increasing maximum growth by 10 per level."))
             .definition(MaterialDefinitionData.Builder::craftable)
             .statAndShield(plat(40f).armor(3.0F, 5.0F, 7.0F, 3.0F).toughness(3.0F).knockbackResistance(0.1F),
                     head(1300, 8.0F, Tiers.NETHERITE, 7.5F),
@@ -154,6 +154,7 @@ public enum TIMaterials {
             .desc(b -> b
                     .encyclopedia("When attacking, increases the user's damage absorption by 1 per level, up to a maximum of 200% of maximum health, and when dealing a critical hit, all damage absorption is consumed and each damage absorbed is increased by 3%.")
                     .armor("When attacked, the wearer's damage absorption is increased by 1 point per level, up to a maximum of 200% of the wearer's maximum health, and the damage taken this time with damage absorption will not exceed 45% of the wearer's maximum health."))
+            .definition(b -> b.tier(4))
             .statAndShield(plat(50f).armor(3.0F, 5.0F, 7.0F, 3.0F).toughness(1.5F).knockbackResistance(0.1F),
                     head(1622, 7.5F, Tiers.NETHERITE, 3.95F),
                     handle().attackDamage(1.2F).durability(1.1F).miningSpeed(1.1F).build(),
@@ -172,6 +173,7 @@ public enum TIMaterials {
                     .encyclopedia("Each level increases 2 upgrade slots, increasing attack speed and mining speed by 12%.")
                     .ranged("Each level adds 2 upgrade slots and increases the initial velocity of arrows by 12%.")
                     .armor("Adds 2 upgrade slots per level, providing the wearer with 45% magic damage protection."))
+            .definition(b -> b.tier(4))
             .statAndShield(plat(34f).armor(2f, 5f, 7f, 2f).toughness(3f),
                     head(1055, 8f, Tiers.DIAMOND, 3.1f),
                     handle().attackDamage(0.95f).durability(1.1f).attackSpeed(1.2f).build(),
@@ -187,7 +189,10 @@ public enum TIMaterials {
     BLACK_DRAGON_SUBSTANCE(MaterialBuildHolder.builder("black_dragon_substance")
             .craftableMaterial(TIItems.BLACK_DRAGON_SUBSTANCE)
             .desc(b -> b
-                    .encyclopedia(""))
+                    .encyclopedia("At the cost of speeding up hunger, you have the ability to fly. Every 20 seconds, there is a chance to increase the attack damage, attack speed, and digging speed of this tool by 1%, and increase the maximum number of growth by 50 per level")
+                    .ranged("At the cost of speeding up hunger, you have the ability to fly. Every 20 seconds, there is a chance to increase the projectile damage, bow draw speed, and initial speed of this tool by 1%, and increase the maximum growth of each level by 50")
+                    .armor("At the cost of speeding up hunger, you have the ability to fly. Every 20 seconds, there is a chance to increase the weapon's armor, armor toughness, and knockback resistance by 1% by 1%, increasing the maximum growth of each level by 50"))
+            .definition(b -> b.tier(4).craftable())
             .statAndShield(plat(25).armor(3f, 6f, 8f, 3f).toughness(2f),
                     head(775, 7.5f, Tiers.NETHERITE, 3.5f),
                     handle().attackDamage(1.1f).durability(0.9f).durability(1.2f).build(),
@@ -195,7 +200,7 @@ public enum TIMaterials {
                     limb(775, 0.1f, 0.2f, -0.05f),
                     grip(0.2f, 3.2f, 0.04f),
                     StatlessMaterialStats.MAILLE)
-            .trait(b -> b.addDefault())
+            .trait(b -> b.addDefault(TIModifierData.ALIEN.asEntry(), TIModifierData.BLACK_WINGS.asEntry()))
             .render(b -> b.color(0xff573e63).fallbacks("bone", "metal")
                     .sprite(b.color(0xff271430, 0xff3e2848, 0xff45304f, 0xff6a4c78, 0xff834b9c, 0xffb373d1)))),
     ;

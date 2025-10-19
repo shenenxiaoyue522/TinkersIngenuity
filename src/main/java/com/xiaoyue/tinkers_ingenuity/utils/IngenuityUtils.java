@@ -7,6 +7,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 
 public class IngenuityUtils {
+
     public static void teleportHome(LivingEntity entity) {
         Level level = entity.level();
         if (level instanceof ServerLevel sl) {

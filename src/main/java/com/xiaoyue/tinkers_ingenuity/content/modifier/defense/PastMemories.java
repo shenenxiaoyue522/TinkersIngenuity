@@ -22,7 +22,7 @@ public class PastMemories extends SimpleModifier implements LivingEventModifierH
     }
 
     @Override
-    protected void addHooks(ModuleHookMap.Builder builder) {
+    public void addHooks(ModuleHookMap.Builder builder) {
         builder.addHook(this, TIHooks.LIVING_EVENT);
     }
 
@@ -31,11 +31,11 @@ public class PastMemories extends SimpleModifier implements LivingEventModifierH
         LivingEntity entity = context.getEntity();
         ToolStack slotTool = TinkerUtils.getReciprocalSlotArmor(entity);
         if (slotTool != null) {
-            if (this.noCD(slotTool, entity) && this.hasThis(slotTool)) {
+            if (this.noGenericCD(slotTool, entity) && this.hasThis(slotTool)) {
                 event.setCanceled(true);
                 entity.setHealth(5.0F);
                 IngenuityUtils.teleportHome(entity);
-                this.addCD(slotTool, entity, 6000);
+                this.addGenericCD(slotTool, entity, 6000);
             }
 
         }

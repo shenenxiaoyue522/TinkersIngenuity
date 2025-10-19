@@ -20,15 +20,15 @@ public abstract class SimpleModifier extends Modifier implements ModifierRemoval
     }
 
     @Override
-    public @NotNull Component getDisplayName(int level) {
+    public final @NotNull Component getDisplayName(int level) {
         return this.isSingleLevel() ? super.getDisplayName() : super.getDisplayName(level);
     }
 
-    protected void addHooks(ModuleHookMap.Builder builder) {
+    public void addHooks(ModuleHookMap.Builder builder) {
     }
 
     @Override
-    public void registerHooks(ModuleHookMap.Builder builder) {
+    public final void registerHooks(ModuleHookMap.Builder builder) {
         builder.addHook(this, ModifierHooks.REMOVE);
         this.addHooks(builder);
     }
@@ -53,14 +53,13 @@ public abstract class SimpleModifier extends Modifier implements ModifierRemoval
         return chance >= TConstruct.RANDOM.nextDouble();
     }
 
-    public void addCD(IToolStackView tool, LivingEntity entity, int time) {
+    public void addGenericCD(IToolStackView tool, LivingEntity entity, int time) {
         if (entity instanceof Player player) {
             player.getCooldowns().addCooldown(tool.getItem(), time);
         }
-
     }
 
-    public boolean noCD(IToolStackView tool, LivingEntity entity) {
+    public boolean noGenericCD(IToolStackView tool, LivingEntity entity) {
         if (entity instanceof Player player) {
             return !player.getCooldowns().isOnCooldown(tool.getItem());
         } else {

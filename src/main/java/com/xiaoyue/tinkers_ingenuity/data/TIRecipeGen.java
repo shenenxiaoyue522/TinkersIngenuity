@@ -36,6 +36,7 @@ import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.shared.TinkerMaterials;
 import slimeknights.tconstruct.shared.block.SlimeType;
 import slimeknights.tconstruct.tools.TinkerModifiers;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 import slimeknights.tconstruct.world.TinkerWorld;
 
 import java.util.List;
@@ -84,6 +85,12 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         ModifierRecipeBuilder.modifier(TIModifierData.GOLDEN.getId()).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
                 .addInput(Items.GOLD_INGOT).addInput(Items.BLACKSTONE)
                 .save(cons, this.prefix(TIModifierData.GOLDEN.getId(), curio_upgrade));
+        ModifierRecipeBuilder.modifier(TIModifierData.FLAME_HEART.getId()).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
+                .addInput(Ingredient.of(Items.NETHERITE_INGOT)).addInput(Items.OBSIDIAN).addInput(Items.MAGMA_CREAM)
+                .save(cons, this.prefix(TIModifierData.FLAME_HEART.getId(), curio_ability));
+        ModifierRecipeBuilder.modifier(ModifierIds.reach).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
+                .addInput(Items.PISTON).addInput(Items.PISTON).addInput(TinkerMaterials.queensSlime.getIngotTag())
+                .addInput(Items.SLIME_BALL).addInput(Items.SLIME_BALL).save(cons, this.prefix(ModifierIds.reach, curio_ability));
     }
 
     protected void materialBuildRecipe(Consumer<FinishedRecipe> cons) {
@@ -182,6 +189,10 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
                 .setFluid(TinkerFluids.moltenGlass.ingredient(2000))
                 .setCoolingTime(80)
                 .save(cons, this.prefix(TIItems.COLOURED_GLAZE_STAR.getId(), casting));
+        ItemCastingRecipeBuilder.tableRecipe(TIItems.BLACK_DRAGON_SUBSTANCE).setCast(Items.DRAGON_HEAD, true)
+                .setFluid(TIFluids.BLACK_DRAGON_GENE.ingredient(300))
+                .setCoolingTime(30)
+                .save(cons, this.prefix(TIItems.BLACK_DRAGON_SUBSTANCE.getId(), casting));
 
         MeltingRecipeBuilder.melting(Ingredient.of(TinkerModifiers.dragonScale),
                         TIFluids.BLACK_DRAGON_GENE.result(75), 1800, 20)
