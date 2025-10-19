@@ -30,7 +30,7 @@ public class Spotless extends SimpleModifier implements InventoryTickModifierHoo
 
     @Override
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level level, LivingEntity entity, int index, boolean select, boolean current, ItemStack stack) {
-        if (current && entity.tickCount % 20 == 0) {
+        if (current) {
             List<MobEffect> list = new ArrayList<>();
             for (MobEffectInstance effect : entity.getActiveEffects()) {
                 if (effect.getEffect().getCategory().equals(MobEffectCategory.HARMFUL)) {
