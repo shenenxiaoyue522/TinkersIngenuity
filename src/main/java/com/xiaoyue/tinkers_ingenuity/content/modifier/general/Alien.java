@@ -1,6 +1,6 @@
 package com.xiaoyue.tinkers_ingenuity.content.modifier.general;
 
-import com.xiaoyue.celestial_invoker.content.ancillary.entry.AttrModifierEntry;
+import com.xiaoyue.celestial_invoker.content.ancillary.entry.AttributeAdder;
 import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import com.xiaoyue.tinkers_ingenuity.content.generic.ISimpleModule;
 import com.xiaoyue.tinkers_ingenuity.content.generic.SerialLoader;
@@ -125,15 +125,15 @@ public record Alien(float bonus, int max, int bonusInterval)
     public void addAttributes(IToolStackView tool, ModifierEntry modifier, EquipmentSlot slot, BiConsumer<Attribute, AttributeModifier> cons) {
         if (slot.equals(LivingEntity.getEquipmentSlotForItem(((ToolStack) tool).createStack()))) {
             if (tool.hasTag(TinkerTags.Items.MELEE_PRIMARY)) {
-                AttrModifierEntry.builder().attr(Attributes.ATTACK_SPEED).nameWithUUID(TAG_BONUS_2).value(getBonus(tool, TAG_BONUS_2))
+                AttributeAdder.builder().attr(Attributes.ATTACK_SPEED).nameWithUUID(TAG_BONUS_2).value(getBonus(tool, TAG_BONUS_2))
                         .operation(1).toCons(cons);
             }
             if (tool.hasTag(TinkerTags.Items.ARMOR)) {
-                AttrModifierEntry.builder().attr(Attributes.ARMOR).nameWithUUID(TAG_BONUS_1).value(getBonus(tool, TAG_BONUS_1))
+                AttributeAdder.builder().attr(Attributes.ARMOR).nameWithUUID(TAG_BONUS_1).value(getBonus(tool, TAG_BONUS_1))
                         .operation(1).toCons(cons);
-                AttrModifierEntry.builder().attr(Attributes.ARMOR_TOUGHNESS).nameWithUUID(TAG_BONUS_2).value(getBonus(tool, TAG_BONUS_2))
+                AttributeAdder.builder().attr(Attributes.ARMOR_TOUGHNESS).nameWithUUID(TAG_BONUS_2).value(getBonus(tool, TAG_BONUS_2))
                         .operation(1).toCons(cons);
-                AttrModifierEntry.builder().attr(Attributes.KNOCKBACK_RESISTANCE).nameWithUUID(TAG_BONUS_3).value(getBonus(tool, TAG_BONUS_3))
+                AttributeAdder.builder().attr(Attributes.KNOCKBACK_RESISTANCE).nameWithUUID(TAG_BONUS_3).value(getBonus(tool, TAG_BONUS_3))
                         .operation(1).toCons(cons);
             }
         }

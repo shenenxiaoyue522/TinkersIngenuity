@@ -1,6 +1,6 @@
 package com.xiaoyue.tinkers_ingenuity.content.modifier.defense;
 
-import com.xiaoyue.celestial_invoker.content.ancillary.entry.AttrModifierEntry;
+import com.xiaoyue.celestial_invoker.content.ancillary.entry.AttributeAdder;
 import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import com.xiaoyue.tinkers_ingenuity.content.generic.ISimpleModule;
 import com.xiaoyue.tinkers_ingenuity.content.generic.SerialLoader;
@@ -63,7 +63,7 @@ public record Crystallization(int time, double chance, int max, float bonus)
         ModDataNBT data = tool.getPersistentData();
         if (slot.isArmor()) {
             float bonus = this.bonus * (float) data.getInt(KEY) * modifier.getLevel();
-            AttrModifierEntry.builder()
+            AttributeAdder.builder()
                     .attr(Attributes.ARMOR_TOUGHNESS).nameWithUUID(KEY).value(bonus).operation(2).toCons(cons)
                     .attr(Attributes.MOVEMENT_SPEED).nameWithUUID(KEY).value(bonus / 2).operation(2).toCons(cons);
         }

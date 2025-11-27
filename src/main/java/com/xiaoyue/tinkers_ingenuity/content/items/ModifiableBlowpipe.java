@@ -35,7 +35,7 @@ public class ModifiableBlowpipe extends ModifiableLauncherItem {
     }
 
     @SubscribeTooltip
-    public static TooltipHolder tooltipHolder = TooltipHolder.define(
+    public static TooltipHolder tooltips = TooltipHolder.define(
             TooltipEntry.define("pattern.tinkers_ingenuity.blowpipe_mouth", "Blowpipe Mouth"),
             TooltipEntry.define("pattern.tinkers_ingenuity.blowpipe_tube", "Blowpipe Tube"),
             TooltipEntry.define("item.tinkers_ingenuity.blowpipe", "Blowpipe"),

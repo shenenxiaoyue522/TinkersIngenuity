@@ -47,13 +47,13 @@ public class TinkerUtils {
     public static final DecimalFormat VALUE_FORMAT = new DecimalFormat("#.##");
 
     @SubscribeTooltip(id = "modifier_bonus")
-    public static TooltipEntry modifierBonusTifo = TooltipEntry.define("%s: Increases %s by %s");
+    public static TooltipEntry modifierBonusInfo = TooltipEntry.define("%s: Increases %s by %s");
 
     public static MutableComponent getModifierBonusTifo(Modifier modifier, FloatToolStat stat, float bonus, boolean mul) {
         MutableComponent bonusText = mul ? Component.literal(bonus * 100 + "%") : Component.literal(bonus + "");
         MutableComponent modifierText = Component.translatable(modifier.getTranslationKey());
         MutableComponent statText = Component.translatable(stat.getTranslationKey());
-        return modifier.applyStyle(modifierBonusTifo.get(modifierText, statText, modifier.applyStyle(bonusText)));
+        return modifier.applyStyle(modifierBonusInfo.get(modifierText, statText, modifier.applyStyle(bonusText)));
     }
 
     public static boolean checkTool(ItemStack stack) {

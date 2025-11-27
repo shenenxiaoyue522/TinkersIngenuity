@@ -15,10 +15,10 @@ import java.util.List;
 public class TISlotGen {
 
     @SubscribeTooltip(key = "curios.identifier.tinkers_curio")
-    public static TooltipEntry slot_tooltip = TooltipEntry.define("Tinkers Curio");
+    public static TooltipEntry slotInfo = TooltipEntry.define("Tinkers Curio");
 
     @SubscribeTooltip(key = "curios.modifiers.tinkers_curio")
-    public static TooltipEntry slot_modifier_tooltip = TooltipEntry.define("When worn as tinkers curio:");
+    public static TooltipEntry slotModifierInfo = TooltipEntry.define("When worn as tinkers curio:");
 
     public static void onRecordGen(RegistrateRecordDataProvider pvd) {
         pvd.map.put("tinkers_ingenuity/curios/slots/tinkers_curio",

@@ -2,7 +2,7 @@ package com.xiaoyue.tinkers_ingenuity.content.items;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
-import com.xiaoyue.celestial_invoker.content.ancillary.entry.AttrModifierEntry;
+import com.xiaoyue.celestial_invoker.content.ancillary.entry.AttributeAdder;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.SubscribeTooltip;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipEntry;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipHolder;
@@ -99,7 +99,7 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
     }
 
     @SubscribeTooltip
-    public static TooltipHolder tooltipHolder = TooltipHolder.define(
+    public static TooltipHolder tooltips = TooltipHolder.define(
             TooltipEntry.define("pattern.tinkers_ingenuity.medal_body", "Medal Body"),
             TooltipEntry.define("pattern.tinkers_ingenuity.medal_ribbons", "Medal Ribbons"),
             TooltipEntry.define("item.tinkers_ingenuity.tinkers_medal", "Tinkers Medal"),
@@ -108,7 +108,7 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
 
     private void addAttributeStats(ToolStack curio, UUID uuid, Multimap<Attribute, AttributeModifier> map) {
         StatsNBT stats = curio.getStats();
-        AttrModifierEntry.builder().uuid(uuid)
+        AttributeAdder.builder().uuid(uuid)
                 .attr(Attributes.MOVEMENT_SPEED).name("curio_speed_stat").value(stats.get(TIToolStats.CURIO_MOVEMENT_SPEED))
                 .operation(1).toMap(map).attr(Attributes.MAX_HEALTH).name("curio_max_health_stat").value(stats.get(TIToolStats.CURIO_MAX_HEALTH))
                 .operation(0).toMap(map).attr(Attributes.ARMOR).name("curio_armo_stat").value(stats.get(TIToolStats.CURIO_ARMOR))
@@ -125,7 +125,7 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
             TinkersCurioModifierHook hook = entry.getHook(TIHooks.TINKERS_CURIO);
             hook.addAttributes(tool, entry.getLevel(), uuid, map::put);
         }
-        AttrModifierEntry builder = AttrModifierEntry.builder();
+        AttributeAdder builder = AttributeAdder.builder();
         if (tool.hasModifier(ModifierIds.reach)) {
             builder.attr(ForgeMod.ENTITY_REACH.get()).name("modifier_entity_reach_bonus").uuid(uuid)
                     .value(tool.getModifierLevel(ModifierIds.reach)).toMap(map);

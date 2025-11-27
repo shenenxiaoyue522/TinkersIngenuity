@@ -3,6 +3,9 @@ package com.xiaoyue.tinkers_ingenuity.data;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.xiaoyue.celestial_invoker.content.ancillary.BindingHandler;
+import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
+import com.xiaoyue.tinkers_ingenuity.content.json.condition.TIMaterialCondition;
+import com.xiaoyue.tinkers_ingenuity.content.shared.holder.MaterialBuildHolder;
 import com.xiaoyue.tinkers_ingenuity.content.shared.material.MaterialRecipeData;
 import com.xiaoyue.tinkers_ingenuity.data.material.TIMaterials;
 import com.xiaoyue.tinkers_ingenuity.data.modifier.TIModifierData;
@@ -10,12 +13,17 @@ import com.xiaoyue.tinkers_ingenuity.register.TIFluids;
 import com.xiaoyue.tinkers_ingenuity.register.TIItems;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.crafting.CompoundIngredient;
+import slimeknights.mantle.recipe.data.ConsumerWrapperBuilder;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -26,27 +34,40 @@ import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.IToolRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
+import slimeknights.tconstruct.library.json.predicate.material.MaterialPredicate;
+import slimeknights.tconstruct.library.json.predicate.material.MaterialStatTypePredicate;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.fuel.MeltingFuelBuilder;
+import slimeknights.tconstruct.library.recipe.ingredient.MaterialValueIngredient;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.partbuilder.PartRecipeBuilder;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.shared.TinkerMaterials;
 import slimeknights.tconstruct.shared.block.SlimeType;
+import slimeknights.tconstruct.smeltery.TinkerSmeltery;
+import slimeknights.tconstruct.tables.TinkerTables;
 import slimeknights.tconstruct.tools.TinkerModifiers;
+import slimeknights.tconstruct.tools.TinkerToolParts;
+import slimeknights.tconstruct.tools.TinkerTools;
 import slimeknights.tconstruct.tools.data.ModifierIds;
+import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
 import slimeknights.tconstruct.world.TinkerWorld;
 
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
+import static com.tterrag.registrate.providers.RegistrateRecipeProvider.has;
 import static com.xiaoyue.celestial_invoker.content.ancillary.BindingHandler.unlock;
 
 public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper, IToolRecipeHelper {
+
     public static void acceptRecipe(RegistrateRecipeProvider pvd) {
-        (new TIRecipeGen()).onRecipeGen(pvd);
+        new TIRecipeGen().onRecipeGen(pvd);
     }
 
     private void vanillaRecipes(RegistrateRecipeProvider pvd) {
@@ -216,12 +237,86 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         return this.molten(consumer, fluid).castingFolder("smeltery/casting/metal").meltingFolder("smeltery/melting/metal");
     }
 
+    public void addMiscArmorRecipe(Consumer<FinishedRecipe> cons) {
+        String parts = "misc_armor/parts/";
+        for (TIMaterials value : TIMaterials.values()) {
+            String prefix = parts + value.asMate().getPath() + "/";
+            MaterialBuildHolder holder = value.holder;
+            if (holder.definition() != null && holder.definition().craftable() && holder.stats() != null) {
+                if (holder.stats().armor() != null) {
+                    PartRecipeBuilder.partRecipe(TinkerToolParts.maille.get())
+                            .setCost(2).setPattern(TinkerToolParts.maille.getId())
+                            .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS),
+                                    Ingredient.of(TinkerSmeltery.mailleCast.get())))
+                            .save(cons, prefix(TinkerToolParts.maille.getId(), prefix));
+                    PartRecipeBuilder.partRecipe(TinkerToolParts.plating.get(ArmorItem.Type.HELMET))
+                            .setCost(3).setPattern(TinkerToolParts.plating.get(ArmorItem.Type.HELMET).getStatType())
+                            .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS),
+                                    Ingredient.of(TinkerSmeltery.helmetPlatingCast.get())))
+                            .save(cons, prefix(TinkerToolParts.plating.get(ArmorItem.Type.HELMET).getStatType(), prefix));
+                    PartRecipeBuilder.partRecipe(TinkerToolParts.plating.get(ArmorItem.Type.CHESTPLATE))
+                            .setCost(6).setPattern(TinkerToolParts.plating.get(ArmorItem.Type.CHESTPLATE).getStatType())
+                            .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS),
+                                    Ingredient.of(TinkerSmeltery.chestplatePlatingCast.get())))
+                            .save(cons, prefix(TinkerToolParts.plating.get(ArmorItem.Type.CHESTPLATE).getStatType(), prefix));
+                    PartRecipeBuilder.partRecipe(TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS))
+                            .setCost(5).setPattern(TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS).getStatType())
+                            .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS),
+                                    Ingredient.of(TinkerSmeltery.leggingsPlatingCast.get())))
+                            .save(cons, prefix(TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS).getStatType(), prefix));
+                    PartRecipeBuilder.partRecipe(TinkerToolParts.plating.get(ArmorItem.Type.BOOTS))
+                            .setCost(3).setPattern(TinkerToolParts.plating.get(ArmorItem.Type.BOOTS).getStatType())
+                            .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS),
+                                    Ingredient.of(TinkerSmeltery.bootsPlatingCast.get())))
+                            .save(cons, prefix(TinkerToolParts.plating.get(ArmorItem.Type.BOOTS).getStatType(), prefix));
+                }
+            }
+        }
+        // travelers
+        Consumer<FinishedRecipe> shapedMaterial = ConsumerWrapperBuilder.wrap(TinkerTables.shapedMaterialRecipeSerializer.get()).build(cons);
+        Function<MaterialStatsId, Ingredient> materialsCosting = type -> MaterialValueIngredient.of(MaterialPredicate.and(TIMaterialCondition.NO_MOLTEN_INGENUITY_MATERIAL,
+                new MaterialStatTypePredicate(type)), 1);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, TinkerTools.travelersGear.get(ArmorItem.Type.HELMET))
+                .pattern("l l")
+                .pattern("glg")
+                .pattern("c c")
+                .define('c', materialsCosting.apply(PlatingMaterialStats.HELMET.getId()))
+                .define('l', Tags.Items.LEATHER)
+                .define('g', Tags.Items.GLASS_PANES_COLORLESS)
+                .unlockedBy("has_item", has(Tags.Items.LEATHER))
+                .save(shapedMaterial, TinkersIngenuity.loc("misc_armor/ingenuity_travelers_goggles"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, TinkerTools.travelersGear.get(ArmorItem.Type.CHESTPLATE))
+                .pattern("l l")
+                .pattern("lcl")
+                .pattern("lcl")
+                .define('c', materialsCosting.apply(PlatingMaterialStats.CHESTPLATE.getId()))
+                .define('l', Tags.Items.LEATHER)
+                .unlockedBy("has_item", has(Tags.Items.LEATHER))
+                .save(shapedMaterial, TinkersIngenuity.loc("misc_armor/ingenuity_travelers_chestplate"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, TinkerTools.travelersGear.get(ArmorItem.Type.LEGGINGS))
+                .pattern("lll")
+                .pattern("c c")
+                .pattern("l l")
+                .define('c', materialsCosting.apply(PlatingMaterialStats.LEGGINGS.getId()))
+                .define('l', Tags.Items.LEATHER)
+                .unlockedBy("has_item", has(Tags.Items.LEATHER))
+                .save(shapedMaterial, TinkersIngenuity.loc("misc_armor/ingenuity_travelers_pants"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, TinkerTools.travelersGear.get(ArmorItem.Type.BOOTS))
+                .pattern("c c")
+                .pattern("l l")
+                .define('c', materialsCosting.apply(PlatingMaterialStats.BOOTS.getId()))
+                .define('l', Tags.Items.LEATHER)
+                .unlockedBy("has_item", has(Tags.Items.LEATHER))
+                .save(shapedMaterial, TinkersIngenuity.loc("misc_armor/ingenuity_travelers_boots"));
+    }
+
     public void onRecipeGen(RegistrateRecipeProvider pvd) {
         this.vanillaRecipes(pvd);
         this.modifierRecipe(pvd);
         this.materialBuildRecipe(pvd);
         this.partToolRecipes(pvd);
         this.smelteryRecipes(pvd);
+        this.addMiscArmorRecipe(pvd);
     }
 
     @Override
