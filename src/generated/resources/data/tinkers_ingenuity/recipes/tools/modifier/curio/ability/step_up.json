@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:scaffolding"
+    },
+    {
+      "item": "minecraft:scaffolding"
+    }
+  ],
+  "result": "tconstruct:step_up",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "tag": "tinkers_ingenuity:modifiable_curio"
+  }
+}
