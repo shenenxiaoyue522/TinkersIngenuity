@@ -108,12 +108,15 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
 
     private void addAttributeStats(ToolStack curio, UUID uuid, Multimap<Attribute, AttributeModifier> map) {
         StatsNBT stats = curio.getStats();
-        AttributeAdder.builder().uuid(uuid)
-                .attr(Attributes.MOVEMENT_SPEED).name("curio_speed_stat").value(stats.get(TIToolStats.CURIO_MOVEMENT_SPEED))
-                .operation(1).toMap(map).attr(Attributes.MAX_HEALTH).name("curio_max_health_stat").value(stats.get(TIToolStats.CURIO_MAX_HEALTH))
-                .operation(0).toMap(map).attr(Attributes.ARMOR).name("curio_armo_stat").value(stats.get(TIToolStats.CURIO_ARMOR))
-                .operation(1).toMap(map).attr(Attributes.ATTACK_DAMAGE).name("curio_attack_stat").value(stats.get(TIToolStats.CURIO_MELEE_ATTACK))
-                .operation(1).toMap(map);
+        AttributeAdder builder = AttributeAdder.builder().uuid(uuid);
+        builder.attr(Attributes.MOVEMENT_SPEED).name("curio_speed_stat")
+                .value(stats.get(TIToolStats.CURIO_MOVEMENT_SPEED)).operation(1).toMap(map)
+                .attr(Attributes.MAX_HEALTH).name("curio_max_health_stat")
+                .value(stats.get(TIToolStats.CURIO_MAX_HEALTH)).operation(0).toMap(map)
+                .attr(Attributes.ARMOR).name("curio_armo_stat")
+                .value(stats.get(TIToolStats.CURIO_ARMOR)).operation(1).toMap(map)
+                .attr(Attributes.ATTACK_DAMAGE).name("curio_attack_stat")
+                .value(stats.get(TIToolStats.CURIO_MELEE_ATTACK)).operation(1).toMap(map);
     }
 
     @Override
@@ -125,12 +128,20 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
             TinkersCurioModifierHook hook = entry.getHook(TIHooks.TINKERS_CURIO);
             hook.addAttributes(tool, entry.getLevel(), uuid, map::put);
         }
-        AttributeAdder builder = AttributeAdder.builder();
+        AttributeAdder builder = AttributeAdder.builder().uuid(uuid);
         if (tool.hasModifier(ModifierIds.reach)) {
-            builder.attr(ForgeMod.ENTITY_REACH.get()).name("modifier_entity_reach_bonus").uuid(uuid)
+            builder.attr(ForgeMod.ENTITY_REACH.get()).name("modifier_entity_reach_bonus")
                     .value(tool.getModifierLevel(ModifierIds.reach)).toMap(map);
-            builder.attr(ForgeMod.BLOCK_REACH.get()).name("modifier_block_reach_bonus").uuid(uuid)
+            builder.attr(ForgeMod.BLOCK_REACH.get()).name("modifier_block_reach_bonus")
                     .value(tool.getModifierLevel(ModifierIds.reach)).toMap(map);
+        }
+        if (tool.hasModifier(ModifierIds.stepUp)) {
+            builder.attr(ForgeMod.STEP_HEIGHT_ADDITION.get()).name("modifier_step_height_addition_bonus")
+                    .value(tool.getModifierLevel(ModifierIds.stepUp) * 0.5).toMap(map);
+        }
+        if (tool.hasModifier(ModifierIds.swiftstrike)) {
+            builder.attr(Attributes.ATTACK_SPEED).name("modifier_attack_speed_bonus").operation(1)
+                    .value(tool.getModifierLevel(ModifierIds.swiftstrike) * 0.05).toMap(map);
         }
         return map;
     }

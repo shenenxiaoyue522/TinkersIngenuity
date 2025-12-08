@@ -27,6 +27,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import slimeknights.tconstruct.library.tools.capability.PersistentDataCapability;
 import slimeknights.tconstruct.library.tools.definition.module.mining.IsEffectiveToolHook;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 
 import static com.xiaoyue.tinkers_ingenuity.TinkersIngenuity.MODID;
 
@@ -73,6 +74,9 @@ public class TIGeneralEventHandler {
             TinkersCurioModifierHook hook = e.getHook(TIHooks.TINKERS_CURIO);
             boolean effective = TinkerUtils.checkTool(stack) && IsEffectiveToolHook.isEffective(ToolStack.from(stack), event.getState());
             hook.getBreakSpeed(c, e.getLevel(), player, event, effective);
+            if (c.hasModifier(ModifierIds.haste)) {
+                event.setNewSpeed(event.getNewSpeed() + c.getModifierLevel(ModifierIds.haste) * 4);
+            }
         });
     }
 
@@ -92,7 +96,7 @@ public class TIGeneralEventHandler {
     }
 
     @SubscribeEvent
-    public static void onDamageEvent(LivingDamageEvent event) {
+    public static void onDamage(LivingDamageEvent event) {
         LivingEntity target = event.getEntity();
         Entity source = event.getSource().getEntity();
         if (source instanceof LivingEntity attacker) {
@@ -108,11 +112,14 @@ public class TIGeneralEventHandler {
     }
 
     @SubscribeEvent
-    public static void onHurtEvent(LivingHurtEvent event) {
+    public static void onHurt(LivingHurtEvent event) {
         LivingEntity target = event.getEntity();
         Entity source = event.getSource().getEntity();
         if (source instanceof LivingEntity attacker) {
             ModifiableCurio.postAction(attacker, (c, e) -> {
+                if (c.hasModifier(ModifierIds.strength)) {
+                    event.setAmount(event.getAmount() * (1 + c.getModifierLevel(ModifierIds.strength) * 0.1f));
+                }
                 TinkersCurioModifierHook hook = e.getHook(TIHooks.TINKERS_CURIO);
                 hook.onDamageTargetPre(c, e.getLevel(), attacker, target, event);
             });
@@ -124,7 +131,7 @@ public class TIGeneralEventHandler {
     }
 
     @SubscribeEvent
-    public static void onAttackEvent(LivingAttackEvent event) {
+    public static void onAttack(LivingAttackEvent event) {
         LivingEntity target = event.getEntity();
         ModifiableCurio.postAction(target, (c, e) -> {
             TinkersCurioModifierHook hook = e.getHook(TIHooks.TINKERS_CURIO);

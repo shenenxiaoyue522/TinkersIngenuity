@@ -24,6 +24,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.CompoundIngredient;
 import slimeknights.mantle.recipe.data.ConsumerWrapperBuilder;
+import slimeknights.mantle.recipe.ingredient.SizedIngredient;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -112,6 +113,18 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         ModifierRecipeBuilder.modifier(ModifierIds.reach).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
                 .addInput(Items.PISTON).addInput(Items.PISTON).addInput(TinkerMaterials.queensSlime.getIngotTag())
                 .addInput(Items.SLIME_BALL).addInput(Items.SLIME_BALL).save(cons, this.prefix(ModifierIds.reach, curio_ability));
+        ModifierRecipeBuilder.modifier(ModifierIds.strength).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(SizedIngredient.of(Ingredient.of(Items.IRON_INGOT), 16))
+                .addInput(Items.BLAZE_POWDER).save(cons, this.prefix(ModifierIds.strength, curio_upgrade));
+        ModifierRecipeBuilder.modifier(ModifierIds.stepUp).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
+                .addInput(Items.LEATHER).addInput(Items.LEATHER).addInput(Items.SCAFFOLDING).addInput(Items.SCAFFOLDING)
+                .save(cons, this.prefix(ModifierIds.stepUp, curio_ability));
+        ModifierRecipeBuilder.modifier(ModifierIds.haste).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(SizedIngredient.of(Ingredient.of(Items.REDSTONE_BLOCK), 5))
+                .save(cons, this.prefix(ModifierIds.haste, curio_upgrade));
+        ModifierRecipeBuilder.modifier(ModifierIds.swiftstrike).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(SizedIngredient.of(Ingredient.of(Items.AMETHYST_BLOCK), 18))
+                .save(cons, this.prefix(ModifierIds.swiftstrike, curio_upgrade));
     }
 
     protected void materialBuildRecipe(Consumer<FinishedRecipe> cons) {
@@ -250,22 +263,22 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
                                     Ingredient.of(TinkerSmeltery.mailleCast.get())))
                             .save(cons, prefix(TinkerToolParts.maille.getId(), prefix));
                     PartRecipeBuilder.partRecipe(TinkerToolParts.plating.get(ArmorItem.Type.HELMET))
-                            .setCost(3).setPattern(TinkerToolParts.plating.get(ArmorItem.Type.HELMET).getStatType())
+                            .setCost(3).setPattern(TConstruct.getResource("helmet_plating"))
                             .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS),
                                     Ingredient.of(TinkerSmeltery.helmetPlatingCast.get())))
                             .save(cons, prefix(TinkerToolParts.plating.get(ArmorItem.Type.HELMET).getStatType(), prefix));
                     PartRecipeBuilder.partRecipe(TinkerToolParts.plating.get(ArmorItem.Type.CHESTPLATE))
-                            .setCost(6).setPattern(TinkerToolParts.plating.get(ArmorItem.Type.CHESTPLATE).getStatType())
+                            .setCost(6).setPattern(TConstruct.getResource("chestplate_plating"))
                             .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS),
                                     Ingredient.of(TinkerSmeltery.chestplatePlatingCast.get())))
                             .save(cons, prefix(TinkerToolParts.plating.get(ArmorItem.Type.CHESTPLATE).getStatType(), prefix));
                     PartRecipeBuilder.partRecipe(TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS))
-                            .setCost(5).setPattern(TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS).getStatType())
+                            .setCost(5).setPattern(TConstruct.getResource("leggings_plating"))
                             .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS),
                                     Ingredient.of(TinkerSmeltery.leggingsPlatingCast.get())))
                             .save(cons, prefix(TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS).getStatType(), prefix));
                     PartRecipeBuilder.partRecipe(TinkerToolParts.plating.get(ArmorItem.Type.BOOTS))
-                            .setCost(3).setPattern(TinkerToolParts.plating.get(ArmorItem.Type.BOOTS).getStatType())
+                            .setCost(3).setPattern(TConstruct.getResource("boots_plating"))
                             .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS),
                                     Ingredient.of(TinkerSmeltery.bootsPlatingCast.get())))
                             .save(cons, prefix(TinkerToolParts.plating.get(ArmorItem.Type.BOOTS).getStatType(), prefix));

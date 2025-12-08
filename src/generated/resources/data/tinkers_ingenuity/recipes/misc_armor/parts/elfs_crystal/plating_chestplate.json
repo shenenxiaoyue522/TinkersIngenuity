@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:part_builder",
   "cost": 6,
-  "pattern": "tconstruct:plating_chestplate",
+  "pattern": "tconstruct:chestplate_plating",
   "pattern_item": [
     {
       "tag": "tconstruct:patterns/default"
