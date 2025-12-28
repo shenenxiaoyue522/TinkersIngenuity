@@ -24,7 +24,7 @@ config = "${mod_id}.mixins.json"
 [[dependencies.${ mod_id }]]
     modId="tconstruct"
     mandatory=true
-    versionRange="[3.10.0.67,)"
+    versionRange="[3.11.0,)"
     ordering="AFTER"
     side="BOTH"
 [[dependencies.${ mod_id }]]
