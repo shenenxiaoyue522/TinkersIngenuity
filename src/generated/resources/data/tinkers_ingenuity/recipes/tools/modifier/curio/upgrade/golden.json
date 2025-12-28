@@ -9,6 +9,7 @@
       "item": "minecraft:blackstone"
     }
   ],
+  "level": 1,
   "result": "tinkers_ingenuity:golden",
   "slots": {
     "upgrades": 1

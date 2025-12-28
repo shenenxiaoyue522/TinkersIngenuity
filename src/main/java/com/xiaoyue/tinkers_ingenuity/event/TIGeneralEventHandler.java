@@ -20,6 +20,7 @@ import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent.ImpactResult;
 import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.entity.player.PlayerXpEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -158,5 +159,14 @@ public class TIGeneralEventHandler {
     public static void onDeath(LivingDeathEvent event) {
         TinkerUtils.postArmorAction(event.getEntity(), holder ->
                 LivingEventModifierHook.postDeath(holder.getTool(), holder.context(), event, holder.slot()));
+    }
+
+    @SubscribeEvent
+    public static void onPickupExp(PlayerXpEvent.PickupXp event) {
+        Player entity = event.getEntity();
+        ModifiableCurio.postAction(entity, (c, e) -> {
+            TinkersCurioModifierHook hook = e.getHook(TIHooks.TINKERS_CURIO);
+            hook.onPickupExp(c, e.getLevel(), entity, event.getOrb());
+        });
     }
 }

@@ -9,6 +9,9 @@
       "item": "minecraft:emerald"
     }
   ],
+  "level": {
+    "max": 5
+  },
   "result": "tinkers_ingenuity:scholar",
   "slots": {
     "upgrades": 1

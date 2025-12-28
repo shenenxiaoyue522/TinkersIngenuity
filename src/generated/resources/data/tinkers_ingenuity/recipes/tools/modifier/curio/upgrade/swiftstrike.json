@@ -7,6 +7,9 @@
       "item": "minecraft:amethyst_block"
     }
   ],
+  "level": {
+    "max": 3
+  },
   "result": "tconstruct:swiftstrike",
   "slots": {
     "upgrades": 1

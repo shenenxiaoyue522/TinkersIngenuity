@@ -18,6 +18,9 @@
       "item": "minecraft:slime_ball"
     }
   ],
+  "level": {
+    "max": 3
+  },
   "result": "tconstruct:reach",
   "slots": {
     "abilities": 1

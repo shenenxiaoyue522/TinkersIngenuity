@@ -31,11 +31,11 @@ public class TIToolDefinitionGen extends AbstractToolDefinitionDataProvider {
     protected void addToolDefinitions() {
         RandomMaterial randomMaterial = RandomMaterial.random().tier(1).build();
         this.define(METEOR_SPEAR).module(PartStatsModule.parts()
-                        .part(TinkerToolParts.smallBlade)
-                        .part(TinkerToolParts.toughHandle)
+                        .part(TinkerToolParts.smallBlade, 0.8f)
+                        .part(TinkerToolParts.toughHandle, 0.9f)
                         .part(TinkerToolParts.largePlate)
                         .part(TinkerToolParts.largePlate)
-                        .part(TinkerToolParts.toughHandle).build())
+                        .part(TinkerToolParts.toughHandle, 0.9f).build())
                 .module(DefaultMaterialsModule.builder()
                         .material(randomMaterial, randomMaterial, randomMaterial, randomMaterial, randomMaterial).build())
                 .module(ToolTraitsModule.builder()

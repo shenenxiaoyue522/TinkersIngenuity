@@ -1,0 +1,13 @@
+{
+  "tool": "tinkers_ingenuity:meteor_spear",
+  "text": [
+    { "text": "A five-component throwable melee weapon with higher attack damage and attack speed than normal throwing weapons." }
+  ],
+  "properties": [
+    "+2 Attack Damage",
+    "1.3 Attack Speed",
+    "65% Mining Speed Multiplier",
+    "120% Attack Damage Multiplier",
+    "Throwing"
+  ]
+}

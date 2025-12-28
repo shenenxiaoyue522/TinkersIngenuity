@@ -12,6 +12,7 @@
       "item": "minecraft:magma_cream"
     }
   ],
+  "level": 1,
   "result": "tinkers_ingenuity:flame_heart",
   "slots": {
     "abilities": 1

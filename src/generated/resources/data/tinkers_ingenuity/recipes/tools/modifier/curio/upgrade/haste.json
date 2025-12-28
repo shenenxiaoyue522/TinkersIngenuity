@@ -7,6 +7,9 @@
       "item": "minecraft:redstone_block"
     }
   ],
+  "level": {
+    "max": 4
+  },
   "result": "tconstruct:haste",
   "slots": {
     "upgrades": 1

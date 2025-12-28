@@ -15,6 +15,9 @@
       "item": "minecraft:scaffolding"
     }
   ],
+  "level": {
+    "max": 5
+  },
   "result": "tconstruct:step_up",
   "slots": {
     "abilities": 1

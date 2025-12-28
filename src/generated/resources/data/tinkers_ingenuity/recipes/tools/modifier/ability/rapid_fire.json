@@ -12,6 +12,7 @@
       "item": "minecraft:string"
     }
   ],
+  "level": 1,
   "result": "tinkers_ingenuity:rapid_fire",
   "slots": {
     "abilities": 1

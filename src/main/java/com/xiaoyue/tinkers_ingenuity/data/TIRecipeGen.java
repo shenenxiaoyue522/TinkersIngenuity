@@ -94,37 +94,38 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         String curio_upgrade = "tools/modifier/curio/upgrade/";
         ModifierRecipeBuilder.modifier(TIModifierData.RAPID_FIRE.getId()).setTools(TinkerTags.Items.RANGED).setSlots(SlotType.ABILITY, 1)
                 .addInput(Items.AMETHYST_BLOCK).addInput(Items.REDSTONE).addInput(Items.STRING)
-                .save(cons, this.prefix(TIModifierData.RAPID_FIRE.getId(), ability));
+                .setMaxLevel(1).save(cons, this.prefix(TIModifierData.RAPID_FIRE.getId(), ability));
         ModifierRecipeBuilder.modifier(TIModifierData.SCHOLAR.getId()).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
-                .addInput(Ingredient.of(Items.BOOK)).addInput(Items.EMERALD)
+                .addInput(Ingredient.of(Items.BOOK)).addInput(Items.EMERALD).setMaxLevel(5)
                 .save(cons, this.prefix(TIModifierData.SCHOLAR.getId(), curio_upgrade));
         ModifierRecipeBuilder.modifier(TIModifierData.BLOT_OUT.getId()).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
                 .addInput(Ingredient.of(ItemTags.WOOL)).addInput(Items.ENDER_PEARL)
-                .save(cons, this.prefix(TIModifierData.BLOT_OUT.getId(), curio_ability));
+                .setMaxLevel(1).save(cons, this.prefix(TIModifierData.BLOT_OUT.getId(), curio_ability));
         ModifierRecipeBuilder.modifier(TIModifierData.WALK_SNOW.getId()).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
-                .addInput(Items.LEATHER_BOOTS)
+                .addInput(Items.LEATHER_BOOTS).setMaxLevel(1)
                 .save(cons, this.prefix(TIModifierData.WALK_SNOW.getId(), curio_upgrade));
         ModifierRecipeBuilder.modifier(TIModifierData.GOLDEN.getId()).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
-                .addInput(Items.GOLD_INGOT).addInput(Items.BLACKSTONE)
+                .addInput(Items.GOLD_INGOT).addInput(Items.BLACKSTONE).setMaxLevel(1)
                 .save(cons, this.prefix(TIModifierData.GOLDEN.getId(), curio_upgrade));
         ModifierRecipeBuilder.modifier(TIModifierData.FLAME_HEART.getId()).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
                 .addInput(Ingredient.of(Items.NETHERITE_INGOT)).addInput(Items.OBSIDIAN).addInput(Items.MAGMA_CREAM)
-                .save(cons, this.prefix(TIModifierData.FLAME_HEART.getId(), curio_ability));
+                .setMaxLevel(1).save(cons, this.prefix(TIModifierData.FLAME_HEART.getId(), curio_ability));
         ModifierRecipeBuilder.modifier(ModifierIds.reach).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
                 .addInput(Items.PISTON).addInput(Items.PISTON).addInput(TinkerMaterials.queensSlime.getIngotTag())
-                .addInput(Items.SLIME_BALL).addInput(Items.SLIME_BALL).save(cons, this.prefix(ModifierIds.reach, curio_ability));
+                .addInput(Items.SLIME_BALL).addInput(Items.SLIME_BALL)
+                .setMaxLevel(3).save(cons, this.prefix(ModifierIds.reach, curio_ability));
         ModifierRecipeBuilder.modifier(ModifierIds.strength).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
                 .addInput(SizedIngredient.of(Ingredient.of(Items.IRON_INGOT), 16))
-                .addInput(Items.BLAZE_POWDER).save(cons, this.prefix(ModifierIds.strength, curio_upgrade));
+                .addInput(Items.BLAZE_POWDER).setMaxLevel(5).save(cons, this.prefix(ModifierIds.strength, curio_upgrade));
         ModifierRecipeBuilder.modifier(ModifierIds.stepUp).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
                 .addInput(Items.LEATHER).addInput(Items.LEATHER).addInput(Items.SCAFFOLDING).addInput(Items.SCAFFOLDING)
-                .save(cons, this.prefix(ModifierIds.stepUp, curio_ability));
+                .setMaxLevel(5).save(cons, this.prefix(ModifierIds.stepUp, curio_ability));
         ModifierRecipeBuilder.modifier(ModifierIds.haste).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
                 .addInput(SizedIngredient.of(Ingredient.of(Items.REDSTONE_BLOCK), 5))
-                .save(cons, this.prefix(ModifierIds.haste, curio_upgrade));
+                .setMaxLevel(4).save(cons, this.prefix(ModifierIds.haste, curio_upgrade));
         ModifierRecipeBuilder.modifier(ModifierIds.swiftstrike).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
                 .addInput(SizedIngredient.of(Ingredient.of(Items.AMETHYST_BLOCK), 18))
-                .save(cons, this.prefix(ModifierIds.swiftstrike, curio_upgrade));
+                .setMaxLevel(3).save(cons, this.prefix(ModifierIds.swiftstrike, curio_upgrade));
     }
 
     protected void materialBuildRecipe(Consumer<FinishedRecipe> cons) {

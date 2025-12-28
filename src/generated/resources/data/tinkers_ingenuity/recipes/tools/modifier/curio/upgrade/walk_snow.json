@@ -6,6 +6,7 @@
       "item": "minecraft:leather_boots"
     }
   ],
+  "level": 1,
   "result": "tinkers_ingenuity:walk_snow",
   "slots": {
     "upgrades": 1
