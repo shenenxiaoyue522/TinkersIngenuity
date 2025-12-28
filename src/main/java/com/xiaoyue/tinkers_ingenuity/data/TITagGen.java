@@ -34,7 +34,6 @@ public class TITagGen {
         pvd.addTag(Items.INTERACTABLE_LEFT).add(TIItems.BLOWPIPE.get());
         pvd.addTag(Items.INTERACTABLE_RIGHT).add(TIItems.METEOR_SPEAR.get());
         pvd.addTag(Items.MELEE).add(TIItems.BLOWPIPE.get(), TIItems.METEOR_SPEAR.get());
-        pvd.addTag(Items.BROAD_TOOLS).add(TIItems.METEOR_SPEAR.get());
         pvd.addTag(Items.MELEE_PRIMARY).add(TIItems.METEOR_SPEAR.get());
         pvd.addTag(METEOR_SPEAR).add(TIItems.METEOR_SPEAR.get());
     }

@@ -9,13 +9,13 @@
         },
         {
           "item": "tconstruct:tough_handle",
-          "scale": 0.9
+          "scale": 0.8
         },
         "tconstruct:large_plate",
         "tconstruct:large_plate",
         {
           "item": "tconstruct:tough_handle",
-          "scale": 0.9
+          "scale": 0.8
         }
       ],
       "primary_part": 0

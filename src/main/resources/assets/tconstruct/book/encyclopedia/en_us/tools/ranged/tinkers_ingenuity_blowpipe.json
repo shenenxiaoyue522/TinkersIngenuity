@@ -1,0 +1,13 @@
+{
+  "tool": "tinkers_ingenuity:blowpipe",
+  "text": [
+    {
+      "text": "A blowpipe is a long-range weapon that can be fired continuously without the need for charging, but the speed of the arrows fired is relatively low."
+    }
+  ],
+  "properties": [
+    "0.85 Accuracy",
+    "90% Arrow Velocity Multiplier",
+    "90% Durability Multiplier"
+  ]
+}
