@@ -12,7 +12,7 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
-import slimeknights.mantle.data.registry.GenericLoaderRegistry;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.module.HookProvider;
 import slimeknights.tconstruct.library.module.ModuleHook;
 
@@ -42,7 +42,7 @@ public record CModifyAttackModule(IJsonPredicate<LivingEntity> attacker, IJsonPr
     }
 
     @Override
-    public RecordLoadable<? extends GenericLoaderRegistry.IHaveLoader> getLoader() {
+    public RecordLoadable<? extends ModifierModule> getLoader() {
         return LOADER;
     }
 

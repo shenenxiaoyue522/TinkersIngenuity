@@ -10,11 +10,11 @@ import net.minecraft.world.entity.player.Player;
 import slimeknights.mantle.data.loadable.primitive.FloatLoadable;
 import slimeknights.mantle.data.loadable.primitive.IntLoadable;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
-import slimeknights.mantle.data.registry.GenericLoaderRegistry;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.ModifyDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.armor.OnAttackedModifierHook;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.module.HookProvider;
 import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
@@ -63,7 +63,7 @@ public record KnightBloodline(float protect, int maxMultiplier)
     }
 
     @Override
-    public RecordLoadable<? extends GenericLoaderRegistry.IHaveLoader> getLoader() {
+    public RecordLoadable<? extends ModifierModule> getLoader() {
         return LOADER;
     }
 

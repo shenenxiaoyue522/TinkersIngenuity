@@ -11,6 +11,9 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import slimeknights.mantle.registration.object.FluidObject;
 
 public enum TILang {
+    METEOR_SPEAR("item.tinkers_ingenuity.meteor_spear", "Meteor Spear"),
+    METEOR_SPEAR_DESCRIPTION("item.tinkers_ingenuity.meteor_spear.description",
+            "A five-component throwable melee weapon with higher attack damage and attack speed than normal throwing weapons."),
     ;
 
     private final String key;

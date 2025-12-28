@@ -37,7 +37,6 @@ public class PastMemories extends SimpleModifier implements LivingEventModifierH
                 IngenuityUtils.teleportHome(entity);
                 this.addGenericCD(slotTool, entity, 6000);
             }
-
         }
     }
 }

@@ -1,6 +1,26 @@
 {
   "parts": [
     {
+      "path": "tinkers_ingenuity:item/meteor_spear/spear_head",
+      "stat_type": "tconstruct:head"
+    },
+    {
+      "path": "tinkers_ingenuity:item/meteor_spear/spear_main_plate",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "tinkers_ingenuity:item/meteor_spear/spear_plate",
+      "stat_type": "tconstruct:binding"
+    },
+    {
+      "path": "tinkers_ingenuity:item/meteor_spear/spear_main_handle",
+      "stat_type": "tconstruct:handle"
+    },
+    {
+      "path": "tinkers_ingenuity:item/meteor_spear/spear_main_handle",
+      "stat_type": "tconstruct:handle"
+    },
+    {
       "path": "tinkers_ingenuity:item/tinkers_medal/medal_ribbons",
       "stat_type": "tinkers_ingenuity:curio_extra"
     },

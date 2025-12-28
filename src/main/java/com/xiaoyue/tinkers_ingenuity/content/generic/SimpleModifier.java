@@ -35,13 +35,15 @@ public abstract class SimpleModifier extends Modifier implements ModifierRemoval
 
     @Override
     public @Nullable Component onRemoved(IToolStackView tool, Modifier modifier) {
-        if (this.getNBTKey() != null) {
-            tool.getPersistentData().remove(this.getNBTKey());
+        ResourceLocation key = this.getNBTKey(tool);
+        if (key != null) {
+            tool.getPersistentData().remove(key);
         }
         return null;
     }
 
-    public ResourceLocation getNBTKey() {
+    @Nullable
+    public ResourceLocation getNBTKey(IToolStackView tool) {
         return null;
     }
 

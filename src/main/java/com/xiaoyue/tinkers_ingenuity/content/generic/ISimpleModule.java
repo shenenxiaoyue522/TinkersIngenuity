@@ -2,6 +2,7 @@ package com.xiaoyue.tinkers_ingenuity.content.generic;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.block.BlockPredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
@@ -25,6 +26,9 @@ public interface ISimpleModule extends ModifierModule {
     default boolean test(LivingEntity entity, IJsonPredicate<LivingEntity> test) {
         return test.equals(LivingEntityPredicate.ANY) || test.matches(entity);
     }
+
+    @Override
+    RecordLoadable<? extends ModifierModule> getLoader();
 
     @Override
     default List<ModuleHook<?>> getDefaultHooks() {

@@ -15,6 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tools.stats.GripMaterialStats;
 import slimeknights.tconstruct.tools.stats.LimbMaterialStats;
@@ -27,6 +28,7 @@ public class TIItems {
     public static final MetalItemEntry<Item, Block> BLACK_GOLD, FLAME_STEEL, BLACK_FLASH_ALLOY, COLORFUL_SLIME, KNIGHT_CRYSTAL, MITHRIL;
     public static final List<ItemEntry<Item>> MEDAL_RIBBONS_CAST, MEDAL_BODY_CAST, BLOWPIPE_TUBE_CAST, BLOWPIPE_MOUTH_CAST;
     public static final ItemEntry<ToolPartItem> MEDAL_RIBBONS, MEDAL_BODY, BLOWPIPE_TUBE, BLOWPIPE_MOUTH;
+    public static final RegistryEntry<ModifiableItem> METEOR_SPEAR;
     public static final RegistryEntry<ModifiableCurio> TINKERS_MEDAL;
     public static final RegistryEntry<ModifiableBlowpipe> BLOWPIPE;
 
@@ -52,6 +54,7 @@ public class TIItems {
         MEDAL_BODY = part("medal_body", "tinkers_medal", p -> new ToolPartItem(p, CurioMainMaterialStat.ID), 0, -3);
         BLOWPIPE_TUBE = part("blowpipe_tube", "blowpipe", p -> new ToolPartItem(p, LimbMaterialStats.ID), 1, 1);
         BLOWPIPE_MOUTH = part("blowpipe_mouth", "blowpipe", p -> new ToolPartItem(p, GripMaterialStats.ID), -2, -2);
+        METEOR_SPEAR = reg().simpleItem("meteor_spear", () -> new ModifiableItem(new Item.Properties(), TIToolDefinitionGen.METEOR_SPEAR));
         TINKERS_MEDAL = reg().simpleItem("tinkers_medal", () -> new ModifiableCurio(TIToolDefinitionGen.TINKERS_MEDAL));
         BLOWPIPE = reg().simpleItem("blowpipe", () -> new ModifiableBlowpipe(TIToolDefinitionGen.BLOWPIPE));
     }
@@ -61,6 +64,7 @@ public class TIItems {
         TinkerUtils.addPartToTab(o, MEDAL_BODY.get());
         TinkerUtils.addPartToTab(o, BLOWPIPE_TUBE.get());
         TinkerUtils.addPartToTab(o, BLOWPIPE_MOUTH.get());
+        TinkerUtils.addTooToTab(o, METEOR_SPEAR.get());
         TinkerUtils.addTooToTab(o, TINKERS_MEDAL.get());
         TinkerUtils.addTooToTab(o, BLOWPIPE.get());
     }

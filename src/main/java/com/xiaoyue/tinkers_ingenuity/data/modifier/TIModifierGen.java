@@ -35,11 +35,11 @@ import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.ModifierSlotModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
+import slimeknights.tconstruct.library.modifiers.modules.capacity.OverslimeModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.TinkerModifiers;
-import slimeknights.tconstruct.tools.modifiers.slotless.OverslimeModifier;
 
 public class TIModifierGen extends AbstractModifierProvider {
     public TIModifierGen(PackOutput packOutput) {
@@ -75,12 +75,12 @@ public class TIModifierGen extends AbstractModifierProvider {
         buildModifier(TIModifierData.DEADLY_PLAGUE.getId())
                 .addModule(ForceAddEffectModule.get(TIEffects.DEADLY_PLAGUE.get(), 1, 200));
         buildModifier(TIModifierData.COLORFUL_SLIME.getId())
-                .addModule(AllFloatStatCopyModule.get(OverslimeModifier.OVERSLIME_STAT,
+                .addModule(AllFloatStatCopyModule.get(OverslimeModule.OVERSLIME_STAT,
                         StatOperation.multiplier_base, 5.0E-5F)).priority(22);
         buildModifier(TIModifierData.COOPERATION.getId()).levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(StatWithTraitCountModule.get(ToolStats.DURABILITY, StatOperation.multiplier_base, 0.15F,
                         true, TinkerModifiers.overslime.getId()))
-                .addModule(StatWithTraitCountModule.get(OverslimeModifier.OVERSLIME_STAT, StatOperation.multiplier_base, 0.15F,
+                .addModule(StatWithTraitCountModule.get(OverslimeModule.OVERSLIME_STAT, StatOperation.multiplier_base, 0.15F,
                         true, TinkerModifiers.overslime.getId()));
         buildModifier(TIModifierData.CRYSTALLIZATION.getId())
                 .addModule(Crystallization.getIns());

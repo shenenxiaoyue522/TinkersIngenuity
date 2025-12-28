@@ -11,10 +11,10 @@ import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
-import slimeknights.mantle.data.registry.GenericLoaderRegistry;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.armor.ProtectionModifierHook;
+import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.module.HookProvider;
 import slimeknights.tconstruct.library.module.ModuleHook;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
@@ -51,7 +51,7 @@ public record SimpleProtectionModule(IJsonPredicate<LivingEntity> entity, IJsonP
     }
 
     @Override
-    public RecordLoadable<? extends GenericLoaderRegistry.IHaveLoader> getLoader() {
+    public RecordLoadable<? extends ModifierModule> getLoader() {
         return LOADER;
     }
 

@@ -90,7 +90,6 @@ public interface TinkersCurioModifierHook {
     }
 
     default void onPickupExp(CurioStackView curio, int level, LivingEntity entity, ExperienceOrb orb) {
-
     }
 
     record AllMerger(Collection<TinkersCurioModifierHook> modules) implements TinkersCurioModifierHook {

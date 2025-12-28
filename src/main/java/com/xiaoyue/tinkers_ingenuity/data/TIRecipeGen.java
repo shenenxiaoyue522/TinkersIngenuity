@@ -160,6 +160,7 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         this.toolBuilding(cons, TIItems.BLOWPIPE.get(), building);
         this.partRecipes(cons, TIItems.BLOWPIPE_TUBE.get(), this.cast("blowpipe_tube", TIItems.BLOWPIPE_TUBE_CAST), 4, part, cast);
         this.partRecipes(cons, TIItems.BLOWPIPE_MOUTH.get(), this.cast("blowpipe_mouth", TIItems.BLOWPIPE_MOUTH_CAST), 2, part, cast);
+        this.toolBuilding(cons, TIItems.METEOR_SPEAR.get(), building);
     }
 
     private CastItemObject cast(String id, List<ItemEntry<Item>> casts) {

@@ -225,5 +225,7 @@
   "tinkers_ingenuity.tooltip.modifier_bonus": "%s: %s提高%s",
   "modifier.tinkers_ingenuity.flame_heart": "心之火",
   "modifier.tinkers_ingenuity.flame_heart.description": "即使你不在火中也会被视为处于火中",
-  "modifier.tinkers_ingenuity.flame_heart.flavor": "不可磨灭的心之火。"
+  "modifier.tinkers_ingenuity.flame_heart.flavor": "不可磨灭的心之火。",
+  "item.tinkers_ingenuity.meteor_spear": "流星长枪",
+  "item.tinkers_ingenuity.meteor_spear.description": "由五个部件组成的可投掷的近战武器，拥有比一般投掷武器更高的攻击伤害与攻击速度。"
 }

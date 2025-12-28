@@ -1,0 +1,59 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default-tool",
+  "textures": {
+    "spear_head": "tinkers_ingenuity:item/meteor_spear/spear_head",
+    "spear_main_plate": "tinkers_ingenuity:item/meteor_spear/spear_main_plate",
+    "spear_plate": "tinkers_ingenuity:item/meteor_spear/spear_plate",
+    "spear_main_handle": "tinkers_ingenuity:item/meteor_spear/spear_main_handle",
+    "spear_handle": "tinkers_ingenuity:item/meteor_spear/spear_handle",
+    "large_spear_head": "tinkers_ingenuity:item/meteor_spear/spear_head",
+    "large_spear_main_plate": "tinkers_ingenuity:item/meteor_spear/spear_main_plate",
+    "large_spear_plate": "tinkers_ingenuity:item/meteor_spear/spear_plate",
+    "large_spear_main_handle": "tinkers_ingenuity:item/meteor_spear/spear_main_handle",
+    "large_spear_handle": "tinkers_ingenuity:item/meteor_spear/spear_handle"
+  },
+  "large": true,
+  "large_offset": [
+    -4,
+    8
+  ],
+  "modifier_roots": {
+    "small": [
+      "tinkers_ingenuity:item/meteor_spear/modifiers/"
+    ],
+    "large": [
+      "tinkers_ingenuity:item/meteor_spear/modifiers/"
+    ]
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "tconstruct:charging": 2
+      },
+      "model": "tinkers_ingenuity:item/blocking/meteor_spear"
+    }
+  ],
+  "parts": [
+    {
+      "name": "spear_head",
+      "index": 0
+    },
+    {
+      "name": "spear_main_plate",
+      "index": 2
+    },
+    {
+      "name": "spear_plate",
+      "index": 3
+    },
+    {
+      "name": "spear_main_handle",
+      "index": 1
+    },
+    {
+      "name": "spear_handle",
+      "index": 4
+    }
+  ]
+}

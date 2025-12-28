@@ -1,6 +1,19 @@
 {
   "modules": [
     {
+      "type": "tconstruct:base_stats",
+      "stats": {
+        "tconstruct:accuracy": 0.85
+      }
+    },
+    {
+      "type": "tconstruct:multiply_stats",
+      "multipliers": {
+        "tconstruct:durability": 0.9,
+        "tconstruct:velocity": 0.9
+      }
+    },
+    {
       "type": "tconstruct:part_stats",
       "parts": [
         "tinkers_ingenuity:blowpipe_tube",

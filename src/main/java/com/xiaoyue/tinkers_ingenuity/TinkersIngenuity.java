@@ -41,8 +41,8 @@ import java.util.concurrent.CompletableFuture;
 
 @Mod(TinkersIngenuity.MODID)
 @Mod.EventBusSubscriber(modid = TinkersIngenuity.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class TinkersIngenuity
-{
+public class TinkersIngenuity {
+
     public static final String MODID = "tinkers_ingenuity";
     public static final Logger LOGGER = LogUtils.getLogger();
     public static final TIRegistrate REGISTRATE = new TIRegistrate(MODID);

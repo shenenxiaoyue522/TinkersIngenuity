@@ -18,19 +18,25 @@ public class TITagGen {
 
     public static final TagKey<Item> TINKERS_CURIO = ItemTags.create(new ResourceLocation("curios", "tinkers_curio"));
     public static final TagKey<Item> MODIFIABLE_CURIO = ItemTags.create(TinkersIngenuity.loc("modifiable_curio"));
+    public static final TagKey<Item> METEOR_SPEAR = ItemTags.create(TinkersIngenuity.loc("meteor_spear"));
 
     public static void addItemTagGen(RegistrateItemTagsProvider pvd) {
         pvd.addTag(TINKERS_CURIO).add(TIItems.TINKERS_MEDAL.get());
         pvd.addTag(MODIFIABLE_CURIO).add(TIItems.TINKERS_MEDAL.get());
-        pvd.addTag(Items.MODIFIABLE).add(TIItems.TINKERS_MEDAL.get(), TIItems.BLOWPIPE.get());
-        pvd.addTag(Items.MULTIPART_TOOL).add(TIItems.TINKERS_MEDAL.get(), TIItems.BLOWPIPE.get());
-        pvd.addTag(Items.DURABILITY).add(TIItems.BLOWPIPE.get());
+        pvd.addTag(Items.MODIFIABLE).add(TIItems.TINKERS_MEDAL.get(), TIItems.BLOWPIPE.get(), TIItems.METEOR_SPEAR.get());
+        pvd.addTag(Items.MULTIPART_TOOL).add(TIItems.TINKERS_MEDAL.get(), TIItems.BLOWPIPE.get(), TIItems.METEOR_SPEAR.get());
+        pvd.addTag(Items.DURABILITY).add(TIItems.BLOWPIPE.get(), TIItems.METEOR_SPEAR.get());
         pvd.addTag(Items.BOWS).add(TIItems.BLOWPIPE.get());
         pvd.addTag(Items.SMALL_TOOLS).add(TIItems.BLOWPIPE.get());
-        pvd.addTag(Items.RANGED).add(TIItems.BLOWPIPE.get());
-        pvd.addTag(Items.BONUS_SLOTS).add(TIItems.BLOWPIPE.get());
+        pvd.addTag(Items.RANGED).add(TIItems.BLOWPIPE.get(), TIItems.METEOR_SPEAR.get());
+        pvd.addTag(Items.BROAD_RANGED).add(TIItems.METEOR_SPEAR.get());
+        pvd.addTag(Items.BONUS_SLOTS).add(TIItems.BLOWPIPE.get(), TIItems.METEOR_SPEAR.get());
         pvd.addTag(Items.INTERACTABLE_LEFT).add(TIItems.BLOWPIPE.get());
-        pvd.addTag(Items.MELEE).add(TIItems.BLOWPIPE.get());
+        pvd.addTag(Items.INTERACTABLE_RIGHT).add(TIItems.METEOR_SPEAR.get());
+        pvd.addTag(Items.MELEE).add(TIItems.BLOWPIPE.get(), TIItems.METEOR_SPEAR.get());
+        pvd.addTag(Items.BROAD_TOOLS).add(TIItems.METEOR_SPEAR.get());
+        pvd.addTag(Items.MELEE_PRIMARY).add(TIItems.METEOR_SPEAR.get());
+        pvd.addTag(METEOR_SPEAR).add(TIItems.METEOR_SPEAR.get());
     }
 
     public static void addFluidTagGen(RegistrateTagsProvider.IntrinsicImpl<Fluid> pvd) {

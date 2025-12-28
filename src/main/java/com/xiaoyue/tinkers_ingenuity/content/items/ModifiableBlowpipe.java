@@ -49,7 +49,7 @@ public class ModifiableBlowpipe extends ModifiableLauncherItem {
         if (tool.isBroken()) {
             return InteractionResultHolder.fail(stack);
         } else {
-            boolean hasAmmo = BowAmmoModifierHook.hasAmmo(tool, stack, pPlayer, this.getAllSupportedProjectiles());
+            boolean hasAmmo = !BowAmmoModifierHook.getAmmo(tool, stack, pPlayer, this.getAllSupportedProjectiles()).isEmpty();
             if (this.toolCheckAndShoot(tool, stack, pPlayer, pLevel, hasAmmo)) {
                 ToolDamageUtil.damageAnimated(tool, 2, pPlayer, pUsedHand);
             }

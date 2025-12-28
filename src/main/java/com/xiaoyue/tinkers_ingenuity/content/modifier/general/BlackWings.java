@@ -8,15 +8,17 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.armor.EquipmentChangeModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.interaction.InventoryTickModifierHook;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.tools.context.EquipmentChangeContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class BlackWings extends SimpleModifier implements InventoryTickModifierHook {
+public class BlackWings extends SimpleModifier implements InventoryTickModifierHook, EquipmentChangeModifierHook {
 
     @Override
     public void addHooks(ModuleHookMap.Builder builder) {
-        builder.addHook(this, ModifierHooks.INVENTORY_TICK);
+        builder.addHook(this, ModifierHooks.INVENTORY_TICK, ModifierHooks.EQUIPMENT_CHANGE);
     }
 
     @Override
@@ -35,6 +37,14 @@ public class BlackWings extends SimpleModifier implements InventoryTickModifierH
             if (player.tickCount % 100 == 0 && abilities.flying && chance(0.5f)) {
                 player.causeFoodExhaustion(0.1f);
             }
+        }
+    }
+
+    @Override
+    public void onUnequip(IToolStackView tool, ModifierEntry modifier, EquipmentChangeContext context) {
+        if (context.getEntity() instanceof Player player && !(player.isCreative() || player.isSpectator())) {
+            player.getAbilities().mayfly = false;
+            player.getAbilities().flying = false;
         }
     }
 }
