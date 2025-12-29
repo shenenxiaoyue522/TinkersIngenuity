@@ -7,16 +7,17 @@
     "spear_plate": "tinkers_ingenuity:item/meteor_spear/spear_plate",
     "spear_main_handle": "tinkers_ingenuity:item/meteor_spear/spear_main_handle",
     "spear_handle": "tinkers_ingenuity:item/meteor_spear/spear_handle",
-    "large_spear_head": "tinkers_ingenuity:item/meteor_spear/spear_head",
-    "large_spear_main_plate": "tinkers_ingenuity:item/meteor_spear/spear_main_plate",
-    "large_spear_plate": "tinkers_ingenuity:item/meteor_spear/spear_plate",
-    "large_spear_main_handle": "tinkers_ingenuity:item/meteor_spear/spear_main_handle",
-    "large_spear_handle": "tinkers_ingenuity:item/meteor_spear/spear_handle"
+
+    "large_spear_head": "tinkers_ingenuity:item/meteor_spear/large/spear_head",
+    "large_spear_main_plate": "tinkers_ingenuity:item/meteor_spear/large/spear_main_plate",
+    "large_spear_plate": "tinkers_ingenuity:item/meteor_spear/large/spear_plate",
+    "large_spear_main_handle": "tinkers_ingenuity:item/meteor_spear/large/spear_main_handle",
+    "large_spear_handle": "tinkers_ingenuity:item/meteor_spear/large/spear_handle"
   },
   "large": true,
   "large_offset": [
-    -4,
-    8
+    -2,
+    2
   ],
   "modifier_roots": {
     "small": [

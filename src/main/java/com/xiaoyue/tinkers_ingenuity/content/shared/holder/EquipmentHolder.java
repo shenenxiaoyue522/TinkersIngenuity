@@ -2,6 +2,7 @@ package com.xiaoyue.tinkers_ingenuity.content.shared.holder;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -10,6 +11,7 @@ import java.util.function.Consumer;
 
 public record EquipmentHolder(EquipmentContext context, EquipmentSlot slot) {
 
+    @Nullable
     public IToolStackView getTool() {
         return this.context.getToolInSlot(this.slot);
     }
@@ -27,7 +29,6 @@ public record EquipmentHolder(EquipmentContext context, EquipmentSlot slot) {
             for(ModifierEntry entry : this.getTool().getModifierList()) {
                 cons.accept(entry);
             }
-
         }
     }
 }
