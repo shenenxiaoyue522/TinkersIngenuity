@@ -49,7 +49,7 @@ public class TinkerUtils {
     @SubscribeTooltip(id = "modifier_bonus")
     public static TooltipEntry modifierBonusInfo = TooltipEntry.define("%s: Increases %s by %s");
 
-    public static MutableComponent getModifierBonusTifo(Modifier modifier, FloatToolStat stat, float bonus, boolean mul) {
+    public static MutableComponent getModifierBonusInfo(Modifier modifier, FloatToolStat stat, float bonus, boolean mul) {
         MutableComponent bonusText = mul ? Component.literal(bonus * 100 + "%") : Component.literal(bonus + "");
         MutableComponent modifierText = Component.translatable(modifier.getTranslationKey());
         MutableComponent statText = Component.translatable(stat.getTranslationKey());

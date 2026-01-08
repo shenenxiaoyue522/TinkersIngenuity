@@ -4,7 +4,8 @@ import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import com.xiaoyue.tinkers_ingenuity.content.generic.ISimpleModule;
 import com.xiaoyue.tinkers_ingenuity.content.generic.SerialLoader;
 import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.attack.GenericCombatModifierHook;
-import com.xiaoyue.tinkers_ingenuity.event.api.TinkerToolCriticalEvent;
+import com.xiaoyue.tinkers_ingenuity.event.api.ToolAttackContextBuildEvent;
+import com.xiaoyue.tinkers_ingenuity.mixin.ToolAttackContextInvoker;
 import com.xiaoyue.tinkers_ingenuity.register.TIHooks;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -40,9 +41,9 @@ public record CriticalChanceModule(IJsonPredicate<LivingEntity> attacker, double
     }
 
     @Override
-    public void onCriticalHit(IToolStackView tool, ModifierEntry modifier, LivingEntity attacker, TinkerToolCriticalEvent event) {
+    public void onCriticalHit(IToolStackView tool, ModifierEntry modifier, LivingEntity attacker, ToolAttackContextBuildEvent event) {
         if (this.test(attacker, this.attacker) && this.chance(this.chance)) {
-            event.setCritical(true);
+            ((ToolAttackContextInvoker) event.getContext()).setCriticalModifier(1.5f);
         }
     }
 

@@ -31,6 +31,12 @@ public record MaterialTraitsData(Map<MaterialStatsId, ModifierEntry[]> otherTrai
             return this;
         }
 
+        public Builder addMeleeAndRanged(ModifierEntry... traits) {
+            addMelee(traits);
+            addRanged(traits);
+            return this;
+        }
+
         public Builder addArmor(ModifierEntry... traits) {
             this.traits.put(MaterialRegistry.ARMOR, traits);
             return this;

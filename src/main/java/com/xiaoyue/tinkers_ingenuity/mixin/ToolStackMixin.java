@@ -5,7 +5,6 @@ import com.xiaoyue.tinkers_ingenuity.content.modifier.general.FreshWater;
 import com.xiaoyue.tinkers_ingenuity.data.modifier.TIModifierData;
 import dev.xkmc.l2serial.util.Wrappers;
 import net.minecraft.nbt.CompoundTag;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -28,7 +27,7 @@ import java.util.List;
 @Mixin(value = ToolStack.class, remap = false)
 public abstract class ToolStackMixin {
 
-    @Shadow @Final private CompoundTag nbt;
+    @Shadow private CompoundTag nbt;
 
     @Shadow protected abstract void setStats(StatsNBT stats);
 

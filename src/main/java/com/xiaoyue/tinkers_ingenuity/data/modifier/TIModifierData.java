@@ -73,6 +73,10 @@ public enum TIModifierData {
             "This tool grows over time"),
     FLAME_HEART("flame_heart", "The fire of the heart that will never be extinguished.",
             "Even if you are not in the fire, you will be considered in the fire"),
+    MOIST("moist", "I won't get you wet.",
+            "Even if you are not in the water, it is considered to be in the water"),
+    AQUATIC("aquatic", "I live in water.",
+            "The tool becomes even easier when in water or in rain"),
     ;
 
     public final String id;

@@ -5,7 +5,7 @@ import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.attack.GenericCombatMo
 import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.defense.LivingEventModifierHook;
 import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.specail.MenuSlotClickModifierHook;
 import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.specail.TinkersCurioModifierHook;
-import com.xiaoyue.tinkers_ingenuity.event.api.TinkerToolCriticalEvent;
+import com.xiaoyue.tinkers_ingenuity.event.api.ToolAttackContextBuildEvent;
 import com.xiaoyue.tinkers_ingenuity.register.TIHooks;
 import com.xiaoyue.tinkers_ingenuity.utils.TinkerUtils;
 import net.minecraft.world.entity.Entity;
@@ -143,7 +143,7 @@ public class TIGeneralEventHandler {
     }
 
     @SubscribeEvent
-    public static void onToolCrit(TinkerToolCriticalEvent event) {
+    public static void onToolCrit(ToolAttackContextBuildEvent event) {
         GenericCombatModifierHook.postCritHit(event.getTool(), event);
     }
 

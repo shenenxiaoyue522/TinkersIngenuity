@@ -125,6 +125,10 @@ public class TIModifierGen extends AbstractModifierProvider {
         buildModifier(TIModifierData.ALIEN.getId())
                 .addModules(Alien.getIns());
         buildModifier(TIModifierData.FLAME_HEART.getId()).levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TIModifierData.MOIST.getId()).levelDisplay(ModifierLevelDisplay.NO_LEVELS);
+        buildModifier(TIModifierData.AQUATIC.getId())
+                .addModule(MixedModificationModule.get(TIEntityCondition.IN_WATER_OR_RAIN,
+                        MultiBonusHelper.addAll(ToolStats.DRAW_SPEED), LevelingFormula.mulBase(0.18f)));
     }
 
     @Override

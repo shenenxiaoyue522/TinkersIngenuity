@@ -30,7 +30,7 @@ public class TITagGen {
         pvd.addTag(Items.SMALL_TOOLS).add(TIItems.BLOWPIPE.get());
         pvd.addTag(Items.RANGED).add(TIItems.BLOWPIPE.get(), TIItems.METEOR_SPEAR.get());
         pvd.addTag(Items.BROAD_RANGED).add(TIItems.METEOR_SPEAR.get());
-        pvd.addTag(Items.BONUS_SLOTS).add(TIItems.BLOWPIPE.get(), TIItems.METEOR_SPEAR.get());
+        pvd.addTag(Items.BONUS_SLOTS).add(TIItems.BLOWPIPE.get(), TIItems.METEOR_SPEAR.get(), TIItems.TINKERS_MEDAL.get());
         pvd.addTag(Items.INTERACTABLE_LEFT).add(TIItems.BLOWPIPE.get());
         pvd.addTag(Items.INTERACTABLE_RIGHT).add(TIItems.METEOR_SPEAR.get());
         pvd.addTag(Items.MELEE).add(TIItems.BLOWPIPE.get(), TIItems.METEOR_SPEAR.get());

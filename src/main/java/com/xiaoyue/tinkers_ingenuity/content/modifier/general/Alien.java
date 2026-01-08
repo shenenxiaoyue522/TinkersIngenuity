@@ -150,15 +150,15 @@ public record Alien(float bonus, int max, int bonusInterval)
     public void addTooltip(IToolStackView tool, ModifierEntry modifier, @Nullable Player player, List<Component> tooltip, TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
         Modifier self = modifier.getModifier();
         if (tool.hasTag(TinkerTags.Items.RANGED)) {
-            tooltip.add(TinkerUtils.getModifierBonusTifo(self, ToolStats.PROJECTILE_DAMAGE, getBonus(tool, TAG_BONUS_1), true));
-            tooltip.add(TinkerUtils.getModifierBonusTifo(self, ToolStats.VELOCITY, getBonus(tool, TAG_BONUS_2), true));
-            tooltip.add(TinkerUtils.getModifierBonusTifo(self, ToolStats.DRAW_SPEED, getBonus(tool, TAG_BONUS_3), true));
+            tooltip.add(TinkerUtils.getModifierBonusInfo(self, ToolStats.PROJECTILE_DAMAGE, getBonus(tool, TAG_BONUS_1), true));
+            tooltip.add(TinkerUtils.getModifierBonusInfo(self, ToolStats.VELOCITY, getBonus(tool, TAG_BONUS_2), true));
+            tooltip.add(TinkerUtils.getModifierBonusInfo(self, ToolStats.DRAW_SPEED, getBonus(tool, TAG_BONUS_3), true));
         }
         if (tool.hasTag(TinkerTags.Items.MELEE_PRIMARY)) {
-            tooltip.add(TinkerUtils.getModifierBonusTifo(self, ToolStats.ATTACK_DAMAGE, getBonus(tool, TAG_BONUS_1), true));
+            tooltip.add(TinkerUtils.getModifierBonusInfo(self, ToolStats.ATTACK_DAMAGE, getBonus(tool, TAG_BONUS_1), true));
         }
         if (tool.hasTag(TinkerTags.Items.HARVEST)) {
-            tooltip.add(TinkerUtils.getModifierBonusTifo(self, ToolStats.MINING_SPEED, getBonus(tool, TAG_BONUS_3), true));
+            tooltip.add(TinkerUtils.getModifierBonusInfo(self, ToolStats.MINING_SPEED, getBonus(tool, TAG_BONUS_3), true));
         }
     }
 

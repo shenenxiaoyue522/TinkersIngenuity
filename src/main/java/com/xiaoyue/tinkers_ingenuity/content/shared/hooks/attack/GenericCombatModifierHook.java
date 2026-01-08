@@ -1,6 +1,6 @@
 package com.xiaoyue.tinkers_ingenuity.content.shared.hooks.attack;
 
-import com.xiaoyue.tinkers_ingenuity.event.api.TinkerToolCriticalEvent;
+import com.xiaoyue.tinkers_ingenuity.event.api.ToolAttackContextBuildEvent;
 import com.xiaoyue.tinkers_ingenuity.register.TIHooks;
 import dev.xkmc.l2damagetracker.contents.attack.CreateSourceEvent;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,7 +17,7 @@ public interface GenericCombatModifierHook {
     default void onCreateSource(IToolStackView tool, ModifierEntry modifier, LivingEntity attacker, CreateSourceEvent event) {
     }
 
-    default void onCriticalHit(IToolStackView tool, ModifierEntry modifier, LivingEntity attacker, TinkerToolCriticalEvent event) {
+    default void onCriticalHit(IToolStackView tool, ModifierEntry modifier, LivingEntity attacker, ToolAttackContextBuildEvent event) {
     }
 
     static void postCreateSource(IToolStackView tool, CreateSourceEvent event) {
@@ -26,9 +26,9 @@ public interface GenericCombatModifierHook {
         }
     }
 
-    static void postCritHit(IToolStackView tool, TinkerToolCriticalEvent event) {
+    static void postCritHit(IToolStackView tool, ToolAttackContextBuildEvent event) {
         for(ModifierEntry e : tool.getModifierList()) {
-            e.getHook(TIHooks.GENERIC_COMBAT).onCriticalHit(tool, e, event.getAttacker(), event);
+            e.getHook(TIHooks.GENERIC_COMBAT).onCriticalHit(tool, e, event.getContext().getAttacker(), event);
         }
     }
 
@@ -41,7 +41,7 @@ public interface GenericCombatModifierHook {
         }
 
         @Override
-        public void onCriticalHit(IToolStackView tool, ModifierEntry modifier, LivingEntity attacker, TinkerToolCriticalEvent event) {
+        public void onCriticalHit(IToolStackView tool, ModifierEntry modifier, LivingEntity attacker, ToolAttackContextBuildEvent event) {
             for(GenericCombatModifierHook module : this.modules) {
                 module.onCriticalHit(tool, modifier, attacker, event);
             }

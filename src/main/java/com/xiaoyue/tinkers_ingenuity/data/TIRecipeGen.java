@@ -74,11 +74,14 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
     private void vanillaRecipes(RegistrateRecipeProvider pvd) {
         String material = "craft/material/";
         unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TIItems.ELFS_CRYSTAL)::unlockedBy, Items.HEART_OF_THE_SEA)
-        .requires(Items.HEART_OF_THE_SEA).requires(Items.DIAMOND).requires(Items.QUARTZ).requires(TinkerMaterials.cobalt.getIngot())
+                .requires(Items.HEART_OF_THE_SEA).requires(Items.DIAMOND).requires(Items.QUARTZ).requires(TinkerMaterials.cobalt.getIngot())
                 .save(pvd, this.prefix(TIItems.ELFS_CRYSTAL.getId(), material));
         unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TIItems.PLAGUE_BONE)::unlockedBy, TinkerMaterials.venombone.get())
                 .requires(TinkerMaterials.venombone).requires(Items.SOUL_SAND).requires(Items.NETHER_WART)
                 .save(pvd, this.prefix(TIItems.PLAGUE_BONE.getId(), material));
+        unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TIItems.SEA_SNAIL)::unlockedBy, Items.NAUTILUS_SHELL)
+                .requires(Items.NAUTILUS_SHELL).requires(Items.GOLD_INGOT).requires(Items.DRIED_KELP_BLOCK).requires(Items.COPPER_INGOT)
+                .save(pvd, this.prefix(TIItems.SEA_SNAIL.getId(), material));
         BindingHandler.metalCraft(pvd, "craft/", TIItems.BLACK_GOLD);
         BindingHandler.metalCraft(pvd, "craft/", TIItems.FLAME_STEEL);
         BindingHandler.metalCraft(pvd, "craft/", TIItems.BLACK_FLASH_ALLOY);

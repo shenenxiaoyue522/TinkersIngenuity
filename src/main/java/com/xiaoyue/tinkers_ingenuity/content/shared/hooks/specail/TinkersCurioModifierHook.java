@@ -92,6 +92,10 @@ public interface TinkersCurioModifierHook {
     default void onPickupExp(CurioStackView curio, int level, LivingEntity entity, ExperienceOrb orb) {
     }
 
+    default float getProtection(CurioStackView curio, LivingEntity entity, DamageSource source, float modifierValue) {
+        return modifierValue;
+    }
+
     record AllMerger(Collection<TinkersCurioModifierHook> modules) implements TinkersCurioModifierHook {
         @Override
         public void onCurioTick(CurioStackView curio, int level, LivingEntity entity) {
@@ -225,6 +229,14 @@ public interface TinkersCurioModifierHook {
             for (TinkersCurioModifierHook module : modules) {
                 module.onPickupExp(curio, level, entity, orb);
             }
+        }
+
+        @Override
+        public float getProtection(CurioStackView curio, LivingEntity entity, DamageSource source, float modifierValue) {
+            for (TinkersCurioModifierHook module : modules) {
+                modifierValue = module.getProtection(curio, entity, source, modifierValue);
+            }
+            return modifierValue;
         }
     }
 }

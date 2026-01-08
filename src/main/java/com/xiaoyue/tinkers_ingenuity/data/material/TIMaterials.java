@@ -203,6 +203,24 @@ public enum TIMaterials {
             .trait(b -> b.addDefault(TIModifierData.ALIEN.asEntry(), TIModifierData.BLACK_WINGS.asEntry()))
             .render(b -> b.color(0xff573e63).fallbacks("bone", "metal")
                     .sprite(b.color(0xff271430, 0xff3e2848, 0xff45304f, 0xff6a4c78, 0xff834b9c, 0xffb373d1)))),
+    SEA_SNAIL(MaterialBuildHolder.builder("sea_snail")
+            .craftableMaterial(TIItems.SEA_SNAIL)
+            .desc(b -> b
+                    .encyclopedia("Even if you are not in the water, it is considered to be in the water. Increases attack damage and digging speed by 18% while in water or in rain")
+                    .ranged("Even if you are not in the water, it is considered to be in the water. Increases draw speed by 18% while in water or in rain")
+                    .armor("Even if you are not in the water, it is considered to be in the water"))
+            .definition(b -> b.tier(3).craftable())
+            .stat(false, null,
+                    head(565, 6.5f, Tiers.IRON, 2.7f),
+                    handle().durability(0.8f).miningSpeed(0.75f).attackSpeed(1.2f).build(),
+                    StatlessMaterialStats.BINDING,
+                    limb(565, 0.2f, 0.05f, -0.1f),
+                    grip(-0.2f, 2.6f, 0f),
+                    StatlessMaterialStats.MAILLE)
+            .trait(b -> b.addDefault(TIModifierData.MOIST.asEntry(), TIModifierData.AQUATIC.asEntry())
+                    .addArmor(TIModifierData.MOIST.asEntry()))
+            .render(b -> b.color(0xffccb393).fallbacks("bone")
+                    .sprite(b.color(0xff5c2d21, 0xff704231, 0xffc79a75, 0xffccb393, 0xfff0e1c7, 0xfffadf11)))),
     ;
 
     public final MaterialBuildHolder holder;

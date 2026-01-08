@@ -118,7 +118,7 @@ dependencies {
     implementation fg.deobf(jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: "[MC1.20,MC1.21)"))
 
     implementation fg.deobf("xiaoyue.celestial_core:celestial_core:1.4.0-slim")
-    implementation fg.deobf(jarJar(group: 'xiaoyue.celestial_invoker', name: 'celestial_invoker', version: "[1.0.5,)"))
+    implementation fg.deobf(jarJar(group: 'xiaoyue.celestial_invoker', name: 'celestial_invoker', version: "[1.0.5b,)"))
 
     implementation fg.deobf("slimeknights.mantle:Mantle:${minecraft_version}-${mantle_version}")
     implementation fg.deobf("slimeknights.tconstruct:TConstruct:${minecraft_version}-${tconstruct_version}")

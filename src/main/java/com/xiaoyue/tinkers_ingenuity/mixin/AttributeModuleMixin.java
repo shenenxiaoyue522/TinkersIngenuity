@@ -15,7 +15,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import java.util.function.BiConsumer;
 
 @Mixin(value = AttributeModule.class, remap = false)
-public class AttributeModuleMixin {
+public abstract class AttributeModuleMixin {
 
     @Inject(at = @At("HEAD"), method = "addAttributes", cancellable = true)
     public void tinkers_ingenuity$checkTool(IToolStackView tool, ModifierEntry modifier, EquipmentSlot slot, BiConsumer<Attribute, AttributeModifier> consumer, CallbackInfo ci) {

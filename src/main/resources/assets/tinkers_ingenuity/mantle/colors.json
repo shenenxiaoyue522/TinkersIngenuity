@@ -33,7 +33,9 @@
     "black_wings": "#573e63",
     "alien": "#573e63",
     "scholar": "#5dd100",
-    "flame_heart": "#d14300"
+    "flame_heart": "#d14300",
+    "moist": "#ccb393",
+    "aquatic": "#ccb393"
   },
   "material.tinkers_ingenuity": {
     "black_gold": "#52476b",
@@ -46,6 +48,7 @@
     "colorful_slime": "#836492",
     "knight_crystal": "#956bde",
     "mithril": "#1fa8b1",
-    "black_dragon_substance": "#573e63"
+    "black_dragon_substance": "#573e63",
+    "sea_snail": "#ccb393"
   }
 }

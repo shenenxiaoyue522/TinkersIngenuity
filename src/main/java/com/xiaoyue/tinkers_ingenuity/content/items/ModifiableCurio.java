@@ -53,6 +53,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 
 public class ModifiableCurio extends ModifiableItem implements ICurioItem {
     public ModifiableCurio(ToolDefinition toolDefinition) {
@@ -62,6 +63,18 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
     public static List<SlotResult> findAll(LivingEntity entity) {
         Optional<ICuriosItemHandler> inv = CuriosApi.getCuriosInventory(entity).resolve();
         return inv.isPresent() ? inv.get().findCurios(TinkerUtils::checkTool) : List.of();
+    }
+
+    public static <T> T postAction(LivingEntity entity, BiFunction<CurioStackView, ModifierEntry, T> func, T defaultValue) {
+        if (!findAll(entity).isEmpty()) {
+            for (SlotResult result : findAll(entity)) {
+                CurioStackView tool = CurioStackView.of(result);
+                for (ModifierEntry entry : tool.getModifiers()) {
+                    return func.apply(tool, entry);
+                }
+            }
+        }
+        return defaultValue;
     }
 
     public static void postAction(LivingEntity entity, BiConsumer<CurioStackView, ModifierEntry> cons) {

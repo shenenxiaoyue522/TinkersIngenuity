@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "tinkers_ingenuity:sea_snail"
+  },
+  "material": "tinkers_ingenuity:sea_snail",
+  "needed": 1,
+  "value": 1
+}

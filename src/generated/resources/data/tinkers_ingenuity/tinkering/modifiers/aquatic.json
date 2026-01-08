@@ -1,0 +1,20 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_ingenuity:mixed_modification",
+      "bonus": {
+        "factor": 0.18,
+        "operation": "multiplier_base",
+        "single": false
+      },
+      "entity": "tinkers_ingenuity:in_water_or_rain",
+      "multi_bonus": {
+        "break_speed": true,
+        "melee_damage": true,
+        "modify_stat": "tconstruct:draw_speed"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -24,7 +24,7 @@ import java.util.List;
 
 public class TIItems {
 
-    public static final ItemEntry<Item> FINAL_SHELL, COLOURED_GLAZE_STAR, ELFS_CRYSTAL, PLAGUE_BONE, BLACK_DRAGON_SUBSTANCE;
+    public static final ItemEntry<Item> FINAL_SHELL, COLOURED_GLAZE_STAR, ELFS_CRYSTAL, PLAGUE_BONE, BLACK_DRAGON_SUBSTANCE, SEA_SNAIL;
     public static final MetalItemEntry<Item, Block> BLACK_GOLD, FLAME_STEEL, BLACK_FLASH_ALLOY, COLORFUL_SLIME, KNIGHT_CRYSTAL, MITHRIL;
     public static final List<ItemEntry<Item>> MEDAL_RIBBONS_CAST, MEDAL_BODY_CAST, BLOWPIPE_TUBE_CAST, BLOWPIPE_MOUTH_CAST;
     public static final ItemEntry<ToolPartItem> MEDAL_RIBBONS, MEDAL_BODY, BLOWPIPE_TUBE, BLOWPIPE_MOUTH;
@@ -45,6 +45,7 @@ public class TIItems {
         KNIGHT_CRYSTAL = reg().slimeMetal("knight_crystal");
         MITHRIL = reg().slimeMetal("mithril");
         BLACK_DRAGON_SUBSTANCE = item("black_dragon_substance", "material", Item::new);
+        SEA_SNAIL = item("sea_snail", "material", Item::new);
         MEDAL_RIBBONS_CAST = reg().castItem("medal_ribbons");
         MEDAL_BODY_CAST = reg().castItem("medal_body");
         BLOWPIPE_TUBE_CAST = reg().castItem("blowpipe_tube");

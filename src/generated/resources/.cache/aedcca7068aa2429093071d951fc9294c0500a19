@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-14T20:08:56.4280446	Tinkers Ingenuity material stats providers
+// 1.20.1	2026-01-03T19:15:51.7357198	Tinkers Ingenuity material stats providers
 a61eb7639d38319957f7f1440bb0f3d187982102 data/tconstruct/tinkering/materials/stats/amethyst_bronze.json
 a85aa8d6809b9745577f269f09be914204234ebb data/tconstruct/tinkering/materials/stats/bone.json
 78fa7df41c59a20b88d9fff67b7718afc9e7b262 data/tconstruct/tinkering/materials/stats/cobalt.json
@@ -19,3 +19,4 @@ b4ead11b70be69a8ddf6911875680de4c6c58d0d data/tinkers_ingenuity/tinkering/materi
 7ddfe010c8c4665a3e97910f8583cc6e69f0ff5c data/tinkers_ingenuity/tinkering/materials/stats/knight_crystal.json
 24d526003312fb0523b0b0a29f4f19cc7b58a844 data/tinkers_ingenuity/tinkering/materials/stats/mithril.json
 745a5673e6afeef6024650d16aa273f43d068d11 data/tinkers_ingenuity/tinkering/materials/stats/plague_bone.json
+3a38cacb553999d789229fa1e78e68ee815a99ee data/tinkers_ingenuity/tinkering/materials/stats/sea_snail.json

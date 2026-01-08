@@ -10,8 +10,8 @@ import slimeknights.tconstruct.library.tools.definition.module.weapon.SweepWeapo
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 @Mixin(value = {SweepWeaponAttack.class}, remap = false)
-public class SweepAttackMixin {
-    @ModifyVariable(at = @At("STORE"), method = {"afterMeleeHit"}, ordinal = 2)
+public abstract class SweepAttackMixin {
+    @ModifyVariable(at = @At("STORE"), method = "afterMeleeHit", ordinal = 2)
     public float tinkers_ingenuity$afterMeleeHit$setSweepDmg(float value, @Local(argsOnly = true) IToolStackView tool, @Local(argsOnly = true) ToolAttackContext context) {
         return SweepEdgeModifierHook.post(tool, context, value);
     }

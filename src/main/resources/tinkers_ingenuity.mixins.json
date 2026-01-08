@@ -4,10 +4,12 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "tinkers_ingenuity.refmap.json",
   "mixins": [
-    "EntityMixin",
     "AttributeModuleMixin",
+    "EntityMixin",
     "SweepAttackMixin",
+    "ToolAttackContextInvoker",
     "ToolAttackUtilMixin",
+    "ToolEventsMixin",
     "ToolStackMixin"
   ],
   "minVersion": "0.8",
