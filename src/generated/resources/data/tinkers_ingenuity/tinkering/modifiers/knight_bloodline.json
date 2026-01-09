@@ -3,7 +3,7 @@
   "modules": [
     {
       "type": "tinkers_ingenuity:knight_bloodline_modifier",
-      "max_multiplier": 2,
+      "max_factor": 2,
       "protect": 0.45
     }
   ],

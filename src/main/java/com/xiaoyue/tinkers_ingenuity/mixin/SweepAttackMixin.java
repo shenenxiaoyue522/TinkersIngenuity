@@ -9,7 +9,7 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.definition.module.weapon.SweepWeaponAttack;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-@Mixin(value = {SweepWeaponAttack.class}, remap = false)
+@Mixin(value = SweepWeaponAttack.class, remap = false)
 public abstract class SweepAttackMixin {
     @ModifyVariable(at = @At("STORE"), method = "afterMeleeHit", ordinal = 2)
     public float tinkers_ingenuity$afterMeleeHit$setSweepDmg(float value, @Local(argsOnly = true) IToolStackView tool, @Local(argsOnly = true) ToolAttackContext context) {

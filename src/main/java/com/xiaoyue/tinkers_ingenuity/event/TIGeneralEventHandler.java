@@ -1,13 +1,17 @@
 package com.xiaoyue.tinkers_ingenuity.event;
 
+import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import com.xiaoyue.tinkers_ingenuity.content.items.ModifiableCurio;
-import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.attack.GenericCombatModifierHook;
+import com.xiaoyue.tinkers_ingenuity.content.shared.holder.CurioStackView;
 import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.defense.LivingEventModifierHook;
 import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.specail.MenuSlotClickModifierHook;
 import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.specail.TinkersCurioModifierHook;
-import com.xiaoyue.tinkers_ingenuity.event.api.ToolAttackContextBuildEvent;
+import com.xiaoyue.tinkers_ingenuity.data.modifier.TIModifierData;
+import com.xiaoyue.tinkers_ingenuity.mixin.ToolAttackContextAccessor;
 import com.xiaoyue.tinkers_ingenuity.register.TIHooks;
 import com.xiaoyue.tinkers_ingenuity.utils.TinkerUtils;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -22,13 +26,22 @@ import net.minecraftforge.event.entity.living.*;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerXpEvent;
 import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import slimeknights.tconstruct.common.TinkerTags;
+import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.tools.capability.PersistentDataCapability;
+import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.definition.module.mining.IsEffectiveToolHook;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.tools.data.ModifierIds;
+import top.theillusivec4.curios.api.SlotResult;
+
+import java.util.List;
+import java.util.Map;
 
 import static com.xiaoyue.tinkers_ingenuity.TinkersIngenuity.MODID;
 
@@ -117,10 +130,10 @@ public class TIGeneralEventHandler {
         LivingEntity target = event.getEntity();
         Entity source = event.getSource().getEntity();
         if (source instanceof LivingEntity attacker) {
+            ModifiableCurio.postAction(attacker, ModifierIds.strength, (C, l) -> {
+                event.setAmount(event.getAmount() * (1 + l * 0.1f));
+            });
             ModifiableCurio.postAction(attacker, (c, e) -> {
-                if (c.hasModifier(ModifierIds.strength)) {
-                    event.setAmount(event.getAmount() * (1 + c.getModifierLevel(ModifierIds.strength) * 0.1f));
-                }
                 TinkersCurioModifierHook hook = e.getHook(TIHooks.TINKERS_CURIO);
                 hook.onDamageTargetPre(c, e.getLevel(), attacker, target, event);
             });
@@ -131,6 +144,36 @@ public class TIGeneralEventHandler {
         });
     }
 
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void onHurtLowest(LivingHurtEvent event) {
+        LivingEntity entity = event.getEntity();
+        List<SlotResult> allCurios = ModifiableCurio.findAll(entity);
+        if (!allCurios.isEmpty()) {
+            float factor = 1f;
+            for (SlotResult result : allCurios) {
+                CurioStackView curio = CurioStackView.of(result);
+                if (curio.hasModifier(ModifierIds.protection)) {
+                    factor -= curio.getModifierLevel(ModifierIds.protection) * 0.05f;
+                }
+                for (Map.Entry<TagKey<DamageType>, ModifierId> entry : PROTECTION_MAP.entrySet()) {
+                    if (curio.hasModifier(entry.getValue()) && event.getSource().is(entry.getKey())) {
+                        factor -= curio.getModifierLevel(entry.getValue()) * 0.08f;
+                    }
+                }
+            }
+            event.setAmount(event.getAmount() * factor);
+        }
+        TinkersIngenuity.LOGGER.info("{}", event.getAmount());
+    }
+
+    private static final Map<TagKey<DamageType>, ModifierId> PROTECTION_MAP = Map.of(
+            TinkerTags.DamageTypes.PROJECTILE_PROTECTION, ModifierIds.projectileProtection,
+            TinkerTags.DamageTypes.FIRE_PROTECTION, ModifierIds.fireProtection,
+            TinkerTags.DamageTypes.MELEE_PROTECTION, ModifierIds.meleeProtection,
+            TinkerTags.DamageTypes.BLAST_PROTECTION, ModifierIds.blastProtection,
+            TinkerTags.DamageTypes.MAGIC_PROTECTION, ModifierIds.magicProtection
+    );
+
     @SubscribeEvent
     public static void onAttack(LivingAttackEvent event) {
         LivingEntity target = event.getEntity();
@@ -140,11 +183,6 @@ public class TIGeneralEventHandler {
                 event.setCanceled(true);
             }
         });
-    }
-
-    @SubscribeEvent
-    public static void onToolCrit(ToolAttackContextBuildEvent event) {
-        GenericCombatModifierHook.postCritHit(event.getTool(), event);
     }
 
     @SubscribeEvent
@@ -168,5 +206,11 @@ public class TIGeneralEventHandler {
             TinkersCurioModifierHook hook = e.getHook(TIHooks.TINKERS_CURIO);
             hook.onPickupExp(c, e.getLevel(), entity, event.getOrb());
         });
+    }
+
+    public static void onToolMeleeStart(IToolStackView tool, ToolAttackContext context) {
+        if (tool.getModifierLevel(TIModifierData.BE_IMPOLITE.getId()) > 0) {
+            ((ToolAttackContextAccessor) context).setCriticalModifier(1.5f);
+        }
     }
 }

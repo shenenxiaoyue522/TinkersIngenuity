@@ -1,9 +1,4 @@
 {
-  "level_display": "tconstruct:default",
-  "modules": [
-    {
-      "type": "tinkers_ingenuity:critical_chance"
-    }
-  ],
+  "level_display": "tconstruct:no_levels",
   "tooltip_display": "always"
 }

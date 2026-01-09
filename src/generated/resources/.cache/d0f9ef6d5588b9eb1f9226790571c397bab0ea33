@@ -1,4 +1,4 @@
-// 1.20.1	2026-01-08T19:29:28.9649971	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider, Sound Definitions, Particle Descriptions]
+// 1.20.1	2026-01-08T23:40:58.8859417	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider, Sound Definitions, Particle Descriptions]
 e557016fbb3942809ff5a0d0860840a884743972 assets/tinkers_ingenuity/blockstates/black_flash_alloy_block.json
 cc611fce4c7ef9bec089301f40af20c25fce67cd assets/tinkers_ingenuity/blockstates/black_gold_block.json
 c4698202e0bffb8078ad7a5f449f9c986d6cead3 assets/tinkers_ingenuity/blockstates/colorful_slime_block.json
@@ -323,11 +323,20 @@ a98e6bd19ea2a4b89464163b2757f9ae7275ce58 data/tinkers_ingenuity/recipes/tools/ma
 852c08a3b93cd3a0451d79d2c5fe8d606950f5f4 data/tinkers_ingenuity/recipes/tools/modifier/ability/rapid_fire.json
 b8062d5e55bdd9e4553efdf656d4111182ea13e1 data/tinkers_ingenuity/recipes/tools/modifier/curio/ability/blot_out.json
 41ba2fb13a6908cc1401e187ce757da20e005a6f data/tinkers_ingenuity/recipes/tools/modifier/curio/ability/flame_heart.json
+f7feefd00f9c73ab90d78b78088997f96600e7af data/tinkers_ingenuity/recipes/tools/modifier/curio/ability/luck.json
 73f3aad4394c270fb0e11e35d9e6901f350ae626 data/tinkers_ingenuity/recipes/tools/modifier/curio/ability/reach.json
 192ba902e808cc897b22d96f90166acc73e4a714 data/tinkers_ingenuity/recipes/tools/modifier/curio/ability/step_up.json
+3147233b835771ee973492b2207ac5ab8660120f data/tinkers_ingenuity/recipes/tools/modifier/curio/ability/swiftstrike.json
+878598d19dbe1a0f381eb1c68345734b38d1a4f5 data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/blast_protection.json
+d55894710dab20a3076e828d979cce82fc2b87da data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/fire_protection.json
 4bd310575b51a4e91218dbdeb3881044b18dc7a1 data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/golden.json
 12862fee656e57a79ef271e3ec36a7a2df3bb76a data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/haste.json
+1197e52b0d58d42fbea7405c83da060d587a79c2 data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/magic_protection.json
+a4390f58583decc741ba328b1fc4c9170a8cf9f6 data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/magnetic.json
+db5d122fc239330c43d0b29466e1eecfb5bf135a data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/melee_protection.json
+51d71391ab2a8ea847ae80724cc5361dff0c7592 data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/projectile_protection.json
 415d732ad197e518be397f944fad8175b6b2a9fc data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/scholar.json
+620ba5082a2da2007868a444d6664258e98066e8 data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/speedy.json
 ccf78ad4344422832ff3d0bbee90d47644a6909e data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/strength.json
 14ebf13d5f6f81b45a34f1543478fcef797a9839 data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/swiftstrike.json
 b8508e9b6452aa31e4dca6ef0002c0718338f822 data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/walk_snow.json

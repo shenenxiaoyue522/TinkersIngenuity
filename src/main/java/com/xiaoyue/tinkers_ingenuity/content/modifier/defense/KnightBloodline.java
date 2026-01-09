@@ -22,12 +22,12 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public record KnightBloodline(float protect, int maxMultiplier)
+public record KnightBloodline(float protect, int maxFactor)
         implements ISimpleModule, OnAttackedModifierHook, ModifyDamageModifierHook {
 
     public static final RecordLoadable<KnightBloodline> LOADER = RecordLoadable.create(
             FloatLoadable.ANY.requiredField("protect", KnightBloodline::protect),
-            IntLoadable.ANY_FULL.requiredField("max_multiplier", KnightBloodline::maxMultiplier),
+            IntLoadable.ANY_FULL.requiredField("max_factor", KnightBloodline::maxFactor),
             KnightBloodline::new
     );
 
@@ -50,8 +50,8 @@ public record KnightBloodline(float protect, int maxMultiplier)
     @Override
     public void onAttacked(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slot, DamageSource source, float amount, boolean direct) {
         if (context.getEntity() instanceof Player player) {
-            if (player.getAbsorptionAmount() < player.getMaxHealth() * (float) this.maxMultiplier) {
-                float maxAbs = Math.min(player.getMaxHealth() * (float) this.maxMultiplier, player.getAbsorptionAmount() + (float) modifier.getLevel());
+            if (player.getAbsorptionAmount() < player.getMaxHealth() * (float) this.maxFactor) {
+                float maxAbs = Math.min(player.getMaxHealth() * (float) this.maxFactor, player.getAbsorptionAmount() + (float) modifier.getLevel());
                 GeneralEventHandler.schedule(() -> player.setAbsorptionAmount(maxAbs));
             }
         }

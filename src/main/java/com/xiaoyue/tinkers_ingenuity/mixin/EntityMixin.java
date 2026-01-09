@@ -20,7 +20,7 @@ public abstract class EntityMixin {
     public void tinkers_ingenuity$setOnFire(CallbackInfoReturnable<Boolean> cir) {
         Entity self = (Entity) (Object) this;
         if (self instanceof LivingEntity entity) {
-            ModifiableCurio.postAction(entity, TIModifierData.FLAME_HEART.getId(), (curio, entry) -> cir.setReturnValue(true));
+            ModifiableCurio.postAction(entity, TIModifierData.FLAME_HEART.getId(), (c, l) -> cir.setReturnValue(true));
         }
     }
 

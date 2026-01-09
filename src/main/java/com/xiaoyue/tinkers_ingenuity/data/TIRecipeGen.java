@@ -129,6 +129,37 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         ModifierRecipeBuilder.modifier(ModifierIds.swiftstrike).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
                 .addInput(SizedIngredient.of(Ingredient.of(Items.AMETHYST_BLOCK), 18))
                 .setMaxLevel(3).save(cons, this.prefix(ModifierIds.swiftstrike, curio_upgrade));
+        ModifierRecipeBuilder.modifier(ModifierIds.protection).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
+                .addInput(Ingredient.of(TinkerModifiers.goldReinforcement)).addInput(Ingredient.of(TinkerModifiers.obsidianReinforcement))
+                .addInput(Ingredient.of(TinkerModifiers.ironReinforcement)).addInput(Ingredient.of(TinkerModifiers.searedReinforcement))
+                .addInput(Ingredient.of(TinkerModifiers.cobaltReinforcement))
+                .setMaxLevel(2).save(cons, this.prefix(ModifierIds.swiftstrike, curio_ability));
+        ModifierRecipeBuilder.modifier(ModifierIds.projectileProtection).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(SizedIngredient.of(Ingredient.of(TinkerModifiers.ironReinforcement), 6))
+                .setMaxLevel(3).save(cons, this.prefix(ModifierIds.projectileProtection, curio_upgrade));
+        ModifierRecipeBuilder.modifier(ModifierIds.fireProtection).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(SizedIngredient.of(Ingredient.of(TinkerModifiers.searedReinforcement), 6))
+                .setMaxLevel(3).save(cons, this.prefix(ModifierIds.fireProtection, curio_upgrade));
+        ModifierRecipeBuilder.modifier(ModifierIds.meleeProtection).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(SizedIngredient.of(Ingredient.of(TinkerModifiers.cobaltReinforcement), 6))
+                .setMaxLevel(3).save(cons, this.prefix(ModifierIds.meleeProtection, curio_upgrade));
+         ModifierRecipeBuilder.modifier(ModifierIds.blastProtection).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(SizedIngredient.of(Ingredient.of(TinkerModifiers.emeraldReinforcement), 6))
+                .setMaxLevel(3).save(cons, this.prefix(ModifierIds.blastProtection, curio_upgrade));
+        ModifierRecipeBuilder.modifier(ModifierIds.magicProtection).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(SizedIngredient.of(Ingredient.of(TinkerModifiers.goldReinforcement), 6))
+                .setMaxLevel(3).save(cons, this.prefix(ModifierIds.magicProtection, curio_upgrade));
+        ModifierRecipeBuilder.modifier(TinkerModifiers.magnetic).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(Ingredient.of(Items.COMPASS)).setMaxLevel(3)
+                .save(cons, this.prefix(TinkerModifiers.magnetic, curio_upgrade));
+        ModifierRecipeBuilder.modifier(ModifierIds.luck).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
+                .addInput(Ingredient.of(Items.LAPIS_BLOCK)).addInput(Ingredient.of(Items.LAPIS_BLOCK))
+                .addInput(Ingredient.of(Items.GOLD_BLOCK)).addInput(Ingredient.of(ItemTags.FLOWERS)).setMaxLevel(1)
+                .save(cons, this.prefix(ModifierIds.luck, curio_ability));
+        ModifierRecipeBuilder.modifier(ModifierIds.speedy).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+                .addInput(Ingredient.of(Items.REDSTONE_BLOCK)).addInput(Ingredient.of(Items.REDSTONE_BLOCK))
+                .addInput(Ingredient.of(Items.FEATHER)).addInput(Ingredient.of(Items.FEATHER))
+                .setMaxLevel(2).save(cons, this.prefix(ModifierIds.speedy, curio_upgrade));
     }
 
     protected void materialBuildRecipe(Consumer<FinishedRecipe> cons) {

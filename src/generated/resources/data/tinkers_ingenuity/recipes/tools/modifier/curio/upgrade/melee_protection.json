@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "amount_needed": 6,
+      "item": "tconstruct:cobalt_reinforcement"
+    }
+  ],
+  "level": {
+    "max": 3
+  },
+  "result": "tconstruct:melee_protection",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tinkers_ingenuity:modifiable_curio"
+  }
+}

@@ -1,8 +1,8 @@
-// 1.20.1	2026-01-03T19:15:51.7357198	Tinkers Ingenuity modifier providers
+// 1.20.1	2026-01-09T20:06:59.9344256	Tinkers Ingenuity modifier providers
 5bcd7aad30ed37c3e9c9b194f448b91568853215 data/tinkers_ingenuity/tinkering/modifiers/aftershock.json
 0ac2154680bea4bc5ea8c585d0b3afbef6017eb1 data/tinkers_ingenuity/tinkering/modifiers/alien.json
 ef0483d06a40924ba1b124e373232436f4da3af4 data/tinkers_ingenuity/tinkering/modifiers/aquatic.json
-bd33c4893af4940860e2ddb71f38404be8cb9a0e data/tinkers_ingenuity/tinkering/modifiers/be_impolite.json
+358afc506ee952dc6e3c09cf51efafff7b3b55a4 data/tinkers_ingenuity/tinkering/modifiers/be_impolite.json
 358afc506ee952dc6e3c09cf51efafff7b3b55a4 data/tinkers_ingenuity/tinkering/modifiers/blot_out.json
 648800cc660ee5b548ffddc29732fe514f502252 data/tinkers_ingenuity/tinkering/modifiers/chivalry.json
 b0e4486bfd8590f50cb69648f952d006e565ab09 data/tinkers_ingenuity/tinkering/modifiers/cold_blooded.json
@@ -19,7 +19,7 @@ dc1f09d352bce192c9de221561a46ab68839b5c1 data/tinkers_ingenuity/tinkering/modifi
 358afc506ee952dc6e3c09cf51efafff7b3b55a4 data/tinkers_ingenuity/tinkering/modifiers/flame_heart.json
 482b8f9c668652d32c0c1b0bc9387988b9f5b875 data/tinkers_ingenuity/tinkering/modifiers/forge_fire.json
 358afc506ee952dc6e3c09cf51efafff7b3b55a4 data/tinkers_ingenuity/tinkering/modifiers/golden.json
-160c86f587dad2deb3114bb50a1e6db5940ebeb7 data/tinkers_ingenuity/tinkering/modifiers/knight_bloodline.json
+6d10f564c7f5457057c7a54703d2c6c93aed601e data/tinkers_ingenuity/tinkering/modifiers/knight_bloodline.json
 12acf1f2c8583476ba6afbd113f5f493865d2ce2 data/tinkers_ingenuity/tinkering/modifiers/lithe.json
 358afc506ee952dc6e3c09cf51efafff7b3b55a4 data/tinkers_ingenuity/tinkering/modifiers/moist.json
 e06a2c91fe5751991e97a9c47ca2bb671f8764b1 data/tinkers_ingenuity/tinkering/modifiers/mysterious.json

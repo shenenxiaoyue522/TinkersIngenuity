@@ -2,7 +2,9 @@ package com.xiaoyue.tinkers_ingenuity.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.general.FreshWater;
+import com.xiaoyue.tinkers_ingenuity.data.TITagGen;
 import com.xiaoyue.tinkers_ingenuity.data.modifier.TIModifierData;
+import com.xiaoyue.tinkers_ingenuity.register.TIToolStats;
 import dev.xkmc.l2serial.util.Wrappers;
 import net.minecraft.nbt.CompoundTag;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,6 +23,7 @@ import slimeknights.tconstruct.library.tools.stat.INumericToolStat;
 import slimeknights.tconstruct.library.tools.stat.IToolStat;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.utils.RestrictedCompoundTag;
+import slimeknights.tconstruct.tools.data.ModifierIds;
 
 import java.util.List;
 
@@ -36,7 +39,12 @@ public abstract class ToolStackMixin {
     @Shadow public abstract RestrictedCompoundTag getRestrictedNBT();
 
     @Inject(at = @At(value = "INVOKE", target = "Lslimeknights/tconstruct/library/tools/definition/module/build/ToolStatsHook;addToolStats(Lslimeknights/tconstruct/library/tools/nbt/IToolContext;Lslimeknights/tconstruct/library/tools/stat/ModifierStatsBuilder;)V"), method = "rebuildStats", cancellable = true)
-    public void tinkers_ingenuity$onFreshWater(CallbackInfo ci, @Local ToolRebuildContext tool) {
+    public void tinkers_ingenuity$onFreshWater(CallbackInfo ci, @Local ToolRebuildContext tool, @Local ModifierStatsBuilder statsBuilder) {
+        if (tool.hasTag(TITagGen.MODIFIABLE_CURIO)) {
+            if (tool.getModifierLevel(ModifierIds.speedy) > 0) {
+                TIToolStats.CURIO_MOVEMENT_SPEED.add(statsBuilder, 0.04 * tool.getModifierLevel(ModifierIds.speedy));
+            }
+        }
         if (tool.getModifierLevel(TIModifierData.FRESH_WATER.getId()) > 0 && nbt.contains(FreshWater.TAG_COPY_STATS) && nbt.contains(FreshWater.TAG_COPY_MULTIPLIERS)) {
             ModifierStatsBuilder builder = ModifierStatsBuilder.builder();
             MultiplierNBT multiplierNBT = MultiplierNBT.readFromNBT(nbt.getCompound(FreshWater.TAG_COPY_MULTIPLIERS));

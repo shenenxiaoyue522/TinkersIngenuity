@@ -9,6 +9,7 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 public class TIAttackListener implements AttackListener {
 
+    @Override
     public void onCreateSource(CreateSourceEvent event) {
         LivingEntity attacker = event.getAttacker();
         ToolStack tool = TinkerUtils.getAttackTool(attacker, event.getDirect());

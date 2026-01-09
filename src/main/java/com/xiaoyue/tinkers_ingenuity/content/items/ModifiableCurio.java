@@ -39,7 +39,9 @@ import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.StatsNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.data.ModifierIds;
+import slimeknights.tconstruct.tools.modifiers.upgrades.general.MagneticModifier;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.SlotResult;
@@ -165,6 +167,9 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
         for (ModifierEntry entry : tool.getModifiers()) {
             entry.getHook(TIHooks.TINKERS_CURIO).onCurioTick(tool, entry.getLevel(), context.entity());
         }
+        if (tool.hasModifier(TinkerModifiers.magnetic.getId())) {
+            MagneticModifier.applyMagnet(context.entity(), tool.getModifierLevel(TinkerModifiers.magnetic.getId()) - 1);
+        }
     }
 
     @Override
@@ -214,6 +219,9 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
         for (ModifierEntry entry : tool.getModifiers()) {
             origin = entry.getHook(TIHooks.TINKERS_CURIO).getLootingLevel(tool, entry.getLevel(), source, target, origin);
         }
+        if (tool.hasModifier(ModifierIds.luck)) {
+            origin += 1;
+        }
         return origin;
     }
 
@@ -223,6 +231,9 @@ public class ModifiableCurio extends ModifiableItem implements ICurioItem {
         CurioStackView tool = CurioStackView.of(context, stack);
         for (ModifierEntry entry : tool.getModifiers()) {
             origin = entry.getHook(TIHooks.TINKERS_CURIO).getFortuneLevel(tool, entry.getLevel(), loot, origin);
+        }
+        if (tool.hasModifier(ModifierIds.luck)) {
+            origin += 1;
         }
         return origin;
     }

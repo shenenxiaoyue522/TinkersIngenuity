@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "item": "minecraft:redstone_block"
+    },
+    {
+      "item": "minecraft:redstone_block"
+    },
+    {
+      "item": "minecraft:feather"
+    },
+    {
+      "item": "minecraft:feather"
+    }
+  ],
+  "level": {
+    "max": 2
+  },
+  "result": "tconstruct:speedy",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tinkers_ingenuity:modifiable_curio"
+  }
+}

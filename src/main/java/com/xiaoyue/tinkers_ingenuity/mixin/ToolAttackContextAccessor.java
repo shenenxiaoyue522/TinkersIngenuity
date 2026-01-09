@@ -1,13 +1,15 @@
 package com.xiaoyue.tinkers_ingenuity.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.gen.Accessor;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 
 @Mixin(value = ToolAttackContext.class, remap = false)
-public interface ToolAttackContextInvoker {
+public interface ToolAttackContextAccessor {
 
     @Accessor
+    @Mutable
     void setCriticalModifier(float modifier);
 
 }

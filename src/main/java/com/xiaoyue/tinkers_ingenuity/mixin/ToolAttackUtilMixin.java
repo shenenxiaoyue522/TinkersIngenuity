@@ -1,18 +1,15 @@
 package com.xiaoyue.tinkers_ingenuity.mixin;
 
-import com.llamalad7.mixinextras.sugar.Local;
 import com.xiaoyue.tinkers_ingenuity.content.generic.MeleeCacheCapability;
-import com.xiaoyue.tinkers_ingenuity.event.api.ToolAttackContextBuildEvent;
+import com.xiaoyue.tinkers_ingenuity.event.TIGeneralEventHandler;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.common.MinecraftForge;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
@@ -20,7 +17,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.function.DoubleSupplier;
 
-@Mixin(value = {ToolAttackUtil.class}, remap = false)
+@Mixin(value = ToolAttackUtil.class, remap = false)
 public abstract class ToolAttackUtilMixin {
 
     @Inject(at = @At("HEAD"), method = "attackEntity(Lslimeknights/tconstruct/library/tools/nbt/IToolStackView;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/entity/Entity;Ljava/util/function/DoubleSupplier;ZLnet/minecraft/world/entity/EquipmentSlot;)Z")
@@ -37,10 +34,8 @@ public abstract class ToolAttackUtilMixin {
         }
     }
 
-    @ModifyVariable(at = @At("STORE"), method = "performAttack", index = 1, argsOnly = true)
-    private static ToolAttackContext tinkers_ingenuity$attackEntity$critical(ToolAttackContext context, @Local(argsOnly = true) IToolStackView tool) {
-        ToolAttackContextBuildEvent event = new ToolAttackContextBuildEvent(tool, context);
-        MinecraftForge.EVENT_BUS.post(event);
-        return event.getContext();
+    @Inject(at = @At("HEAD"), method = "performAttack")
+    private static void tinkers_ingenuity$startAttack(IToolStackView tool, ToolAttackContext context, CallbackInfoReturnable<Boolean> cir) {
+        TIGeneralEventHandler.onToolMeleeStart(tool, context);
     }
 }

@@ -7,9 +7,8 @@
     "AttributeModuleMixin",
     "EntityMixin",
     "SweepAttackMixin",
-    "ToolAttackContextInvoker",
+    "ToolAttackContextAccessor",
     "ToolAttackUtilMixin",
-    "ToolEventsMixin",
     "ToolStackMixin"
   ],
   "minVersion": "0.8",

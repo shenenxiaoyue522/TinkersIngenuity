@@ -1,0 +1,26 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "item": "minecraft:lapis_block"
+    },
+    {
+      "item": "minecraft:lapis_block"
+    },
+    {
+      "item": "minecraft:gold_block"
+    },
+    {
+      "tag": "minecraft:flowers"
+    }
+  ],
+  "level": 1,
+  "result": "tconstruct:luck",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "tag": "tinkers_ingenuity:modifiable_curio"
+  }
+}

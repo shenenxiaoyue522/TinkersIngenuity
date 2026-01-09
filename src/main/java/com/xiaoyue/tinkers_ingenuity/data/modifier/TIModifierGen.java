@@ -16,7 +16,6 @@ import com.xiaoyue.tinkers_ingenuity.content.modifier.general.Chivalry;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.module.building.AllFloatStatCopyModule;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.module.building.StatWithTraitCountModule;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.module.combat.CreateSourceModule;
-import com.xiaoyue.tinkers_ingenuity.content.modifier.module.combat.CriticalChanceModule;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.module.combat.ExtraMagicAttackModule;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.module.combat.ForceAddEffectModule;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.module.curios.*;
@@ -60,8 +59,7 @@ public class TIModifierGen extends AbstractModifierProvider {
                 .addModule(StatBoostModule.multiplyBase(ToolStats.ATTACK_DAMAGE).flat(0.2F))
                 .addModule(StatBoostModule.multiplyBase(ToolStats.PROJECTILE_DAMAGE).flat(0.2F))
                 .addModule(CreateSourceModule.any(TIDamageState.BYPASS_ARMOR));
-        buildModifier(TIModifierData.BE_IMPOLITE.getId())
-                .addModule(CriticalChanceModule.any(1.0F));
+        buildModifier(TIModifierData.BE_IMPOLITE.getId()).levelDisplay(ModifierLevelDisplay.NO_LEVELS);
         buildModifier(TIModifierData.PENETRATING_STAR.getId())
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(CreateSourceModule.any(TIDamageState.BYPASS_ENTITY_INV))
