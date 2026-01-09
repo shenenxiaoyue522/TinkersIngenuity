@@ -163,7 +163,6 @@ public class TIGeneralEventHandler {
             }
             event.setAmount(event.getAmount() * factor);
         }
-        TinkersIngenuity.LOGGER.info("{}", event.getAmount());
     }
 
     private static final Map<TagKey<DamageType>, ModifierId> PROTECTION_MAP = Map.of(
