@@ -190,7 +190,7 @@
   "modifier.tinkers_ingenuity.lithe.description": "The wearer's digging speed, attack speed, and arrow speed are increased",
   "modifier.tinkers_ingenuity.lithe.flavor": "Light as a feather.",
   "modifier.tinkers_ingenuity.moist": "Moist",
-  "modifier.tinkers_ingenuity.moist.description": "Even if you are not in the water, it is considered to be in the water",
+  "modifier.tinkers_ingenuity.moist.description": "Even if you are not in the water or rain, you will be considered in the water or rain",
   "modifier.tinkers_ingenuity.moist.flavor": "I won't get you wet.",
   "modifier.tinkers_ingenuity.mysterious": "Mysterious",
   "modifier.tinkers_ingenuity.mysterious.description": "This tool will get more upgrade slots",

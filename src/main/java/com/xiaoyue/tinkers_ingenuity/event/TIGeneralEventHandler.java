@@ -1,6 +1,5 @@
 package com.xiaoyue.tinkers_ingenuity.event;
 
-import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import com.xiaoyue.tinkers_ingenuity.content.items.ModifiableCurio;
 import com.xiaoyue.tinkers_ingenuity.content.shared.holder.CurioStackView;
 import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.defense.LivingEventModifierHook;

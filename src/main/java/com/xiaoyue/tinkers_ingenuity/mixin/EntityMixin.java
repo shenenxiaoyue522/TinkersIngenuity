@@ -24,7 +24,7 @@ public abstract class EntityMixin {
         }
     }
 
-    @Inject(at = @At("HEAD"), method = "isInWater", cancellable = true)
+    @Inject(at = @At("HEAD"), method = "isInWaterOrRain", cancellable = true)
     public void tinkers_ingenuity$setOnWater(CallbackInfoReturnable<Boolean> cir) {
         Entity self = (Entity) (Object) this;
         if (self instanceof LivingEntity entity) {

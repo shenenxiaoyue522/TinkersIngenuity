@@ -237,6 +237,6 @@
   "modifier.tinkers_ingenuity.aquatic.description": "这件工具在水中或雨中时会变得更加好用",
   "modifier.tinkers_ingenuity.aquatic.flavor": "我住在水中。",
   "modifier.tinkers_ingenuity.moist": "湿润",
-  "modifier.tinkers_ingenuity.moist.description": "即使你不在水中也将被视为在水中",
+  "modifier.tinkers_ingenuity.moist.description": "即使你不在水中或雨中也将被视为在水中或雨中",
   "modifier.tinkers_ingenuity.moist.flavor": "我不会弄湿你。"
 }
