@@ -3,7 +3,7 @@ package com.xiaoyue.tinkers_ingenuity.register;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
-import com.xiaoyue.celestial_invoker.content.ancillary.entry.MetalItemEntry;
+import com.xiaoyue.celestial_invoker.content.common.entry.MetalItemEntry;
 import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import com.xiaoyue.tinkers_ingenuity.content.items.ModifiableBlowpipe;
 import com.xiaoyue.tinkers_ingenuity.content.items.ModifiableCurio;
