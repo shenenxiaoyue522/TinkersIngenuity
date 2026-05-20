@@ -2,7 +2,7 @@ package com.xiaoyue.tinkers_ingenuity.content.items;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
-import com.xiaoyue.celestial_invoker.content.ancillary.entry.AttributeAdder;
+import com.xiaoyue.celestial_invoker.content.common.entry.AttributeAdder;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.SubscribeTooltip;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipEntry;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipHolder;

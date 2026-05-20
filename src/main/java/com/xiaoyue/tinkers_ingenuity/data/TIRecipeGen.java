@@ -2,7 +2,7 @@ package com.xiaoyue.tinkers_ingenuity.data;
 
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import com.xiaoyue.celestial_invoker.content.ancillary.BindingHandler;
+import com.xiaoyue.celestial_invoker.content.common.Bindings;
 import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import com.xiaoyue.tinkers_ingenuity.content.json.condition.TIMaterialCondition;
 import com.xiaoyue.tinkers_ingenuity.content.shared.holder.MaterialBuildHolder;
@@ -63,7 +63,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 import static com.tterrag.registrate.providers.RegistrateRecipeProvider.has;
-import static com.xiaoyue.celestial_invoker.content.ancillary.BindingHandler.unlock;
+import static com.xiaoyue.celestial_invoker.content.common.Bindings.unlock;
 
 public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper, IToolRecipeHelper {
 
@@ -82,12 +82,12 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TIItems.SEA_SNAIL)::unlockedBy, Items.NAUTILUS_SHELL)
                 .requires(Items.NAUTILUS_SHELL).requires(Items.GOLD_INGOT).requires(Items.DRIED_KELP_BLOCK).requires(Items.COPPER_INGOT)
                 .save(pvd, this.prefix(TIItems.SEA_SNAIL.getId(), material));
-        BindingHandler.metalCraft(pvd, "craft/", TIItems.BLACK_GOLD);
-        BindingHandler.metalCraft(pvd, "craft/", TIItems.FLAME_STEEL);
-        BindingHandler.metalCraft(pvd, "craft/", TIItems.BLACK_FLASH_ALLOY);
-        BindingHandler.metalCraft(pvd, "craft/", TIItems.COLORFUL_SLIME);
-        BindingHandler.metalCraft(pvd, "craft/", TIItems.KNIGHT_CRYSTAL);
-        BindingHandler.metalCraft(pvd, "craft/", TIItems.MITHRIL);
+        Bindings.metalCraft(pvd, "craft/", TIItems.BLACK_GOLD);
+        Bindings.metalCraft(pvd, "craft/", TIItems.FLAME_STEEL);
+        Bindings.metalCraft(pvd, "craft/", TIItems.BLACK_FLASH_ALLOY);
+        Bindings.metalCraft(pvd, "craft/", TIItems.COLORFUL_SLIME);
+        Bindings.metalCraft(pvd, "craft/", TIItems.KNIGHT_CRYSTAL);
+        Bindings.metalCraft(pvd, "craft/", TIItems.MITHRIL);
     }
 
     protected void modifierRecipe(Consumer<FinishedRecipe> cons) {

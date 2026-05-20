@@ -138,6 +138,17 @@ public class TinkerUtils {
         }
     }
 
+    public static int getArmorTotalModifierLevel(LivingEntity entity, ModifierId modifier) {
+        int totalLv = 0;
+        for (ItemStack armor : entity.getArmorSlots()) {
+            if (TinkerUtils.checkTool(armor)) {
+                ToolStack tool = ToolStack.from(armor);
+                totalLv += tool.getModifierLevel(modifier);
+            }
+        }
+        return totalLv;
+    }
+
     public static ItemStack getRangedTool(LivingEntity entity) {
         for(InteractionHand hand : InteractionHand.values()) {
             ItemStack stack = entity.getItemInHand(hand);

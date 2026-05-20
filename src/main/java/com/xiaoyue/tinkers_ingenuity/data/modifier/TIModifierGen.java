@@ -5,7 +5,6 @@ import com.xiaoyue.tinkers_ingenuity.content.json.action.LivingEntityAction;
 import com.xiaoyue.tinkers_ingenuity.content.json.action.MultiBonusHelper;
 import com.xiaoyue.tinkers_ingenuity.content.json.action.ProjectileDataAction;
 import com.xiaoyue.tinkers_ingenuity.content.json.condition.TIEntityCondition;
-import com.xiaoyue.tinkers_ingenuity.content.json.condition.TISourceCondition;
 import com.xiaoyue.tinkers_ingenuity.content.json.variable.LevelingFormula;
 import com.xiaoyue.tinkers_ingenuity.content.json.variable.StatOperation;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.defense.Crystallization;
@@ -30,6 +29,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.ModifierSlotModule;
@@ -117,7 +117,7 @@ public class TIModifierGen extends AbstractModifierProvider {
                         false, ToolStats.VELOCITY), LevelingFormula.mulBase(0.12f)))
                 .addModule(AttributeModule.builder(Attributes.ATTACK_SPEED, AttributeModifier.Operation.MULTIPLY_BASE).eachLevel(0.12f));
         buildModifier(TIModifierData.DEMONIC.getId())
-                .addModule(SimpleProtectionModule.any(TISourceCondition.IS_MAGIC, LevelingFormula.mulBase(0.45f)));
+                .addModule(SimpleProtectionModule.any(DamageSourcePredicate.tag(TinkerTags.DamageTypes.MAGIC_PROTECTION), LevelingFormula.mulBase(0.45f)));
         buildModifier(TIModifierData.SCHOLAR.getId())
                 .addModule(CPickupExpBonusModule.any(LevelingFormula.mulBase(0.15f)));
         buildModifier(TIModifierData.ALIEN.getId())

@@ -4,6 +4,7 @@ import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.attack.GenericCombatMo
 import com.xiaoyue.tinkers_ingenuity.utils.TinkerUtils;
 import dev.xkmc.l2damagetracker.contents.attack.AttackListener;
 import dev.xkmc.l2damagetracker.contents.attack.CreateSourceEvent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
@@ -14,6 +15,7 @@ public class TIAttackListener implements AttackListener {
         LivingEntity attacker = event.getAttacker();
         ToolStack tool = TinkerUtils.getAttackTool(attacker, event.getDirect());
         if (tool != null) {
+            attacker.sendSystemMessage(Component.literal(tool.toString()));
             GenericCombatModifierHook.postCreateSource(tool, event);
         }
     }

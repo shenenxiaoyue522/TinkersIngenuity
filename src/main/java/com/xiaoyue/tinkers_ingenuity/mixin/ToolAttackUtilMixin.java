@@ -2,10 +2,6 @@ package com.xiaoyue.tinkers_ingenuity.mixin;
 
 import com.xiaoyue.tinkers_ingenuity.content.generic.MeleeCacheCapability;
 import com.xiaoyue.tinkers_ingenuity.event.TIGeneralEventHandler;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -15,27 +11,21 @@ import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.helper.ToolAttackUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-import java.util.function.DoubleSupplier;
-
 @Mixin(value = ToolAttackUtil.class, remap = false)
 public abstract class ToolAttackUtilMixin {
 
-    @Inject(at = @At("HEAD"), method = "attackEntity(Lslimeknights/tconstruct/library/tools/nbt/IToolStackView;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/entity/Entity;Ljava/util/function/DoubleSupplier;ZLnet/minecraft/world/entity/EquipmentSlot;)Z")
-    private static void tinkers_ingenuity$attackEntity$putCache(IToolStackView tool, LivingEntity attackerLiving, InteractionHand hand, Entity targetEntity, DoubleSupplier cooldownFunction, boolean isExtraAttack, EquipmentSlot sourceSlot, CallbackInfoReturnable<Boolean> cir) {
-        if (attackerLiving instanceof Player player) {
-            MeleeCacheCapability.saveTool(player, hand);
+    @Inject(at = @At("HEAD"), method = "performAttack")
+    private static void tinkers_ingenuity$attackEntity$putCache(IToolStackView tool, ToolAttackContext context, CallbackInfoReturnable<Boolean> cir) {
+        if (context.getAttacker() instanceof Player player) {
+            MeleeCacheCapability.saveTool(player, context.getHand());
         }
+        TIGeneralEventHandler.onToolMeleeStart(tool, context);
     }
 
-    @Inject(at = @At("RETURN"), method = "attackEntity(Lslimeknights/tconstruct/library/tools/nbt/IToolStackView;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/entity/Entity;Ljava/util/function/DoubleSupplier;ZLnet/minecraft/world/entity/EquipmentSlot;)Z")
-    private static void tinkers_ingenuity$attackEntity$removeCache(IToolStackView tool, LivingEntity attackerLiving, InteractionHand hand, Entity targetEntity, DoubleSupplier cooldownFunction, boolean isExtraAttack, EquipmentSlot sourceSlot, CallbackInfoReturnable<Boolean> cir) {
-        if (attackerLiving instanceof Player player) {
+    @Inject(at = @At("RETURN"), method = "performAttack")
+    private static void tinkers_ingenuity$attackEntity$removeCache(IToolStackView tool, ToolAttackContext context, CallbackInfoReturnable<Boolean> cir) {
+        if (context.getAttacker() instanceof Player player) {
             MeleeCacheCapability.removeCache(player);
         }
-    }
-
-    @Inject(at = @At("HEAD"), method = "performAttack")
-    private static void tinkers_ingenuity$startAttack(IToolStackView tool, ToolAttackContext context, CallbackInfoReturnable<Boolean> cir) {
-        TIGeneralEventHandler.onToolMeleeStart(tool, context);
     }
 }

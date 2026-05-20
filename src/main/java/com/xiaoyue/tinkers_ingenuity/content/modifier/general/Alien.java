@@ -1,6 +1,6 @@
 package com.xiaoyue.tinkers_ingenuity.content.modifier.general;
 
-import com.xiaoyue.celestial_invoker.content.ancillary.entry.AttributeAdder;
+import com.xiaoyue.celestial_invoker.content.common.entry.AttributeAdder;
 import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import com.xiaoyue.tinkers_ingenuity.content.generic.ISimpleModule;
 import com.xiaoyue.tinkers_ingenuity.content.generic.SerialLoader;

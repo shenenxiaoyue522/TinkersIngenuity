@@ -30,19 +30,24 @@ public class BlackWings extends SimpleModifier implements InventoryTickModifierH
     public void onInventoryTick(IToolStackView tool, ModifierEntry modifier, Level level, LivingEntity entity, int index, boolean select, boolean current, ItemStack stack) {
         if (entity instanceof Player player && current) {
             Abilities abilities = player.getAbilities();
-            if (abilities.mayfly) {
-                return;
-            }
             abilities.mayfly = true;
-            if (player.tickCount % 100 == 0 && abilities.flying && chance(0.5f)) {
+            if (player.tickCount % 100 == 0 && chance(0.5f) && abilities.flying) {
                 player.causeFoodExhaustion(0.1f);
             }
         }
     }
 
     @Override
+    public void onEquip(IToolStackView tool, ModifierEntry modifier, EquipmentChangeContext context) {
+        if (context.getEntity() instanceof Player player) {
+            player.getAbilities().mayfly = true;
+            player.getAbilities().flying = true;
+        }
+    }
+
+    @Override
     public void onUnequip(IToolStackView tool, ModifierEntry modifier, EquipmentChangeContext context) {
-        if (context.getEntity() instanceof Player player && !(player.isCreative() || player.isSpectator())) {
+        if (context.getEntity() instanceof Player player && !player.isCreative() && !player.isSpectator()) {
             player.getAbilities().mayfly = false;
             player.getAbilities().flying = false;
         }
