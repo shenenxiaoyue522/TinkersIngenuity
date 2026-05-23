@@ -24,6 +24,14 @@
     "tinkers_ingenuity:player_attack-bypass_armor-bypass_cooldown",
     "tinkers_ingenuity:player_attack-bypass_armor-bypass_cooldown-bypass_magic",
     "tinkers_ingenuity:player_attack-bypass_armor-bypass_cooldown-bypass_entity_inv",
-    "tinkers_ingenuity:player_attack-bypass_armor-bypass_cooldown-bypass_entity_inv-bypass_magic"
+    "tinkers_ingenuity:player_attack-bypass_armor-bypass_cooldown-bypass_entity_inv-bypass_magic",
+    "tinkers_ingenuity:thrown_tool-bypass_cooldown",
+    "tinkers_ingenuity:thrown_tool-bypass_cooldown-bypass_magic",
+    "tinkers_ingenuity:thrown_tool-bypass_cooldown-bypass_entity_inv",
+    "tinkers_ingenuity:thrown_tool-bypass_cooldown-bypass_entity_inv-bypass_magic",
+    "tinkers_ingenuity:thrown_tool-bypass_armor-bypass_cooldown",
+    "tinkers_ingenuity:thrown_tool-bypass_armor-bypass_cooldown-bypass_magic",
+    "tinkers_ingenuity:thrown_tool-bypass_armor-bypass_cooldown-bypass_entity_inv",
+    "tinkers_ingenuity:thrown_tool-bypass_armor-bypass_cooldown-bypass_entity_inv-bypass_magic"
   ]
 }

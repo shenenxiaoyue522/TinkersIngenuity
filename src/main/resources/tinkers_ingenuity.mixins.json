@@ -5,6 +5,7 @@
   "refmap": "tinkers_ingenuity.refmap.json",
   "mixins": [
     "AttributeModuleMixin",
+    "CombatRuleMixin",
     "EntityMixin",
     "SweepAttackMixin",
     "ToolAttackContextAccessor",

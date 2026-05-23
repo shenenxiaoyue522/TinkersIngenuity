@@ -20,6 +20,7 @@ import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import slimeknights.tconstruct.common.TinkerDamageTypes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,7 @@ public class TIDamageTypes extends DamageTypeAndTagsGen {
     public static final DamageTypeRoot PLAYER_ATTACK;
     public static final DamageTypeRoot MOB_ATTACK;
     public static final DamageTypeRoot ARROW;
+    public static final DamageTypeRoot THROWN_TOOL;
     protected static final List<DamageTypeWrapper> LIST;
 
     public TIDamageTypes(PackOutput output, CompletableFuture<HolderLookup.Provider> pvd, ExistingFileHelper helper) {
@@ -45,6 +47,7 @@ public class TIDamageTypes extends DamageTypeAndTagsGen {
             PLAYER_ATTACK.add(state);
             MOB_ATTACK.add(state);
             ARROW.add(state);
+            THROWN_TOOL.add(state);
         }
         DamageTypeRoot.configureGeneration(Set.of("tinkers_ingenuity"), "tinkers_ingenuity", LIST);
     }
@@ -83,6 +86,7 @@ public class TIDamageTypes extends DamageTypeAndTagsGen {
         PLAYER_ATTACK = new DamageTypeRoot("tinkers_ingenuity", DamageTypes.PLAYER_ATTACK, List.of(L2DamageTypes.DIRECT), (type) -> new DamageType("player", 0.1F));
         MOB_ATTACK = new DamageTypeRoot("tinkers_ingenuity", DamageTypes.MOB_ATTACK, List.of(L2DamageTypes.DIRECT), (type) -> new DamageType("mob", 0.1F));
         ARROW = new DamageTypeRoot("tinkers_ingenuity", DamageTypes.ARROW, List.of(DamageTypeTags.IS_PROJECTILE), (type) -> new DamageType("arrow", 0.1F));
+        THROWN_TOOL = new DamageTypeRoot("tinkers_ingenuity", TinkerDamageTypes.THROWN_TOOL, List.of(DamageTypeTags.IS_PROJECTILE), (type) -> new DamageType("thrown_tool", 0.1F));
         LIST = new ArrayList<>();
     }
 }

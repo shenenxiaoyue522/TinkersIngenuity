@@ -117,7 +117,7 @@ public class TIModifierGen extends AbstractModifierProvider {
                         false, ToolStats.VELOCITY), LevelingFormula.mulBase(0.12f)))
                 .addModule(AttributeModule.builder(Attributes.ATTACK_SPEED, AttributeModifier.Operation.MULTIPLY_BASE).eachLevel(0.12f));
         buildModifier(TIModifierData.DEMONIC.getId())
-                .addModule(SimpleProtectionModule.any(DamageSourcePredicate.tag(TinkerTags.DamageTypes.MAGIC_PROTECTION), LevelingFormula.mulBase(0.45f)));
+                .addModule(SimpleProtectionModule.any(DamageSourcePredicate.tag(TinkerTags.DamageTypes.MAGIC_PROTECTION), LevelingFormula.add(11.25f)));
         buildModifier(TIModifierData.SCHOLAR.getId())
                 .addModule(CPickupExpBonusModule.any(LevelingFormula.mulBase(0.15f)));
         buildModifier(TIModifierData.ALIEN.getId())

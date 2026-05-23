@@ -5,11 +5,14 @@
       "type": "tinkers_ingenuity:simple_protection",
       "entity": "mantle:any",
       "protection": {
-        "factor": 0.45,
-        "operation": "multiplier_base",
+        "factor": 11.25,
+        "operation": "addition",
         "single": false
       },
-      "source": "tinkers_ingenuity:is_magic"
+      "source": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:protection/magic"
+      }
     }
   ],
   "tooltip_display": "always"
