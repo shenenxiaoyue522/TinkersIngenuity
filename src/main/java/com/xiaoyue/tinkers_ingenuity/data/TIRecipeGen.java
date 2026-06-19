@@ -193,7 +193,7 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
                 .addInput(Ingredient.of(Items.IRON_SWORD)).addInput(Ingredient.of(Items.ARROW))
                 .addInput(Ingredient.of(TinkerMaterials.roseGold.getIngotTag()))
                 .saveSalvage(cons, this.prefix(TIModifierData.SUPER_SHARP.getId(), upgradeSalvage))
-                .setMaxLevel(5).save(cons, this.prefix(TIModifierData.SUPER_SHARP.getId(), upgrade));
+                .setMaxLevel(3).save(cons, this.prefix(TIModifierData.SUPER_SHARP.getId(), upgrade));
     }
 
     protected void materialBuildRecipe(Consumer<FinishedRecipe> cons) {

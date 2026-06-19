@@ -80,7 +80,7 @@ public enum TIModifierData {
     OVERDRAFT("overdraft", "If you want to use it, just add it.",
             "When the mucus coating is depleted, it automatically consumes the slime balls in the backpack to replenish the mucus coating"),
     SUPER_SHARP("super_sharp", "It can break iron up close and pierce steel from afar！",
-            "Further increases melee and projectile damage for this weapon"),
+            "Further increases this weapon's attack damage and velocity"),
     ;
 
     public final String id;

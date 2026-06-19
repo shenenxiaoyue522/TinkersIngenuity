@@ -129,7 +129,7 @@ public class TIModifierGen extends AbstractModifierProvider {
                         MultiBonusHelper.addAll(ToolStats.DRAW_SPEED), LevelingFormula.mulBase(0.18f)));
         buildModifier(TIModifierData.SUPER_SHARP.getId())
                 .addModule(StatBoostModule.multiplyBase(ToolStats.ATTACK_DAMAGE).eachLevel(0.1f))
-                .addModule(StatBoostModule.multiplyBase(ToolStats.PROJECTILE_DAMAGE).eachLevel(0.1f));
+                .addModule(StatBoostModule.multiplyBase(ToolStats.VELOCITY).eachLevel(0.1f));
     }
 
     @Override

@@ -244,6 +244,6 @@
   "modifier.tinkers_ingenuity.overdraft.flavor": "想用就补。",
   "item.tinkers_ingenuity.mithril_reinforcement": "秘银加固板",
   "modifier.tinkers_ingenuity.super_sharp": "锋锐",
-  "modifier.tinkers_ingenuity.super_sharp.description": "额外提高这件武器的近战伤害与弹射物伤害",
+  "modifier.tinkers_ingenuity.super_sharp.description": "额外提高这件武器的攻击伤害与初速度",
   "modifier.tinkers_ingenuity.super_sharp.flavor": "近能破铁远能穿钢！"
 }
