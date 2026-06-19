@@ -127,6 +127,9 @@ public class TIModifierGen extends AbstractModifierProvider {
         buildModifier(TIModifierData.AQUATIC.getId())
                 .addModule(MixedModificationModule.get(TIEntityCondition.IN_WATER_OR_RAIN,
                         MultiBonusHelper.addAll(ToolStats.DRAW_SPEED), LevelingFormula.mulBase(0.18f)));
+        buildModifier(TIModifierData.SUPER_SHARP.getId())
+                .addModule(StatBoostModule.multiplyBase(ToolStats.ATTACK_DAMAGE).eachLevel(0.1f))
+                .addModule(StatBoostModule.multiplyBase(ToolStats.PROJECTILE_DAMAGE).eachLevel(0.1f));
     }
 
     @Override

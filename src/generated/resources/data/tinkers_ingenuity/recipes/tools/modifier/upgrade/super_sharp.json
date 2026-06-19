@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "item": "minecraft:iron_sword"
+    },
+    {
+      "item": "minecraft:arrow"
+    },
+    {
+      "tag": "forge:ingots/rose_gold"
+    }
+  ],
+  "level": {
+    "max": 5
+  },
+  "result": "tinkers_ingenuity:super_sharp",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tinkers_ingenuity:meteor_spear"
+  }
+}

@@ -238,5 +238,12 @@
   "modifier.tinkers_ingenuity.aquatic.flavor": "我住在水中。",
   "modifier.tinkers_ingenuity.moist": "湿润",
   "modifier.tinkers_ingenuity.moist.description": "即使你不在水中或雨中也将被视为在水中或雨中",
-  "modifier.tinkers_ingenuity.moist.flavor": "我不会弄湿你。"
+  "modifier.tinkers_ingenuity.moist.flavor": "我不会弄湿你。",
+  "modifier.tinkers_ingenuity.overdraft": "透支",
+  "modifier.tinkers_ingenuity.overdraft.description": "黏液覆层耗尽时自动消耗背包中的黏液球补充黏液覆层",
+  "modifier.tinkers_ingenuity.overdraft.flavor": "想用就补。",
+  "item.tinkers_ingenuity.mithril_reinforcement": "秘银加固板",
+  "modifier.tinkers_ingenuity.super_sharp": "锋锐",
+  "modifier.tinkers_ingenuity.super_sharp.description": "额外提高这件武器的近战伤害与弹射物伤害",
+  "modifier.tinkers_ingenuity.super_sharp.flavor": "近能破铁远能穿钢！"
 }

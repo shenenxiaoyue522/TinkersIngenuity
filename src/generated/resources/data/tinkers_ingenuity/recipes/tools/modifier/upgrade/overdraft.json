@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "item": "minecraft:slime_ball"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "level": {
+    "max": 5
+  },
+  "result": "tinkers_ingenuity:overdraft",
+  "slots": {
+    "upgrades": 1
+  },
+  "tools": {
+    "tag": "tconstruct:modifiable/durability"
+  }
+}

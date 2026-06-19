@@ -5,5 +5,7 @@
   "tinkers_ingenuity:walk_snow": "tinkers_ingenuity:gui/modifiers/upgrade/curios/walk_snow",
   "tinkers_ingenuity:scholar": "tinkers_ingenuity:gui/modifiers/upgrade/curios/scholar",
   "tinkers_ingenuity:flame_heart": "tinkers_ingenuity:gui/modifiers/ability/curios/flame_heart",
+  "tinkers_ingenuity:overdraft": "tinkers_ingenuity:gui/modifiers/upgrade/overdraft",
+  "tinkers_ingenuity:super_sharp": "tinkers_ingenuity:gui/modifiers/upgrade/super_sharp",
   "tinkers_ingenuity:golden": ["minecraft:item/gold_ingot", "tinkers_ingenuity:gui/modifiers/small/curios"]
 }

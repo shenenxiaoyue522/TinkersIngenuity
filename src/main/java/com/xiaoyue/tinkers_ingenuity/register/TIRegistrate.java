@@ -5,7 +5,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
-import com.xiaoyue.celestial_invoker.content.common.helper.IRegistrateHelper;
+import com.xiaoyue.celestial_invoker.content.common.IRegistrateExtra;
 import dev.xkmc.l2library.base.L2Registrate;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -23,7 +23,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import java.util.List;
 
-public class TIRegistrate extends L2Registrate implements IRegistrateHelper<L2Registrate> {
+public class TIRegistrate extends L2Registrate implements IRegistrateExtra<L2Registrate> {
 
     private final FluidDeferredRegister fluidRegister = new FluidDeferredRegister(this.getModid());
 

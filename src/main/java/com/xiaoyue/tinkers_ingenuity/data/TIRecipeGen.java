@@ -185,6 +185,15 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
                 .addInput(Ingredient.of(Items.FEATHER)).addInput(Ingredient.of(Items.FEATHER))
                 .saveSalvage(cons, this.prefix(ModifierIds.speedy, curioUpgradeSalvage))
                 .setMaxLevel(2).save(cons, this.prefix(ModifierIds.speedy, curioUpgrade));
+        ModifierRecipeBuilder.modifier(TIModifierData.OVERDRAFT.getId()).setTools(TinkerTags.Items.DURABILITY).setSlots(SlotType.UPGRADE, 1)
+                .addInput(Ingredient.of(Items.SLIME_BALL)).addInput(Ingredient.of(Items.BUCKET))
+                .saveSalvage(cons, this.prefix(TIModifierData.OVERDRAFT.getId(), upgradeSalvage))
+                .setMaxLevel(5).save(cons, this.prefix(TIModifierData.OVERDRAFT.getId(), upgrade));
+        ModifierRecipeBuilder.modifier(TIModifierData.SUPER_SHARP.getId()).setTools(TITagGen.METEOR_SPEAR).setSlots(SlotType.UPGRADE, 1)
+                .addInput(Ingredient.of(Items.IRON_SWORD)).addInput(Ingredient.of(Items.ARROW))
+                .addInput(Ingredient.of(TinkerMaterials.roseGold.getIngotTag()))
+                .saveSalvage(cons, this.prefix(TIModifierData.SUPER_SHARP.getId(), upgradeSalvage))
+                .setMaxLevel(5).save(cons, this.prefix(TIModifierData.SUPER_SHARP.getId(), upgrade));
     }
 
     protected void materialBuildRecipe(Consumer<FinishedRecipe> cons) {
@@ -288,6 +297,10 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
                 .setFluid(TIFluids.BLACK_DRAGON_GENE.ingredient(300))
                 .setCoolingTime(30)
                 .save(cons, this.prefix(TIItems.BLACK_DRAGON_SUBSTANCE.getId(), casting));
+        ItemCastingRecipeBuilder.tableRecipe(TIItems.MITHRIL_REINFORCEMENT).setCast(TIItems.MITHRIL.ingot(), true)
+                .setFluid(TinkerFluids.moltenGold.ingredient(720))
+                .setCoolingTime(40)
+                .save(cons, this.prefix(TIItems.MITHRIL_REINFORCEMENT.getId(), casting));
 
         MeltingRecipeBuilder.melting(Ingredient.of(TinkerModifiers.dragonScale),
                         TIFluids.BLACK_DRAGON_GENE.result(75), 1800, 20)

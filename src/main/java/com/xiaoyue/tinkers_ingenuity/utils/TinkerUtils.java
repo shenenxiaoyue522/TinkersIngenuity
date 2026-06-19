@@ -44,7 +44,7 @@ import java.util.function.Consumer;
 
 public class TinkerUtils {
 
-    public static final DecimalFormat VALUE_FORMAT = new DecimalFormat("#.##");
+    public static final DecimalFormat DOUBLE_VALUE_FORMAT = new DecimalFormat("#.##");
 
     @SubscribeTooltip(id = "modifier_bonus")
     public static TooltipEntry modifierBonusTooltip = TooltipEntry.define("%s: Increases %s by %s");
@@ -100,7 +100,7 @@ public class TinkerUtils {
     }
 
     public static void addStatInfo(TooltipBuilder builder, IToolStackView tool, FloatToolStat stat) {
-        builder.add(Component.translatable(stat.getTranslationKey()).append(Component.translatable(VALUE_FORMAT.format(tool.getStats().get(stat)))
+        builder.add(Component.translatable(stat.getTranslationKey()).append(Component.translatable(DOUBLE_VALUE_FORMAT.format(tool.getStats().get(stat)))
                 .withStyle((style) -> style.withColor(stat.getColor()))));
     }
 

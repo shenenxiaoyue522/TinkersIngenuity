@@ -1,12 +1,12 @@
-// 1.20.1	2026-05-23T16:17:59.3140942	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider]
+// 1.20.1	2026-06-12T20:38:48.0829509	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider]
 e557016fbb3942809ff5a0d0860840a884743972 assets/tinkers_ingenuity/blockstates/black_flash_alloy_block.json
 cc611fce4c7ef9bec089301f40af20c25fce67cd assets/tinkers_ingenuity/blockstates/black_gold_block.json
 c4698202e0bffb8078ad7a5f449f9c986d6cead3 assets/tinkers_ingenuity/blockstates/colorful_slime_block.json
 480b0a384ab820b673818d08d333df0991f24297 assets/tinkers_ingenuity/blockstates/flame_steel_block.json
 432f1fae2524f5443f1ff8b3212f0d06d0efbfc2 assets/tinkers_ingenuity/blockstates/knight_crystal_block.json
 b6efcb95bd5101561eb5c6e185af32ea6e8a88e5 assets/tinkers_ingenuity/blockstates/mithril_block.json
-6106fc2d883132d708e508f0074992af2df1becc assets/tinkers_ingenuity/lang/en_ud.json
-cfc57aadd85752d43d70fa41f190ed4bacd796a9 assets/tinkers_ingenuity/lang/en_us.json
+8405f58c5022f6b2b013ade2f61d6ab25ecddc68 assets/tinkers_ingenuity/lang/en_ud.json
+4639a3338ebba6c32a55f88028c7e428e52d8af1 assets/tinkers_ingenuity/lang/en_us.json
 871dda071e83965b8ecdd8953e93e79429dca841 assets/tinkers_ingenuity/models/block/black_flash_alloy_block.json
 629b3d1a5fa53ba3a6f846d3f4ffdd40b0ad81b4 assets/tinkers_ingenuity/models/block/black_gold_block.json
 4511efea30d1e67156abf770eb04fe482661e3df assets/tinkers_ingenuity/models/block/colorful_slime_block.json
@@ -51,6 +51,7 @@ b4d4b1cd757bdbc6bb29bb10f7d9eeb5ed1240de assets/tinkers_ingenuity/models/item/me
 ff7d2f952fea9aa46be9e5e7941ba70601e8de81 assets/tinkers_ingenuity/models/item/mithril_block.json
 0ae9cdf6b8ea8ae3e874b29bbebbbf95733b9bcc assets/tinkers_ingenuity/models/item/mithril_ingot.json
 030fffa43dd70a6044008a6bcdb9e7b36f82c446 assets/tinkers_ingenuity/models/item/mithril_nugget.json
+e7d9cb1a4287c27c2491f4123780425d35a69852 assets/tinkers_ingenuity/models/item/mithril_reinforcement.json
 f135cfcb8bc12748ffc720dac1f22185f50e2da2 assets/tinkers_ingenuity/models/item/plague_bone.json
 46568245328da394910f5c1a55e1b628039cfeb3 assets/tinkers_ingenuity/models/item/sea_snail.json
 8ecc4eef6c7a89d42bc384569b2f2393d45306c7 data/curios/tags/items/tinkers_curio.json
@@ -230,6 +231,7 @@ eb70db3c6a99999f3d79da405f0ef89a1977f0e4 data/tinkers_ingenuity/recipes/smeltery
 acdea95b07afa2cb7e3cb4c66780d710a4ca5a45 data/tinkers_ingenuity/recipes/smeltery/casting/metal/mithril/ingot_sand_cast.json
 ff4de7aa1aab361ef86ac2dc450a1ea0ba0c3db1 data/tinkers_ingenuity/recipes/smeltery/casting/metal/mithril/nugget_gold_cast.json
 71e41f65a47e1649da3c4693dd6d532f74d065bf data/tinkers_ingenuity/recipes/smeltery/casting/metal/mithril/nugget_sand_cast.json
+3d848b716f0ebf8f7b499bdf24b218461a90b4a3 data/tinkers_ingenuity/recipes/smeltery/casting/mithril_reinforcement.json
 41967a60e0e0849a3011edd53ebbfbfe0b64b304 data/tinkers_ingenuity/recipes/smeltery/casts/gold/blowpipe_mouth.json
 27ce2e969b28a6d0b2450698f93e39528474ade5 data/tinkers_ingenuity/recipes/smeltery/casts/gold/blowpipe_tube.json
 82b44310a9ad1a73ea1ee8bad7dd8e68d0ea707a data/tinkers_ingenuity/recipes/smeltery/casts/gold/medal_body.json
@@ -360,6 +362,10 @@ ee8aaf1ec7da8764e4098ca8034a3ce2bc627934 data/tinkers_ingenuity/recipes/tools/mo
 ccf78ad4344422832ff3d0bbee90d47644a6909e data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/strength.json
 14ebf13d5f6f81b45a34f1543478fcef797a9839 data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/swiftstrike.json
 b8508e9b6452aa31e4dca6ef0002c0718338f822 data/tinkers_ingenuity/recipes/tools/modifier/curio/upgrade/walk_snow.json
+9a8445b57433459000ee221a14199aa57855aaad data/tinkers_ingenuity/recipes/tools/modifier/upgrade/overdraft.json
+3789c32454da92aa7bef65d80e3c5457db46a119 data/tinkers_ingenuity/recipes/tools/modifier/upgrade/salvage/overdraft.json
+a345988e1878756cbe66868cffd780dba0be1ffe data/tinkers_ingenuity/recipes/tools/modifier/upgrade/salvage/super_sharp.json
+76ff263fa02acc7a40638353cb625fc952730149 data/tinkers_ingenuity/recipes/tools/modifier/upgrade/super_sharp.json
 563b54bf13467f483d58a105a9662f4838d1b2ae data/tinkers_ingenuity/recipes/tools/parts/builder/blowpipe_mouth.json
 ab16a4434a0d45f4300b1e8a0ad9715eb48a8602 data/tinkers_ingenuity/recipes/tools/parts/builder/blowpipe_tube.json
 cfb2da1421b48ea78ff1e1defd786fbe74528fb8 data/tinkers_ingenuity/recipes/tools/parts/builder/medal_body.json

@@ -5,6 +5,7 @@ import com.xiaoyue.tinkers_ingenuity.content.modifier.defense.Spotless;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.general.BlackWings;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.general.EnderResonance;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.general.FreshWater;
+import com.xiaoyue.tinkers_ingenuity.content.modifier.general.Overdraft;
 import com.xiaoyue.tinkers_ingenuity.data.modifier.TIModifierData;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierManager;
@@ -19,6 +20,7 @@ public class TIModifiers {
         modifier(event, TIModifierData.ENDER_RESONANCE, EnderResonance::new);
         modifier(event, TIModifierData.FRESH_WATER, FreshWater::new);
         modifier(event, TIModifierData.BLACK_WINGS, BlackWings::new);
+        modifier(event, TIModifierData.OVERDRAFT, Overdraft::new);
     }
 
     public static <T extends Modifier> void modifier(ModifierManager.ModifierRegistrationEvent event, TIModifierData id, Supplier<T> modifier) {
