@@ -11,7 +11,7 @@
       "type": "tconstruct:stat_boost",
       "each_level": 0.1,
       "operation": "multiply_base",
-      "stat": "tconstruct:projectile_damage"
+      "stat": "tconstruct:velocity"
     }
   ],
   "tooltip_display": "always"

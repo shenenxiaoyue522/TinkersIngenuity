@@ -1,4 +1,4 @@
-// 1.20.1	2026-06-12T20:38:48.0819509	Tinkers Ingenuity modifier providers
+// 1.20.1	2026-06-19T15:21:16.4835877	Tinkers Ingenuity modifier providers
 5bcd7aad30ed37c3e9c9b194f448b91568853215 data/tinkers_ingenuity/tinkering/modifiers/aftershock.json
 0ac2154680bea4bc5ea8c585d0b3afbef6017eb1 data/tinkers_ingenuity/tinkering/modifiers/alien.json
 ef0483d06a40924ba1b124e373232436f4da3af4 data/tinkers_ingenuity/tinkering/modifiers/aquatic.json
@@ -28,6 +28,6 @@ e704dfd1f0dbc077faf3c09662907ef81b5852a2 data/tinkers_ingenuity/tinkering/modifi
 0be950226991eb92ee3337481fba554d7aa8b035 data/tinkers_ingenuity/tinkering/modifiers/quenched_body.json
 6ec1ca4fbd6854ebea4c947f646970d33ff6eb3d data/tinkers_ingenuity/tinkering/modifiers/rapid_fire.json
 cedcf53a315074e1f677175675cad5a6d2358381 data/tinkers_ingenuity/tinkering/modifiers/scholar.json
-8c93e75794f0275d9813589eedc418d9173fa99a data/tinkers_ingenuity/tinkering/modifiers/super_sharp.json
+e308dcb1d8277110867267a46d7d6fd02624ea05 data/tinkers_ingenuity/tinkering/modifiers/super_sharp.json
 e67b906dd70e6cbd91178b410665d44282cca5ed data/tinkers_ingenuity/tinkering/modifiers/vulnerability_insurance.json
 358afc506ee952dc6e3c09cf51efafff7b3b55a4 data/tinkers_ingenuity/tinkering/modifiers/walk_snow.json

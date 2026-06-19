@@ -221,7 +221,7 @@
   "modifier.tinkers_ingenuity.spotless.description": "This piece of armor will help protect you from negative effects",
   "modifier.tinkers_ingenuity.spotless.flavor": "In pristine condition.",
   "modifier.tinkers_ingenuity.super_sharp": "Super Sharp",
-  "modifier.tinkers_ingenuity.super_sharp.description": "Further increases melee and projectile damage for this weapon",
+  "modifier.tinkers_ingenuity.super_sharp.description": "Further increases this weapon's attack damage and velocity",
   "modifier.tinkers_ingenuity.super_sharp.flavor": "It can break iron up close and pierce steel from afar！",
   "modifier.tinkers_ingenuity.vulnerability_insurance": "Vulnerability Insurance",
   "modifier.tinkers_ingenuity.vulnerability_insurance.description": "Each time you are attacked, you will be less likely to deal damage from subsequent attacks of this type",
