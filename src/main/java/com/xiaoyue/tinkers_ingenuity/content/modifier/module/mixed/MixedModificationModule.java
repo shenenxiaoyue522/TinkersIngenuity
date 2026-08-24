@@ -32,8 +32,7 @@ public record MixedModificationModule(IJsonPredicate<LivingEntity> holder, Multi
             LivingEntityPredicate.LOADER.defaultField("entity", MixedModificationModule::holder),
             MultiBonusHelper.ALL.requiredField("multi_bonus", MixedModificationModule::multiBonus),
             LevelingFormula.LOADER.requiredField("bonus", MixedModificationModule::bonus),
-            MixedModificationModule::new
-    );
+            MixedModificationModule::new);
 
     @SerialLoader
     public static void onInit() {

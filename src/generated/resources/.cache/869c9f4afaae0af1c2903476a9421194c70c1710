@@ -1,12 +1,12 @@
-// 1.20.1	2026-06-19T15:21:16.4845929	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes), Global Loot Modifier Registrate Provider, Record Data Registrate Provider]
+// 1.20.1	2026-08-24T22:38:03.4294611	Registrate Provider for tinkers_ingenuity [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Tags (attributes)]
 e557016fbb3942809ff5a0d0860840a884743972 assets/tinkers_ingenuity/blockstates/black_flash_alloy_block.json
 cc611fce4c7ef9bec089301f40af20c25fce67cd assets/tinkers_ingenuity/blockstates/black_gold_block.json
 c4698202e0bffb8078ad7a5f449f9c986d6cead3 assets/tinkers_ingenuity/blockstates/colorful_slime_block.json
 480b0a384ab820b673818d08d333df0991f24297 assets/tinkers_ingenuity/blockstates/flame_steel_block.json
 432f1fae2524f5443f1ff8b3212f0d06d0efbfc2 assets/tinkers_ingenuity/blockstates/knight_crystal_block.json
 b6efcb95bd5101561eb5c6e185af32ea6e8a88e5 assets/tinkers_ingenuity/blockstates/mithril_block.json
-2f47c8c7062fd8f32de56ac4161ed1b1b2025af0 assets/tinkers_ingenuity/lang/en_ud.json
-695be64d730aa1b4516d24fd4f28d8024009e7c2 assets/tinkers_ingenuity/lang/en_us.json
+fe0c73d7b50573831d21b5406177b2e304640c75 assets/tinkers_ingenuity/lang/en_ud.json
+e4d065709bb26b37bae1d4d3f285cb3a471079e6 assets/tinkers_ingenuity/lang/en_us.json
 871dda071e83965b8ecdd8953e93e79429dca841 assets/tinkers_ingenuity/models/block/black_flash_alloy_block.json
 629b3d1a5fa53ba3a6f846d3f4ffdd40b0ad81b4 assets/tinkers_ingenuity/models/block/black_gold_block.json
 4511efea30d1e67156abf770eb04fe482661e3df assets/tinkers_ingenuity/models/block/colorful_slime_block.json
@@ -55,7 +55,6 @@ e7d9cb1a4287c27c2491f4123780425d35a69852 assets/tinkers_ingenuity/models/item/mi
 f135cfcb8bc12748ffc720dac1f22185f50e2da2 assets/tinkers_ingenuity/models/item/plague_bone.json
 46568245328da394910f5c1a55e1b628039cfeb3 assets/tinkers_ingenuity/models/item/sea_snail.json
 8ecc4eef6c7a89d42bc384569b2f2393d45306c7 data/curios/tags/items/tinkers_curio.json
-bc4e4393d8ca5a7ad14dbefd9369539d91ea131a data/forge/loot_modifiers/global_loot_modifiers.json
 61bd1161903e24baa04155e84f6b262b591803b1 data/forge/tags/fluids/black_dragon_gene.json
 03e3dc5809c19ceb254cba856596324e9d66607e data/forge/tags/fluids/dragon_breath.json
 27cfe0835e00eb0cb836958efdd7420dbc9e10e8 data/forge/tags/fluids/ender_compound.json
@@ -133,8 +132,6 @@ eeeff159cf515529cb70af36244ec331b8827360 data/tinkers_ingenuity/advancements/rec
 21693ae50690649f8e34d29b9ceef5b0bb180625 data/tinkers_ingenuity/advancements/recipes/misc/craft/nugget_from_ingot/flame_steel_ingot.json
 e2f063aa2661943a0d686b7592ea08760d082a15 data/tinkers_ingenuity/advancements/recipes/misc/craft/nugget_from_ingot/knight_crystal_ingot.json
 5728cb6e722eb5ec5d9e6ca40d1331579efb7a8a data/tinkers_ingenuity/advancements/recipes/misc/craft/nugget_from_ingot/mithril_ingot.json
-30e2574cb44d3ce9cd4c96a6f39d54d6cc1d7c0f data/tinkers_ingenuity/curios/entities/player_vanilla.json
-7bf8f64f32668ee115212fcd8c1ae6de4dc0906e data/tinkers_ingenuity/curios/slots/tinkers_curio.json
 d941b6fe76bc803ea71d9aa4daea1f49f1db99d9 data/tinkers_ingenuity/loot_tables/blocks/black_flash_alloy_block.json
 301afc33d6da11deda641941e9eb1ad4aa9f7cea data/tinkers_ingenuity/loot_tables/blocks/black_gold_block.json
 4588249f584969c0262905da159354487655787b data/tinkers_ingenuity/loot_tables/blocks/colorful_slime_block.json
@@ -321,6 +318,7 @@ a98e6bd19ea2a4b89464163b2757f9ae7275ce58 data/tinkers_ingenuity/recipes/tools/ma
 1a18e0bbf4fa697efc72944a816c96fc95e62669 data/tinkers_ingenuity/recipes/tools/materials/mithril/ingot.json
 23a20bc9fcc31f6eb6826bc65bd843728a1c6b1c data/tinkers_ingenuity/recipes/tools/materials/mithril/nugget.json
 2ca3ff401313b0e7ac884baabdca2c326e94363f data/tinkers_ingenuity/recipes/tools/materials/plague_bone.json
+4c48699640478261629f352e2c02e4a0ebabc2bf data/tinkers_ingenuity/recipes/tools/materials/sculk_vein.json
 315aecc4903869ca50db25d972ff812812cab6ee data/tinkers_ingenuity/recipes/tools/materials/sea_snail.json
 852c08a3b93cd3a0451d79d2c5fe8d606950f5f4 data/tinkers_ingenuity/recipes/tools/modifier/ability/rapid_fire.json
 7c7663332d451b6684bfbed320477afffd3a863b data/tinkers_ingenuity/recipes/tools/modifier/ability/salvage/rapid_fire.json

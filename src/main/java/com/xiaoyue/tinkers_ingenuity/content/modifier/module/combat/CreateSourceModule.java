@@ -26,8 +26,7 @@ public record CreateSourceModule(TIDamageState source, IJsonPredicate<LivingEnti
     public static final RecordLoadable<CreateSourceModule> LOADER = RecordLoadable.create(
             TILoadable.DAMAGE_STATE.requiredField("source", CreateSourceModule::source),
             LivingEntityPredicate.LOADER.requiredField("attacker", CreateSourceModule::attacker),
-            CreateSourceModule::new
-    );
+            CreateSourceModule::new);
 
     @SerialLoader
     public static void onInit() {

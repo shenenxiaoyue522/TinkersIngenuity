@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "minecraft:sculk_vein"
+  },
+  "material": "tinkers_ingenuity:sculk_vein",
+  "needed": 1,
+  "value": 1
+}

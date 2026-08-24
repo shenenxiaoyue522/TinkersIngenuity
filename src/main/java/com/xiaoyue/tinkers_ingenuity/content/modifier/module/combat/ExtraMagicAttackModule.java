@@ -35,8 +35,7 @@ public record ExtraMagicAttackModule(IJsonPredicate<LivingEntity> attacker, IJso
             LivingEntityPredicate.LOADER.requiredField("attacker", ExtraMagicAttackModule::attacker),
             LivingEntityPredicate.LOADER.requiredField("target", ExtraMagicAttackModule::target),
             LevelingFormula.LOADER.requiredField("damage", ExtraMagicAttackModule::damage),
-            ExtraMagicAttackModule::new
-    );
+            ExtraMagicAttackModule::new);
 
     @SerialLoader
     public static void onInit() {

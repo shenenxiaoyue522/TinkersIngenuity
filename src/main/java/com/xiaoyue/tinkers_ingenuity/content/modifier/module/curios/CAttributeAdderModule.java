@@ -32,8 +32,7 @@ public record CAttributeAdderModule(ResourceLocation name, Attribute attribute, 
             Loadables.ATTRIBUTE.requiredField("attribute", CAttributeAdderModule::attribute),
             TinkerLoadables.OPERATION.requiredField("operation", CAttributeAdderModule::operation),
             DoubleLoadable.ANY.requiredField("amount", CAttributeAdderModule::amount),
-            CAttributeAdderModule::new
-    );
+            CAttributeAdderModule::new);
 
     @SerialLoader
     public static void onInit() {

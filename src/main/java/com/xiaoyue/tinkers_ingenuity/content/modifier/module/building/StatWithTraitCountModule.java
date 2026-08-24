@@ -33,8 +33,7 @@ public record StatWithTraitCountModule(INumericToolStat<?> stat, StatOperation o
             FloatLoadable.ANY.requiredField("factor", StatWithTraitCountModule::factor),
             BooleanLoadable.DEFAULT.defaultField("single", false, StatWithTraitCountModule::single),
             ResourceLocationLoadable.DEFAULT.requiredField("trait", StatWithTraitCountModule::trait),
-            StatWithTraitCountModule::new
-    );
+            StatWithTraitCountModule::new);
 
     @SerialLoader
     public static void onInit() {

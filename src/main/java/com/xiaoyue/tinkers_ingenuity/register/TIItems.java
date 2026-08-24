@@ -35,16 +35,16 @@ public class TIItems {
     static {
         reg().defaultCreativeTab(TinkersIngenuity.ITEMS.getKey());
         FINAL_SHELL = item("final_shell", "material", Item::new);
-        BLACK_GOLD = reg().slimeMetal("black_gold");
-        FLAME_STEEL = reg().slimeMetal("flame_steel");
-        BLACK_FLASH_ALLOY = reg().slimeMetal("black_flash_alloy");
+        BLACK_GOLD = reg().getExtra().slimeMetal("black_gold");
+        FLAME_STEEL = reg().getExtra().slimeMetal("flame_steel");
+        BLACK_FLASH_ALLOY = reg().getExtra().slimeMetal("black_flash_alloy");
         COLOURED_GLAZE_STAR = item("coloured_glaze_star", "material", Item::new);
         ELFS_CRYSTAL = item("elfs_crystal", "material", Item::new);
         PLAGUE_BONE = item("plague_bone", "material", Item::new);
         MITHRIL_REINFORCEMENT = item("mithril_reinforcement", "material", Item::new);
-        COLORFUL_SLIME = reg().slimeMetal("colorful_slime");
-        KNIGHT_CRYSTAL = reg().slimeMetal("knight_crystal");
-        MITHRIL = reg().slimeMetal("mithril");
+        COLORFUL_SLIME = reg().getExtra().slimeMetal("colorful_slime");
+        KNIGHT_CRYSTAL = reg().getExtra().slimeMetal("knight_crystal");
+        MITHRIL = reg().getExtra().slimeMetal("mithril");
         BLACK_DRAGON_SUBSTANCE = item("black_dragon_substance", "material", Item::new);
         SEA_SNAIL = item("sea_snail", "material", Item::new);
         MEDAL_RIBBONS_CAST = reg().castItem("medal_ribbons");

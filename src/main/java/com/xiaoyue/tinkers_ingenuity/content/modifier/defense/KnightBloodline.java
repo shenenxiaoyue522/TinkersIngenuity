@@ -28,8 +28,7 @@ public record KnightBloodline(float protect, int maxFactor)
     public static final RecordLoadable<KnightBloodline> LOADER = RecordLoadable.create(
             FloatLoadable.ANY.requiredField("protect", KnightBloodline::protect),
             IntLoadable.ANY_FULL.requiredField("max_factor", KnightBloodline::maxFactor),
-            KnightBloodline::new
-    );
+            KnightBloodline::new);
 
     @SerialLoader
     public static void onInit() {

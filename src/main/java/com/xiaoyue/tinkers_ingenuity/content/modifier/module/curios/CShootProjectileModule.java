@@ -29,8 +29,7 @@ public record CShootProjectileModule(IJsonPredicate<LivingEntity> shooter, Proje
             LivingEntityPredicate.LOADER.requiredField("shooter", CShootProjectileModule::shooter),
             ProjectileDataAction.LOADER.requiredField("action", CShootProjectileModule::action),
             LevelingFormula.LOADER.requiredField("modifier", CShootProjectileModule::modifier),
-            CShootProjectileModule::new
-    );
+            CShootProjectileModule::new);
 
     @SerialLoader
     public static void onInit() {

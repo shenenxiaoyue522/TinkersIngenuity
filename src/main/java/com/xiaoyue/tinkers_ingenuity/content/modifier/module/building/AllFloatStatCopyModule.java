@@ -27,8 +27,7 @@ public record AllFloatStatCopyModule(INumericToolStat<?> source, StatOperation o
             StatOperation.LOADER.requiredField("operation", AllFloatStatCopyModule::operation),
             FloatLoadable.ANY.requiredField("factor", AllFloatStatCopyModule::factor),
             BooleanLoadable.DEFAULT.defaultField("with_multiplier", true, AllFloatStatCopyModule::withMultiplier),
-            AllFloatStatCopyModule::new
-    );
+            AllFloatStatCopyModule::new);
 
     @SerialLoader
     public static void onInit() {

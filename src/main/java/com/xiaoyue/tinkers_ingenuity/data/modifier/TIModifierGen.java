@@ -12,6 +12,7 @@ import com.xiaoyue.tinkers_ingenuity.content.modifier.defense.KnightBloodline;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.defense.VulnerabilityInsurance;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.general.Alien;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.general.Chivalry;
+import com.xiaoyue.tinkers_ingenuity.content.modifier.general.Mending;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.module.building.AllFloatStatCopyModule;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.module.building.StatWithTraitCountModule;
 import com.xiaoyue.tinkers_ingenuity.content.modifier.module.combat.CreateSourceModule;
@@ -130,6 +131,7 @@ public class TIModifierGen extends AbstractModifierProvider {
         buildModifier(TIModifierData.SUPER_SHARP.getId())
                 .addModule(StatBoostModule.multiplyBase(ToolStats.ATTACK_DAMAGE).eachLevel(0.1f))
                 .addModule(StatBoostModule.multiplyBase(ToolStats.VELOCITY).eachLevel(0.1f));
+        buildModifier(TIModifierData.MENDING.getId()).addModule(new Mending(1));
     }
 
     @Override

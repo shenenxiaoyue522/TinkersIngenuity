@@ -6,6 +6,7 @@ import com.xiaoyue.tinkers_ingenuity.content.shared.material.MaterialDefinitionD
 import com.xiaoyue.tinkers_ingenuity.data.modifier.TIModifierData;
 import com.xiaoyue.tinkers_ingenuity.register.TIFluids;
 import com.xiaoyue.tinkers_ingenuity.register.TIItems;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tiers;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.tools.TinkerModifiers;
@@ -221,6 +222,14 @@ public enum TIMaterials {
                     .addArmor(TIModifierData.MOIST.asEntry()))
             .render(b -> b.color(0xffccb393).fallbacks("bone")
                     .sprite(b.color(0xff5c2d21, 0xff704231, 0xffc79a75, 0xffccb393, 0xfff0e1c7, 0xfffadf11)))),
+    SCULK_VEIN(MaterialBuildHolder.builder("sculk_vein")
+            .craftableMaterial(Items.SCULK_VEIN)
+            .desc(b -> b.encyclopedia("Picking up experience restores 1 durability to your tool per level"))
+            .definition(b -> b.craftable().tier(1))
+            .stat(false, null, StatlessMaterialStats.BOWSTRING)
+            .defaultTrait(TIModifierData.MENDING.asEntry())
+            .render(b -> b.color(0xff03404f).fallbacks("crystal").parts(StatlessMaterialStats.BOWSTRING.getIdentifier())
+                    .sprite(b.color(0xff052931, 0xff052931, 0xff03404f, 0xff05615c, 0xff009093, 0xff28dce8)))),
     ;
 
     public final MaterialBuildHolder holder;

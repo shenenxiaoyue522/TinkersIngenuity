@@ -34,8 +34,7 @@ public record Chivalry(LevelingFormula bonus, int maxMultiplier)
     public static final RecordLoadable<Chivalry> LOADER = RecordLoadable.create(
             LevelingFormula.LOADER.requiredField("bonus", Chivalry::bonus),
             IntLoadable.ANY_FULL.requiredField("max_multiplier", Chivalry::maxMultiplier),
-            Chivalry::new
-    );
+            Chivalry::new);
 
     @SerialLoader
     public static void onInit() {

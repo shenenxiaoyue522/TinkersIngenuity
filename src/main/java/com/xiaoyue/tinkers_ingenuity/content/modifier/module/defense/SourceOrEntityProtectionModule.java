@@ -30,8 +30,7 @@ public record SourceOrEntityProtectionModule(IJsonPredicate<DamageSource> source
             LivingEntityPredicate.LOADER.requiredField("entity", SourceOrEntityProtectionModule::entity),
             LevelingFormula.LOADER.requiredField("source_protection", SourceOrEntityProtectionModule::sourceProtection),
             LevelingFormula.LOADER.requiredField("entity_protection", SourceOrEntityProtectionModule::entityProtection),
-            SourceOrEntityProtectionModule::new
-    );
+            SourceOrEntityProtectionModule::new);
 
     @SerialLoader
     public static void onInit() {

@@ -29,7 +29,7 @@ public record MaterialRenderData(int color, String[] fallbacks, MaterialStatsId[
             return this;
         }
 
-        public Builder parts(MaterialStatsId[] parts) {
+        public Builder parts(MaterialStatsId... parts) {
             this.parts = parts;
             return this;
         }

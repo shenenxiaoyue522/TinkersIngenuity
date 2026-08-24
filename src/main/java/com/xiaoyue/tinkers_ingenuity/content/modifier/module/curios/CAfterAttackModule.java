@@ -31,8 +31,7 @@ public record CAfterAttackModule(IJsonPredicate<LivingEntity> attacker, IJsonPre
             LivingEntityAction.LOADER.requiredField("action", CAfterAttackModule::action),
             FloatLoadable.ANY.requiredField("amount", CAfterAttackModule::amount),
             BooleanLoadable.DEFAULT.requiredField("crit_bonus", CAfterAttackModule::critBonus),
-            CAfterAttackModule::new
-    );
+            CAfterAttackModule::new);
 
     @SerialLoader
     public static void onInit() {

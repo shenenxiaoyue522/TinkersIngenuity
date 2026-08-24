@@ -23,8 +23,7 @@ public record CPickupExpBonusModule(IJsonPredicate<LivingEntity> entity, Levelin
     public static final RecordLoadable<CPickupExpBonusModule> LOADER = RecordLoadable.create(
             LivingEntityPredicate.LOADER.requiredField("entity", CPickupExpBonusModule::entity),
             LevelingFormula.LOADER.requiredField("bonus", CPickupExpBonusModule::bonus),
-            CPickupExpBonusModule::new
-    );
+            CPickupExpBonusModule::new);
 
     @SerialLoader
     public static void onInit() {

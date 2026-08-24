@@ -36,8 +36,7 @@ public record ForceAddEffectModule(MobEffect effect, int level, int time)
             Loadables.MOB_EFFECT.requiredField("effect", ForceAddEffectModule::effect),
             IntLoadable.ANY_FULL.requiredField("level", ForceAddEffectModule::level),
             IntLoadable.ANY_FULL.requiredField("time", ForceAddEffectModule::time),
-            ForceAddEffectModule::new
-    );
+            ForceAddEffectModule::new);
 
     @SerialLoader
     public static void onInit() {

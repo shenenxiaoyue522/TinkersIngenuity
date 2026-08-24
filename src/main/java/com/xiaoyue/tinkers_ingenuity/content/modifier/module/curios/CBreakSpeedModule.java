@@ -29,8 +29,7 @@ public record CBreakSpeedModule(IJsonPredicate<LivingEntity> entity, LevelingFor
             LevelingFormula.LOADER.requiredField("modifier", CBreakSpeedModule::modifier),
             BlockPredicate.LOADER.requiredField("block", CBreakSpeedModule::block),
             BooleanLoadable.DEFAULT.requiredField("effective", CBreakSpeedModule::effective),
-            CBreakSpeedModule::new
-    );
+            CBreakSpeedModule::new);
 
     @SerialLoader
     public static void onInit() {

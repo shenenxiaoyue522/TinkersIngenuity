@@ -57,8 +57,7 @@ public record Alien(float bonus, int max, int bonusInterval)
             FloatLoadable.ANY.requiredField("bonus", Alien::bonus),
             IntLoadable.ANY_FULL.requiredField("max", Alien::max),
             IntLoadable.ANY_FULL.requiredField("bonus_interval", Alien::bonusInterval),
-            Alien::new
-    );
+            Alien::new);
 
     @SerialLoader
     public static void onInit() {

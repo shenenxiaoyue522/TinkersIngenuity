@@ -29,8 +29,7 @@ public record CAttackImmuneModule(IJsonPredicate<DamageSource> source, double ch
             DoubleLoadable.ANY.requiredField("chance", CAttackImmuneModule::chance),
             LivingEntityAction.LOADER.nullableField("action", CAttackImmuneModule::action),
             FloatLoadable.ANY.defaultField("action_amount", 0f, CAttackImmuneModule::actionAmount),
-            CAttackImmuneModule::new
-    );
+            CAttackImmuneModule::new);
 
     @SerialLoader
     public static void onInit() {

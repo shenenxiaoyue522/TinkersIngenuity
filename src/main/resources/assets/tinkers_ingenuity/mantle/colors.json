@@ -37,7 +37,8 @@
     "moist": "#ccb393",
     "aquatic": "#ccb393",
     "overdraft": "#82c873",
-    "super_sharp": "#ff4b36"
+    "super_sharp": "#ff4b36",
+    "mending": "#009093"
   },
   "material.tinkers_ingenuity": {
     "black_gold": "#52476b",
@@ -51,6 +52,7 @@
     "knight_crystal": "#956bde",
     "mithril": "#1fa8b1",
     "black_dragon_substance": "#573e63",
-    "sea_snail": "#ccb393"
+    "sea_snail": "#ccb393",
+    "sculk_vein": "#009093"
   }
 }

@@ -3,8 +3,8 @@ package com.xiaoyue.tinkers_ingenuity;
 import com.mojang.logging.LogUtils;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.entry.RegistryEntry;
+import com.xiaoyue.celestial_invoker.content.common.RegistrateExtra;
 import com.xiaoyue.celestial_invoker.content.common.SimpleInvoker;
-import com.xiaoyue.celestial_invoker.content.generator.CelestialProviders;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipLoader;
 import com.xiaoyue.tinkers_ingenuity.content.generic.MeleeCacheCapability;
 import com.xiaoyue.tinkers_ingenuity.content.generic.SerialLoader;
@@ -47,14 +47,14 @@ public class TinkersIngenuity {
     public static final Logger LOGGER = LogUtils.getLogger();
     public static final TIRegistrate REGISTRATE = new TIRegistrate(MODID);
 
-    public static final RegistryEntry<CreativeModeTab> ITEMS = REGISTRATE.buildCreativeTab("items",
+    public static final RegistryEntry<CreativeModeTab> ITEMS = REGISTRATE.getExtra().buildCreativeTab("items",
             e -> e.icon(TIItems.BLACK_GOLD.ingot()::asStack));
 
-    public static final RegistryEntry<CreativeModeTab> FLUIDS = REGISTRATE.buildCreativeTab("fluids",
+    public static final RegistryEntry<CreativeModeTab> FLUIDS = REGISTRATE.getExtra().buildCreativeTab("fluids",
             e -> e.icon(Objects.requireNonNull(TIFluids.MOLTEN_BLACK_FLASH_ALLOY.getBucket())::getDefaultInstance)
                     .displayItems((p, o) -> o.acceptAll(TIFluids.allBucket())));
 
-    public static final RegistryEntry<CreativeModeTab> TOOLS = REGISTRATE.buildCreativeTab("tools",
+    public static final RegistryEntry<CreativeModeTab> TOOLS = REGISTRATE.getExtra().buildCreativeTab("tools",
             e -> e.icon(TIItems.TINKERS_MEDAL.get()::getRenderTool).displayItems(TIItems::addItemsToTab));
     
     public TinkersIngenuity() {
@@ -71,7 +71,6 @@ public class TinkersIngenuity {
         REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, TITagGen::addItemTagGen);
         REGISTRATE.addDataGenerator(ProviderType.FLUID_TAGS, TITagGen::addFluidTagGen);
         REGISTRATE.addDataGenerator(ProviderType.RECIPE, TIRecipeGen::acceptRecipe);
-        REGISTRATE.addDataGenerator(CelestialProviders.RECORD_DATA, TISlotGen::onRecordGen);
     }
 
     @SubscribeEvent
@@ -110,6 +109,7 @@ public class TinkersIngenuity {
         gen.addProvider(client, new FluidModelGen(output));
         gen.addProvider(client, new FluidBucketModelProvider(output, MODID));
         gen.addProvider(client, new FluidBlockstateModelProvider(output, MODID));
+        gen.addProvider(server, new TISlotGen(gen));
     }
 
     @SubscribeEvent

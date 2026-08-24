@@ -1,6 +1,7 @@
 package com.xiaoyue.tinkers_ingenuity.event;
 
 import com.xiaoyue.tinkers_ingenuity.content.items.ModifiableCurio;
+import com.xiaoyue.tinkers_ingenuity.content.modifier.general.Mending;
 import com.xiaoyue.tinkers_ingenuity.content.shared.holder.CurioStackView;
 import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.defense.LivingEventModifierHook;
 import com.xiaoyue.tinkers_ingenuity.content.shared.hooks.specail.MenuSlotClickModifierHook;
@@ -34,6 +35,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierId;
 import slimeknights.tconstruct.library.tools.capability.PersistentDataCapability;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.definition.module.mining.IsEffectiveToolHook;
+import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.tools.data.ModifierIds;
@@ -204,6 +206,7 @@ public class TIGeneralEventHandler {
             TinkersCurioModifierHook hook = e.getHook(TIHooks.TINKERS_CURIO);
             hook.onPickupExp(c, e.getLevel(), entity, event.getOrb());
         });
+        Mending.onHandler(entity);
     }
 
     public static void onToolMeleeStart(IToolStackView tool, ToolAttackContext context) {

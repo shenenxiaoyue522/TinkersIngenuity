@@ -29,8 +29,7 @@ public record SimpleProtectionModule(IJsonPredicate<LivingEntity> entity, IJsonP
             LivingEntityPredicate.LOADER.requiredField("entity", SimpleProtectionModule::entity),
             DamageSourcePredicate.LOADER.requiredField("source", SimpleProtectionModule::source),
             LevelingFormula.LOADER.requiredField("protection", SimpleProtectionModule::protection),
-            SimpleProtectionModule::new
-    );
+            SimpleProtectionModule::new);
 
     @SerialLoader
     public static void onInit() {

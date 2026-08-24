@@ -1,0 +1,10 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_ingenuity:mending",
+      "repair": 1
+    }
+  ],
+  "tooltip_display": "always"
+}

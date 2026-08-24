@@ -43,8 +43,7 @@ public record Crystallization(int time, double chance, int max, float bonus)
             DoubleLoadable.ANY.requiredField("chance", Crystallization::chance),
             IntLoadable.ANY_FULL.requiredField("max", Crystallization::max),
             FloatLoadable.ANY.requiredField("bonus", Crystallization::bonus),
-            Crystallization::new
-    );
+            Crystallization::new);
 
     @SerialLoader
     public static void onInit() {

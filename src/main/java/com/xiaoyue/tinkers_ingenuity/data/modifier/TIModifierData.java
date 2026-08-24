@@ -81,6 +81,8 @@ public enum TIModifierData {
             "When the mucus coating is depleted, it automatically consumes the slime balls in the backpack to replenish the mucus coating"),
     SUPER_SHARP("super_sharp", "It can break iron up close and pierce steel from afar！",
             "Further increases this weapon's attack damage and velocity"),
+    MENDING("mending", "Experienced Tool!",
+            "Collecting experience orbs repairs a portion of the tool's durability"),
     ;
 
     public final String id;

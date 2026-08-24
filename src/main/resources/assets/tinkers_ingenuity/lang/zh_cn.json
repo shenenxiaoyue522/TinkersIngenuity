@@ -245,5 +245,10 @@
   "item.tinkers_ingenuity.mithril_reinforcement": "秘银加固板",
   "modifier.tinkers_ingenuity.super_sharp": "锋锐",
   "modifier.tinkers_ingenuity.super_sharp.description": "额外提高这件武器的攻击伤害与初速度",
-  "modifier.tinkers_ingenuity.super_sharp.flavor": "近能破铁远能穿钢！"
+  "modifier.tinkers_ingenuity.super_sharp.flavor": "近能破铁远能穿钢！",
+  "material.tinkers_ingenuity.sculk_vein": "幽匿脉络",
+  "material.tinkers_ingenuity.sculk_vein.encyclopedia": "拾取经验时每级恢复工具1点耐久",
+  "modifier.tinkers_ingenuity.mending": "经验修补",
+  "modifier.tinkers_ingenuity.mending.description": "拾取经验时恢复工具部分耐久",
+  "modifier.tinkers_ingenuity.mending.flavor": "老道的工具！"
 }

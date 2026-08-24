@@ -25,8 +25,7 @@ public record CModifyAttackModule(IJsonPredicate<LivingEntity> attacker, IJsonPr
             LivingEntityPredicate.LOADER.requiredField("attacker", CModifyAttackModule::attacker),
             LivingEntityPredicate.LOADER.requiredField("target", CModifyAttackModule::target),
             LevelingFormula.LOADER.requiredField("bonus", CModifyAttackModule::bonus),
-            CModifyAttackModule::new
-    );
+            CModifyAttackModule::new);
 
     @SerialLoader
     public static void onInit() {
