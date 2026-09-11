@@ -55,13 +55,13 @@ public abstract class SimpleModifier extends Modifier implements ModifierRemoval
         return chance >= TConstruct.RANDOM.nextDouble();
     }
 
-    public void addGenericCD(IToolStackView tool, LivingEntity entity, int time) {
+    public void addCooldown(IToolStackView tool, LivingEntity entity, int time) {
         if (entity instanceof Player player) {
             player.getCooldowns().addCooldown(tool.getItem(), time);
         }
     }
 
-    public boolean noGenericCD(IToolStackView tool, LivingEntity entity) {
+    public boolean cooldownReady(IToolStackView tool, LivingEntity entity) {
         if (entity instanceof Player player) {
             return !player.getCooldowns().isOnCooldown(tool.getItem());
         } else {

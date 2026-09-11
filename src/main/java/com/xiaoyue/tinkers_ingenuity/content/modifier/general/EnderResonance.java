@@ -30,7 +30,7 @@ public class EnderResonance extends SimpleModifier implements GeneralInteraction
 
     @Override
     public InteractionResult onToolUse(IToolStackView tool, ModifierEntry modifier, Player player, InteractionHand hand, InteractionSource source) {
-        if (source.equals(InteractionSource.RIGHT_CLICK) && this.noGenericCD(tool, player)) {
+        if (source.equals(InteractionSource.RIGHT_CLICK) && this.cooldownReady(tool, player)) {
             Level level = player.level();
             level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDER_PEARL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
             if (!level.isClientSide()) {
@@ -39,7 +39,7 @@ public class EnderResonance extends SimpleModifier implements GeneralInteraction
                 pearl.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
                 level.addFreshEntity(pearl);
             }
-            this.addGenericCD(tool, player, 400);
+            this.addCooldown(tool, player, 400);
             return InteractionResult.CONSUME;
         } else {
             return InteractionResult.PASS;

@@ -3,7 +3,6 @@ package com.xiaoyue.tinkers_ingenuity;
 import com.mojang.logging.LogUtils;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.entry.RegistryEntry;
-import com.xiaoyue.celestial_invoker.content.common.RegistrateExtra;
 import com.xiaoyue.celestial_invoker.content.common.SimpleInvoker;
 import com.xiaoyue.celestial_invoker.invoker.tooltip.TooltipLoader;
 import com.xiaoyue.tinkers_ingenuity.content.generic.MeleeCacheCapability;
@@ -36,7 +35,6 @@ import slimeknights.tconstruct.fluids.data.FluidBucketModelProvider;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
 import slimeknights.tconstruct.library.modifiers.ModifierManager;
 
-import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 @Mod(TinkersIngenuity.MODID)
@@ -51,7 +49,7 @@ public class TinkersIngenuity {
             e -> e.icon(TIItems.BLACK_GOLD.ingot()::asStack));
 
     public static final RegistryEntry<CreativeModeTab> FLUIDS = REGISTRATE.getExtra().buildCreativeTab("fluids",
-            e -> e.icon(Objects.requireNonNull(TIFluids.MOLTEN_BLACK_FLASH_ALLOY.getBucket())::getDefaultInstance)
+            e -> e.icon(TIFluids.MOLTEN_BLACK_FLASH_ALLOY.getBucket()::getDefaultInstance)
                     .displayItems((p, o) -> o.acceptAll(TIFluids.allBucket())));
 
     public static final RegistryEntry<CreativeModeTab> TOOLS = REGISTRATE.getExtra().buildCreativeTab("tools",

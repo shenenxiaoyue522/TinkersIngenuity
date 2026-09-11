@@ -26,7 +26,7 @@ import java.util.List;
 public class TIRegistrate extends L2Registrate {
 
     private final FluidDeferredRegister fluidRegister = new FluidDeferredRegister(this.getModid());
-    private final RegistrateExtra<L2Registrate> extra;
+    private final RegistrateExtra<TIRegistrate> extra;
 
     public TIRegistrate(String modid) {
         super(modid);
@@ -73,7 +73,7 @@ public class TIRegistrate extends L2Registrate {
         ModifierModule.LOADER.register(new ResourceLocation(this.getModid(), id), loader);
     }
 
-    public RegistrateExtra<L2Registrate> getExtra() {
+    public RegistrateExtra<TIRegistrate> getExtra() {
         return extra;
     }
 }

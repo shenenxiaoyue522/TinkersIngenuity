@@ -63,9 +63,9 @@ public record Crystallization(int time, double chance, int max, float bonus)
         ModDataNBT data = tool.getPersistentData();
         if (slot.isArmor()) {
             float bonus = this.bonus * (float) data.getInt(KEY) * modifier.getLevel();
-            AttributeAdder.builder()
-                    .attr(Attributes.ARMOR_TOUGHNESS).nameWithUUID(KEY).value(bonus).operation(2).toCons(cons)
-                    .attr(Attributes.MOVEMENT_SPEED).nameWithUUID(KEY).value(bonus / 2).operation(2).toCons(cons);
+            AttributeAdder builder = AttributeAdder.builder().nameWithUUID(KEY);
+            builder.attr(Attributes.ARMOR_TOUGHNESS).value(bonus).operation(2).toCons(cons);
+            builder.attr(Attributes.MOVEMENT_SPEED).value(bonus / 2).operation(2).toCons(cons);
         }
     }
 
