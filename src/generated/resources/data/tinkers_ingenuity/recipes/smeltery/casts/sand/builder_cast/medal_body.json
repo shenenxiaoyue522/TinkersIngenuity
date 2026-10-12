@@ -4,5 +4,6 @@
   "pattern_item": {
     "tag": "tconstruct:casts/sand"
   },
-  "result": "tinkers_ingenuity:medal_body_sand_cast"
+  "result": "tinkers_ingenuity:medal_body_sand_cast",
+  "title_key": "tconstruct:sand_cast"
 }

@@ -4,5 +4,6 @@
   "pattern_item": {
     "tag": "tconstruct:casts/red_sand"
   },
-  "result": "tinkers_ingenuity:medal_ribbons_red_sand_cast"
+  "result": "tinkers_ingenuity:medal_ribbons_red_sand_cast",
+  "title_key": "tconstruct:sand_cast"
 }

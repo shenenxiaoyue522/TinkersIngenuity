@@ -15,6 +15,5 @@
         "modify_stat": "tconstruct:draw_speed"
       }
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

@@ -16,6 +16,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -24,6 +25,8 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.CompoundIngredient;
 import slimeknights.mantle.recipe.data.ConsumerWrapperBuilder;
+import slimeknights.mantle.recipe.ingredient.EntityIngredient;
+import slimeknights.mantle.recipe.ingredient.FluidIngredient;
 import slimeknights.mantle.recipe.ingredient.SizedIngredient;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.TConstruct;
@@ -41,6 +44,7 @@ import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.entitymelting.EntityMeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.fuel.MeltingFuelBuilder;
 import slimeknights.tconstruct.library.recipe.ingredient.MaterialValueIngredient;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
@@ -171,10 +175,10 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
                 .addInput(SizedIngredient.of(Ingredient.of(TinkerModifiers.goldReinforcement), 6))
                 .saveSalvage(cons, this.prefix(ModifierIds.magicProtection, curioUpgradeSalvage))
                 .setMaxLevel(3).save(cons, this.prefix(ModifierIds.magicProtection, curioUpgrade));
-        ModifierRecipeBuilder.modifier(TinkerModifiers.magnetic).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
+        ModifierRecipeBuilder.modifier(ModifierIds.magnetic).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.UPGRADE, 1)
                 .addInput(Ingredient.of(Items.COMPASS)).setMaxLevel(3)
-                .saveSalvage(cons, this.prefix(TinkerModifiers.magnetic, curioUpgradeSalvage))
-                .save(cons, this.prefix(TinkerModifiers.magnetic, curioUpgrade));
+                .saveSalvage(cons, this.prefix(ModifierIds.magnetic, curioUpgradeSalvage))
+                .save(cons, this.prefix(ModifierIds.magnetic, curioUpgrade));
         ModifierRecipeBuilder.modifier(ModifierIds.luck).setTools(TITagGen.MODIFIABLE_CURIO).setSlots(SlotType.ABILITY, 1)
                 .addInput(Ingredient.of(Items.LAPIS_BLOCK)).addInput(Ingredient.of(Items.LAPIS_BLOCK))
                 .addInput(Ingredient.of(Items.GOLD_BLOCK)).addInput(Ingredient.of(ItemTags.FLOWERS)).setMaxLevel(1)
@@ -261,7 +265,7 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
         AlloyRecipeBuilder.alloy(TIFluids.MOLTEN_BLACK_FLASH_ALLOY, 90)
                 .addInput(TinkerFluids.moltenDiamond.ingredient(200))
                 .addInput(TinkerFluids.moltenManyullyn.ingredient(270))
-                .addInput(TIFluids.SCULK_GENE.ingredient(270))
+                .addInput(FluidIngredient.of(TITagGen.MOLTEN_ECHO, 270))
                 .save(cons, this.prefix(TIFluids.MOLTEN_BLACK_FLASH_ALLOY, alloys));
         AlloyRecipeBuilder.alloy(TIFluids.MOLTEN_COLORFUL_SLIME, 90)
                 .addInput(TinkerFluids.skySlime.ingredient(750))
@@ -309,7 +313,7 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
                         TIFluids.DRAGON_BREATH.result(250), 1200, 30)
                 .save(cons, this.prefix(TIFluids.DRAGON_BREATH.getId(), melting));
         MeltingRecipeBuilder.melting(Ingredient.of(Items.ECHO_SHARD),
-                        TIFluids.SCULK_GENE.result(45), 1200, 40)
+                        TIFluids.SCULK_GENE.result(100), 1200, 40)
                 .save(cons, this.prefix(TIFluids.SCULK_GENE.getId(), melting));
         MeltingRecipeBuilder.melting(Ingredient.of(TinkerWorld.earthGeode.getBud(GeodeItemObject.BudSize.CLUSTER)),
                         TinkerFluids.slime.get(SlimeType.EARTH), 1000, 1)
@@ -318,6 +322,9 @@ public class TIRecipeGen implements ISmelteryRecipeHelper, IMaterialRecipeHelper
 
         MeltingFuelBuilder.fuel(TIFluids.DRAGON_BREATH.ingredient(50), 120, 2200)
                 .save(cons, this.location(fuel));
+
+        EntityMeltingRecipeBuilder.melting(EntityIngredient.of(EntityType.SLIME), TIFluids.TERRESTRIAL_SOLUTION.result(20))
+                .save(cons, prefix(TIFluids.TERRESTRIAL_SOLUTION, "entity_melting"));
     }
 
     public SmelteryRecipeBuilder metal(Consumer<FinishedRecipe> consumer, FluidObject<?> fluid) {

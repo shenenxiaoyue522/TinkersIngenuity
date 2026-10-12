@@ -9,6 +9,5 @@
       "crit_bonus": true,
       "target": "mantle:any"
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

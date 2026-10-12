@@ -22,24 +22,12 @@
     ],
     "transformer": {
       "type": "tconstruct:grey_to_sprite",
-      "palette": [
-        {
-          "color": "FF000000",
-          "grey": 0
-        },
-        {
-          "grey": 63,
-          "path": "tinkers_ingenuity:color/colorful_slime/1"
-        },
-        {
-          "grey": 178,
-          "path": "tinkers_ingenuity:color/colorful_slime/2"
-        },
-        {
-          "grey": 255,
-          "path": "tinkers_ingenuity:color/colorful_slime/3"
-        }
-      ]
+      "palette": {
+        "000": "FF000000",
+        "063": "tinkers_ingenuity:color/colorful_slime/1",
+        "178": "tinkers_ingenuity:color/colorful_slime/2",
+        "255": "tinkers_ingenuity:color/colorful_slime/3"
+      }
     }
   }
 }

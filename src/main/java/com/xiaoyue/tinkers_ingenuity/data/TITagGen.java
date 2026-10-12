@@ -6,6 +6,7 @@ import com.xiaoyue.tinkers_ingenuity.TinkersIngenuity;
 import com.xiaoyue.tinkers_ingenuity.register.TIFluids;
 import com.xiaoyue.tinkers_ingenuity.register.TIItems;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -19,6 +20,8 @@ public class TITagGen {
     public static final TagKey<Item> TINKERS_CURIO = ItemTags.create(new ResourceLocation("curios", "tinkers_curio"));
     public static final TagKey<Item> MODIFIABLE_CURIO = ItemTags.create(TinkersIngenuity.loc("modifiable_curio"));
     public static final TagKey<Item> METEOR_SPEAR = ItemTags.create(TinkersIngenuity.loc("meteor_spear"));
+
+    public static final TagKey<Fluid> MOLTEN_ECHO = FluidTags.create(new ResourceLocation("forge:molten_echo"));
 
     public static void addItemTagGen(RegistrateItemTagsProvider pvd) {
         pvd.addTag(TINKERS_CURIO).add(TIItems.TINKERS_MEDAL.get());
@@ -43,7 +46,9 @@ public class TITagGen {
             TagKey<Fluid> tag = fluid.getCommonTag();
             assert tag != null;
             pvd.addTag(tag).add(fluid.get());
+            if (fluid == TIFluids.SCULK_GENE) {
+                pvd.addTag(MOLTEN_ECHO).add(fluid.get());
+            }
         }
-
     }
 }

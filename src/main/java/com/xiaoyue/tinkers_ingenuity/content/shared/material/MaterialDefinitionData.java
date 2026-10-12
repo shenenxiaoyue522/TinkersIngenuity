@@ -3,6 +3,7 @@ package com.xiaoyue.tinkers_ingenuity.content.shared.material;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.crafting.conditions.*;
 import slimeknights.tconstruct.common.json.ConfigEnabledCondition;
+import slimeknights.tconstruct.library.materials.definition.IMaterial;
 import slimeknights.tconstruct.library.materials.definition.Material;
 
 import javax.annotation.Nullable;
@@ -10,7 +11,7 @@ import javax.annotation.Nullable;
 public record MaterialDefinitionData(int tier, int order, boolean craftable, boolean hidden, @Nullable ICondition condition) {
 
     public Material getMate(ResourceLocation id) {
-        return new Material(id, tier, order, craftable, hidden);
+        return new Material(id, tier, order, IMaterial.computeRarity(tier), craftable, hidden);
     }
 
     public static Builder builder() {

@@ -11,6 +11,5 @@
       "attacker": "mantle:any",
       "source": "bypass_cooldown"
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }

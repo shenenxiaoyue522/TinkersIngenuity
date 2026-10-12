@@ -18,6 +18,5 @@
       "attacker": "mantle:any",
       "source": "bypass_armor"
     }
-  ],
-  "tooltip_display": "always"
+  ]
 }
